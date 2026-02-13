@@ -3,6 +3,8 @@
     { "source": "/exluir", "destination": "/excluir", "permanent": true }
   ],
   "rewrites": [
+    { "source": "/campaigns", "destination": "https://metrix-ads-optimizer.vercel.app/" },
+    { "source": "/campaigns/(.*)", "destination": "https://metrix-ads-optimizer.vercel.app/$1" },
     { "source": "/politica-de-privacidade", "destination": "/politica-de-privacidade.html" },
     { "source": "/termos", "destination": "/termos.html" },
     { "source": "/excluir", "destination": "/excluir.html" }
