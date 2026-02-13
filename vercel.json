@@ -5,6 +5,14 @@
   "rewrites": [
     { "source": "/campaigns", "destination": "https://metrix-ads-optimizer.vercel.app/" },
     { "source": "/campaigns/(.*)", "destination": "https://metrix-ads-optimizer.vercel.app/$1" },
+    { "source": "/dashboard", "destination": "https://metrix-ads-optimizer.vercel.app/dashboard" },
+    { "source": "/analysis", "destination": "https://metrix-ads-optimizer.vercel.app/analysis" },
+    { "source": "/optimize", "destination": "https://metrix-ads-optimizer.vercel.app/optimize" },
+    { "source": "/audience", "destination": "https://metrix-ads-optimizer.vercel.app/audience" },
+    { "source": "/settings", "destination": "https://metrix-ads-optimizer.vercel.app/settings" },
+    { "source": "/history", "destination": "https://metrix-ads-optimizer.vercel.app/history" },
+    { "source": "/api/(.*)", "destination": "https://metrix-ads-optimizer.vercel.app/api/$1" },
+    { "source": "/static/(.*)", "destination": "https://metrix-ads-optimizer.vercel.app/static/$1" },
     { "source": "/politica-de-privacidade", "destination": "/politica-de-privacidade.html" },
     { "source": "/termos", "destination": "/termos.html" },
     { "source": "/excluir", "destination": "/excluir.html" }
