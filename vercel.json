@@ -1,6 +1,11 @@
 {
+  "redirects": [
+    { "source": "/exluir", "destination": "/excluir", "permanent": true }
+  ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/politica-de-privacidade", "destination": "/politica-de-privacidade.html" },
+    { "source": "/termos", "destination": "/termos.html" },
+    { "source": "/excluir", "destination": "/excluir.html" }
   ],
   "headers": [
     {
