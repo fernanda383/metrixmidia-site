@@ -84,7 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
           const card = document.createElement('article');
           card.className = 'case-card';
           card.innerHTML = `
-            <div class="case-thumb" style="background-image:url('${item.thumb}')">
+            <div class="case-thumb">
+              <img src="${item.thumb}" alt="Thumb ${item.title}" loading="lazy">
               <div class="case-thumb-text">
                 <span class="case-thumb-title">${item.title}</span>
                 <span class="case-thumb-segment">${item.segment}</span>
