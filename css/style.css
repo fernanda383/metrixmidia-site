@@ -48,7 +48,7 @@ img { max-width: 100%; display: block; border-radius: 12px; }
 .navbar.scrolled { background: rgba(10,10,10,0.92); backdrop-filter: blur(12px); padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
 .nav-container { display:flex; align-items:center; justify-content:space-between; }
 .nav-logo { display:flex; align-items:center; gap: 12px; }
-.logo-svg { height: 36px; width: auto; }
+.logo-svg, .logo-img { height: 36px; width: auto; display:block; }
 .nav-menu { display:flex; gap:20px; align-items:center; }
 .nav-link { color: var(--gray-light); font-weight:500; }
 .nav-link:hover, .nav-link.active { color: var(--white); }
@@ -130,6 +130,9 @@ img { max-width: 100%; display: block; border-radius: 12px; }
 .case-card { background: var(--bg-card); border:1px solid rgba(255,255,255,0.08); border-radius:16px; overflow:hidden; display:flex; flex-direction:column; box-shadow: var(--shadow); transition: transform var(--transition), border-color var(--transition); }
 .case-card:hover { transform: translateY(-4px); border-color: var(--yellow); }
 .case-thumb { aspect-ratio: 16 / 9; background: linear-gradient(135deg, rgba(245,230,66,0.12), rgba(255,255,255,0.05)); position:relative; }
+.case-thumb { display:flex; flex-direction:column; justify-content:flex-end; padding:16px; gap:4px; }
+.case-thumb-title { font-weight:800; font-size:1.1rem; color: var(--white); text-shadow: 0 6px 20px rgba(0,0,0,0.4); }
+.case-thumb-segment { color: var(--gray-light); font-size:0.95rem; }
 .case-body { padding:18px; display:grid; gap:10px; flex:1; }
 .case-title { font-weight:800; font-size:1.2rem; }
 .case-segment { color: var(--gray-light); }
@@ -150,6 +153,9 @@ img { max-width: 100%; display: block; border-radius: 12px; }
 .case-section h3 { font-size:1.4rem; margin-bottom:12px; }
 .case-section p { color: var(--gray-light); }
 .image-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:14px; margin-top:14px; }
+.image-grid { justify-items:center; }
+.image-grid figure { width:100%; max-width:520px; }
+.case-section img { width:100%; height:auto; border-radius:12px; }
 .caption { color: var(--gray-light); font-size:0.9rem; margin-top:6px; }
 
 /* PLACEHOLDER */
