@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" role="img" aria-label="Metrix Mídia">
-  <rect width="320" height="120" fill="none"/>
-  <g transform="translate(10 20)" fill="#f5e642">
-    <path d="M0 80V10c0-4 2-8 7-8h7c5 0 7 4 7 8v32c0 4-2 8-7 8H13c-5 0-7 4-7 8v22z"/>
-    <path d="M22 80V10c0-4 2-8 7-8h7c5 0 7 4 7 8v32c0 4-2 8-7 8h-1c-5 0-7 4-7 8v22z"/>
-    <path d="M44 80V10c0-4 2-8 7-8h7c5 0 7 4 7 8v32c0 4-2 8-7 8h-1c-5 0-7 4-7 8v22z"/>
-  </g>
-  <text x="90" y="72" font-family="'Inter', Arial, sans-serif" font-weight="900" font-size="60" fill="#ffffff" letter-spacing="-2">etrix</text>
-  <text x="245" y="40" font-family="'Inter', Arial, sans-serif" font-weight="400" font-size="12" fill="#8a8a8a">®</text>
-  <text x="220" y="96" font-family="'Inter', Arial, sans-serif" font-weight="600" font-size="18" fill="#8a8a8a" letter-spacing="5">MÍDIA</text>
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="632.000000pt" height="395.000000pt" viewBox="0 0 632.000000 395.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,395.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none">
+</g>
 </svg>
