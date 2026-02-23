@@ -7,5 +7,14 @@
     "results": ["87.665 views", "-41% custo/conversa", "+1,5% seguidores"],
     "tags": ["Reposicionamento", "Social", "Ads"],
     "thumb": "/static/cases/academia-tenis-de-mesa/thumb.webp"
+  },
+  {
+    "slug": "editora-recriar",
+    "title": "Editora Recriar",
+    "segment": "E-commerce | Educação",
+    "summary": "Case focado em performance de tráfego pago",
+    "results": ["ROAS 3,89x", "CPC R$0,34", "131 conversões"],
+    "tags": ["Ads", "Meta", "Performance"],
+    "thumb": "/static/cases/editora-recriar/thumb.webp"
   }
 ]
