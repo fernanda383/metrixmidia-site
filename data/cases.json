@@ -25,5 +25,14 @@
     "results": ["ROAS 2,16x", "CPC R$0,13", "24 conversões"],
     "tags": ["Ads", "Meta", "Performance"],
     "thumb": "/static/cases/labtem/thumb.webp"
+  },
+  {
+    "slug": "victor-azevedo",
+    "title": "Victor Azevedo",
+    "segment": "Infoproduto | Conteúdo",
+    "summary": "Campanhas Meta Ads otimizadas para ROAS",
+    "results": ["ROAS 2,69x", "CPC R$0,49", "42 conversões"],
+    "tags": ["Ads", "Meta", "Performance"],
+    "thumb": "/static/cases/victor-azevedo/thumb.webp"
   }
 ]
