@@ -16,5 +16,14 @@
     "results": ["ROAS 3,89x", "CPC R$0,34", "131 conversões"],
     "tags": ["Ads", "Meta", "Performance"],
     "thumb": "/static/cases/editora-recriar/thumb.webp"
+  },
+  {
+    "slug": "labtem",
+    "title": "Labtem",
+    "segment": "Educação | Pós-graduação",
+    "summary": "Tráfego pago com foco em ROAS e baixo CPC",
+    "results": ["ROAS 2,16x", "CPC R$0,13", "24 conversões"],
+    "tags": ["Ads", "Meta", "Performance"],
+    "thumb": "/static/cases/labtem/thumb.webp"
   }
 ]
