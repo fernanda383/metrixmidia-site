@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "academia-de-tenis-de-mesa",
+    "title": "Academia de Tênis de Mesa",
+    "segment": "Esporte & Educação",
+    "summary": "Reposicionamento + crescimento orgânico e pago",
+    "results": ["87.665 views", "-41% custo/conversa", "+1,5% seguidores"],
+    "tags": ["Reposicionamento", "Social", "Ads"],
+    "thumb": "/static/cases/academia-tenis-de-mesa/thumb.webp"
+  },
+  {
+    "slug": "editora-recriar",
+    "title": "Editora Recriar",
+    "segment": "E-commerce | Educação",
+    "summary": "Case focado em performance de tráfego pago",
+    "results": ["ROAS 3,89x", "CPC R$0,34", "131 conversões"],
+    "tags": ["Ads", "Meta", "Performance"],
+    "thumb": "/static/cases/editora-recriar/thumb.webp"
+  },
+  {
+    "slug": "labtem",
+    "title": "Labtem",
+    "segment": "Educação | Pós-graduação",
+    "summary": "Tráfego pago com foco em ROAS e baixo CPC",
+    "results": ["ROAS 2,16x", "CPC R$0,13", "24 conversões"],
+    "tags": ["Ads", "Meta", "Performance"],
+    "thumb": "/static/cases/labtem/thumb.webp"
+  },
+  {
+    "slug": "victor-azevedo",
+    "title": "Victor Azevedo",
+    "segment": "Infoproduto | Conteúdo",
+    "summary": "Campanhas Meta Ads otimizadas para ROAS",
+    "results": ["ROAS 2,69x", "CPC R$0,49", "42 conversões"],
+    "tags": ["Ads", "Meta", "Performance"],
+    "thumb": "/static/cases/victor-azevedo/thumb.webp"
+  }
+]

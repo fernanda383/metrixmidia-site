@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Metrix Mídia - Agência de marketing e conteúdo. Narrativas que sustentam propósito e geram resultado.">
+  <meta name="description" content="Metrix Mídia - Agência de marketing digital. Narrativas que sustentam propósito e geram resultado em tráfego pago, gestão de redes sociais e narrativa autêntica.">
   <meta name="theme-color" content="#0a0a0a">
   <title>Metrix Mídia | Narrativas que geram resultado</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 
   <script type="application/ld+json">
   {
@@ -25,32 +25,19 @@
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
-      "contactOption": "TollFree",
       "availableLanguage": "Portuguese"
     }
   }
   </script>
 </head>
 <body>
-  <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="#" class="nav-logo">
-        <svg viewBox="0 0 260 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
-          <g fill="#f5e642">
-            <path d="M2 50V12c0-2 1-4 3-4h4c2 0 3 2 3 4v18c0 2-1 3-3 3h-1c-2 0-3 1-3 3v14z"/>
-            <path d="M14 50V12c0-2 1-4 3-4h4c2 0 3 2 3 4v18c0 2-1 3-3 3h-1c-2 0-3 1-3 3v14z"/>
-            <path d="M26 50V12c0-2 1-4 3-4h4c2 0 3 2 3 4v18c0 2-1 3-3 3h-1c-2 0-3 1-3 3v14z"/>
-          </g>
-          <text x="40" y="44" font-family="'Inter', Arial, sans-serif" font-weight="800" font-size="44" fill="#ffffff" letter-spacing="-2">etrix</text>
-          <text x="155" y="32" font-family="'Inter', Arial, sans-serif" font-weight="400" font-size="10" fill="#8a8a8a">®</text>
-          <text x="140" y="56" font-family="'Inter', Arial, sans-serif" font-weight="400" font-size="13" fill="#8a8a8a" letter-spacing="4">MÍDIA</text>
-        </svg>
+      <a href="#hero" class="nav-logo" aria-label="Metrix Mídia">
+        <img src="/static/logo.svg" alt="Metrix Mídia" class="logo-img">
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
       <ul class="nav-menu" id="navMenu">
         <li><a href="#sobre" class="nav-link">Sobre</a></li>
@@ -64,102 +51,60 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section class="hero" id="hero">
     <div class="hero-bg"></div>
     <div class="container hero-content">
-      <p class="hero-tag animate-fade-up">Agência de Marketing & Conteúdo</p>
-      <h1 class="hero-title animate-fade-up delay-1">
-        Narrativas que sustentam propósito<br>
-        e geram <span class="highlight">resultado.</span>
-      </h1>
-      <p class="hero-subtitle animate-fade-up delay-2">
-        Não somos mais uma agência. Somos parceiros estratégicos<br class="hide-mobile">
-        que acreditam no <em>poder das histórias</em>.
-      </p>
-      <div class="hero-actions animate-fade-up delay-3">
-        <a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Metrix%20M%C3%ADdia%20e%20gostaria%20de%20saber%20mais." class="btn btn-primary" target="_blank" rel="noopener">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Fale pelo WhatsApp
-        </a>
+      <p class="hero-tag animate-on-scroll">Agência de Marketing & Conteúdo</p>
+      <h1 class="hero-title animate-on-scroll">Narrativas que sustentam propósito<br>e geram <span class="highlight">resultado.</span></h1>
+      <p class="hero-subtitle animate-on-scroll">Não somos mais uma agência. Somos parceiros estratégicos que acreditam no <em>poder das histórias</em>.</p>
+      <div class="hero-actions animate-on-scroll">
+        <a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Metrix%20M%C3%ADdia%20e%20gostaria%20de%20saber%20mais." class="btn btn-primary" target="_blank" rel="noopener">Fale pelo WhatsApp</a>
         <a href="#sobre" class="btn btn-ghost">Conheça a Metrix</a>
       </div>
     </div>
-    <div class="hero-scroll-indicator">
-      <div class="scroll-line"></div>
-    </div>
+    <div class="hero-scroll-indicator"></div>
   </section>
 
-  <!-- Sobre Section -->
   <section class="section sobre" id="sobre">
     <div class="container">
       <div class="section-grid">
         <div class="section-text">
           <p class="section-tag animate-on-scroll">Quem somos</p>
-          <h2 class="section-title animate-on-scroll">
-            Histórias são a base de tudo.<br>
-            Não vendemos posts bonitos.
-          </h2>
-          <p class="section-highlight animate-on-scroll">
-            Construímos narrativas que conectam e convertem.
-          </p>
-          <p class="section-desc animate-on-scroll">
-            O que nos move não é apenas fechar contratos. É construir <strong>parcerias</strong> que façam sentido. Por isso, só trabalhamos com quem está disposto a:
-          </p>
+          <h2 class="section-title animate-on-scroll">Histórias são a base de tudo.<br>Não vendemos posts bonitos.</h2>
+          <p class="section-highlight animate-on-scroll">Construímos narrativas que conectam e convertem.</p>
+          <p class="section-desc animate-on-scroll">O que nos move não é apenas fechar contratos. É construir <strong>parcerias</strong> que façam sentido. Por isso, só trabalhamos com quem está disposto a:</p>
           <ul class="check-list animate-on-scroll">
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5e642" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-              Gravar conteúdos autênticos
-            </li>
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5e642" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-              Examinar e ajustar o comercial
-            </li>
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5e642" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-              Executar com a mesma intensidade que nós
-            </li>
+            <li>Gravar conteúdos autênticos</li>
+            <li>Examinar e ajustar o comercial</li>
+            <li>Executar com a mesma intensidade que nós</li>
           </ul>
         </div>
         <div class="section-visual animate-on-scroll">
-          <div class="quote-card">
-            <div class="quote-mark">"</div>
-            <p>Se você não está disposto, talvez a METRIX não seja para você.</p>
-          </div>
+          <div class="placeholder">Se você não está disposto, talvez a METRIX não seja para você.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Metodologia Section -->
   <section class="section metodologia" id="metodologia">
     <div class="container">
       <p class="section-tag center animate-on-scroll">Como trabalhamos</p>
-      <h2 class="section-title center animate-on-scroll">
-        Nossa <span class="highlight">metodologia</span> é simples
-      </h2>
-      <p class="section-subtitle center animate-on-scroll">
-        Narrativas autênticas que conectam. Estratégia que gera resultado mensurável. Parcerias que transformam vidas.
-      </p>
-
+      <h2 class="section-title center animate-on-scroll">Nossa <span class="highlight">metodologia</span> é simples</h2>
+      <p class="section-subtitle center animate-on-scroll">Narrativas autênticas que conectam. Estratégia que gera resultado mensurável. Parcerias que transformam vidas.</p>
       <div class="steps-grid">
         <div class="step-card animate-on-scroll">
-          <div class="step-number">01</div>
-          <h3 class="step-title">Escuta</h3>
-          <p class="step-desc">Anamnese narrativa profunda para entender seu propósito e objetivos reais.</p>
+          <div class="step-number">01</div><h3 class="step-title">Escuta</h3>
+          <p class="step-desc">Anamnese narrativa profunda para entender propósito e objetivos reais.</p>
         </div>
         <div class="step-card animate-on-scroll">
-          <div class="step-number">02</div>
-          <h3 class="step-title">Estratégia</h3>
+          <div class="step-number">02</div><h3 class="step-title">Estratégia</h3>
           <p class="step-desc">Construção de narrativa autêntica com calendário editorial estruturado.</p>
         </div>
         <div class="step-card animate-on-scroll">
-          <div class="step-number">03</div>
-          <h3 class="step-title">Execução</h3>
+          <div class="step-number">03</div><h3 class="step-title">Execução</h3>
           <p class="step-desc">Implementação com acompanhamento constante e ajustes baseados em dados.</p>
         </div>
       </div>
-
       <div class="framework animate-on-scroll">
         <p class="framework-label">Framework PONTE</p>
         <p class="framework-desc">16 semanas de transformação estruturada</p>
@@ -175,43 +120,24 @@
           <span class="fw-step"><strong>E</strong>scalabilidade</span>
         </div>
       </div>
-
-      <p class="methodology-footer animate-on-scroll">
-        Não somos prestadores de serviço. Somos <strong>parceiros no seu crescimento.</strong>
-      </p>
     </div>
   </section>
 
-  <!-- Resultados Section -->
   <section class="section resultados" id="resultados">
     <div class="container">
       <p class="section-tag center animate-on-scroll">Nossos números</p>
-      <h2 class="section-title center animate-on-scroll">
-        Números são apenas <span class="highlight">consequência.</span>
-      </h2>
-      <p class="section-subtitle center animate-on-scroll">
-        O que realmente importa são as histórias por trás deles.
-      </p>
-
+      <h2 class="section-title center animate-on-scroll">Números são apenas <span class="highlight">consequência.</span></h2>
+      <p class="section-subtitle center animate-on-scroll">O que realmente importa são as histórias por trás deles.</p>
       <div class="results-grid">
         <div class="result-card animate-on-scroll">
-          <div class="result-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f5e642" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          </div>
           <div class="result-value">R$ 5M<span class="result-plus">+</span></div>
           <p class="result-label">Faturados para nossos clientes</p>
         </div>
         <div class="result-card animate-on-scroll">
-          <div class="result-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f5e642" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
           <div class="result-value">R$ 1M<span class="result-plus">+</span></div>
           <p class="result-label">Geridos em tráfego pago</p>
         </div>
         <div class="result-card animate-on-scroll">
-          <div class="result-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#f5e642" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12s1.5 3 4 3 4-3 4-3"/><circle cx="9" cy="9" r="1" fill="#f5e642"/><circle cx="15" cy="9" r="1" fill="#f5e642"/></svg>
-          </div>
           <div class="result-value">∞</div>
           <p class="result-label">Vidas transformadas através do conteúdo</p>
         </div>
@@ -219,111 +145,51 @@
     </div>
   </section>
 
-  <!-- Planos Section -->
   <section class="section planos" id="planos">
     <div class="container">
       <p class="section-tag center animate-on-scroll">Nossos planos</p>
-      <h2 class="section-title center animate-on-scroll">
-        Escolha o plano ideal para o seu <span class="highlight">crescimento</span>
-      </h2>
-
+      <h2 class="section-title center animate-on-scroll">Escolha o plano ideal para o seu <span class="highlight">crescimento</span></h2>
       <div class="plans-grid">
-        <!-- Estratégia -->
         <div class="plan-card animate-on-scroll">
           <div class="plan-header">
             <h3 class="plan-name">Estratégia</h3>
-            <div class="plan-price">
-              <span class="currency">R$</span>
-              <span class="amount">1.200</span>
-              <span class="period">/mês</span>
-            </div>
+            <div class="plan-price"><span class="currency">R$</span><span class="amount">1.200</span><span class="period">/mês</span></div>
           </div>
           <ul class="plan-features">
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5e642" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-              Pauta de conteúdo estratégica mensal
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5e642" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-              Calendário editorial estruturado
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5e642" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-              Copy profissional
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5e642" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-              Reunião mensal
-            </li>
+            <li>Pauta de conteúdo estratégica mensal</li>
+            <li>Calendário editorial estruturado</li>
+            <li>Copy profissional</li>
+            <li>Reunião mensal</li>
           </ul>
-          <a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Estrat%C3%A9gia%20da%20Metrix%20M%C3%ADdia." class="btn btn-outline" target="_blank" rel="noopener">Quero este plano</a>
+          <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Estrat%C3%A9gia%20da%20Metrix%20M%C3%ADdia.">Quero este plano</a>
         </div>
-
-        <!-- Performance (destaque) -->
         <div class="plan-card plan-featured animate-on-scroll">
           <div class="plan-badge">Mais popular</div>
           <div class="plan-header">
             <h3 class="plan-name">Performance</h3>
-            <div class="plan-price">
-              <span class="currency">R$</span>
-              <span class="amount">1.800</span>
-              <span class="period">/mês</span>
-            </div>
+            <div class="plan-price"><span class="currency">R$</span><span class="amount">1.800</span><span class="period">/mês</span></div>
           </div>
           <ul class="plan-features">
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5e642" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-              Tudo do Estratégia
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5e642" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-              Gestão de tráfego pago (Google/Meta)
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5e642" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-              Criativos para anúncios
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5e642" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-              Reunião quinzenal
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5e642" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-              Relatório semanal
-            </li>
+            <li>Tudo do Estratégia</li>
+            <li>Gestão de tráfego pago (Google/Meta)</li>
+            <li>Criativos para anúncios</li>
+            <li>Reunião quinzenal</li>
+            <li>Relatório semanal</li>
           </ul>
-          <a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Performance%20da%20Metrix%20M%C3%ADdia." class="btn btn-primary" target="_blank" rel="noopener">Quero este plano</a>
+          <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Performance%20da%20Metrix%20M%C3%ADdia.">Quero este plano</a>
         </div>
-
-        <!-- Legado -->
         <div class="plan-card animate-on-scroll">
           <div class="plan-header">
             <h3 class="plan-name">Legado</h3>
-            <div class="plan-price">
-              <span class="currency">R$</span>
-              <span class="amount">2.500</span>
-              <span class="period">/mês</span>
-            </div>
+            <div class="plan-price"><span class="currency">R$</span><span class="amount">2.500</span><span class="period">/mês</span></div>
           </div>
           <ul class="plan-features">
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5e642" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-              Tudo do Performance
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5e642" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-              Captações mensais (foto + vídeo)
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5e642" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-              Produção in loco
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5e642" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
-              Banco de conteúdo profissional
-            </li>
+            <li>Tudo do Performance</li>
+            <li>Captações mensais (foto + vídeo)</li>
+            <li>Produção in loco</li>
+            <li>Banco de conteúdo profissional</li>
           </ul>
-          <a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Legado%20da%20Metrix%20M%C3%ADdia." class="btn btn-outline" target="_blank" rel="noopener">Quero este plano</a>
+          <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Legado%20da%20Metrix%20M%C3%ADdia.">Quero este plano</a>
         </div>
       </div>
     </div>
@@ -367,41 +233,24 @@
     </div>
   </section>
 
-  <!-- CTA Section -->
   <section class="section cta-section" id="contato">
     <div class="container">
       <div class="cta-content animate-on-scroll">
         <h2 class="cta-title">Pronto para construir uma narrativa que <span class="highlight">transforma</span>?</h2>
         <p class="cta-desc">Vamos conversar sobre como a Metrix Mídia pode impulsionar o seu negócio com conteúdo autêntico e estratégico.</p>
         <div class="cta-actions">
-          <a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Metrix%20M%C3%ADdia%20e%20gostaria%20de%20saber%20mais." class="btn btn-primary btn-lg" target="_blank" rel="noopener">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Fale pelo WhatsApp
-          </a>
-          <a href="https://instagram.com/metrixmidia" class="btn btn-ghost btn-lg" target="_blank" rel="noopener">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-            Siga no Instagram
-          </a>
+          <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Metrix%20M%C3%ADdia%20e%20gostaria%20de%20saber%20mais.">Fale pelo WhatsApp</a>
+          <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://instagram.com/metrixmidia">Siga no Instagram</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <svg viewBox="0 0 260 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="footer-logo">
-            <g fill="#f5e642">
-              <path d="M2 50V12c0-2 1-4 3-4h4c2 0 3 2 3 4v18c0 2-1 3-3 3h-1c-2 0-3 1-3 3v14z"/>
-              <path d="M14 50V12c0-2 1-4 3-4h4c2 0 3 2 3 4v18c0 2-1 3-3 3h-1c-2 0-3 1-3 3v14z"/>
-              <path d="M26 50V12c0-2 1-4 3-4h4c2 0 3 2 3 4v18c0 2-1 3-3 3h-1c-2 0-3 1-3 3v14z"/>
-            </g>
-            <text x="40" y="44" font-family="'Inter', Arial, sans-serif" font-weight="800" font-size="44" fill="#ffffff" letter-spacing="-2">etrix</text>
-            <text x="155" y="32" font-family="'Inter', Arial, sans-serif" font-weight="400" font-size="10" fill="#8a8a8a">®</text>
-            <text x="140" y="56" font-family="'Inter', Arial, sans-serif" font-weight="400" font-size="13" fill="#8a8a8a" letter-spacing="4">MÍDIA</text>
-          </svg>
+          <img src="/static/logo.svg" alt="Metrix Mídia" class="logo-img">
           <p class="footer-tagline">Narrativas que sustentam propósito e geram resultado.</p>
         </div>
         <div class="footer-links">
@@ -414,24 +263,29 @@
         </div>
         <div class="footer-social">
           <a href="https://wa.me/5511983414590" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.04 2C6.57 2 2.13 6.44 2.13 11.91c0 1.73.46 3.41 1.34 4.9L2 22l5.27-1.38c1.44.78 3.06 1.19 4.77 1.19 5.47 0 9.91-4.44 9.91-9.91C21.95 6.44 17.51 2 12.04 2zm0 18.05c-1.48 0-2.92-.39-4.18-1.13l-.3-.17-3.12.82.83-3.04-.2-.31a8.07 8.07 0 01-1.23-4.31c0-4.45 3.62-8.06 8.07-8.06 2.16 0 4.19.84 5.72 2.36a8.02 8.02 0 012.35 5.7c0 4.45-3.62 8.06-8.06 8.06zm4.45-5.88c-.24-.12-1.43-.71-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.19-.72-.64-1.21-1.43-1.35-1.67-.14-.24-.01-.37.11-.49.12-.12.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.86-.2-.48-.41-.41-.56-.42-.14-.01-.31-.02-.49-.02-.18 0-.44.07-.67.33-.23.26-.88.87-.88 2.13 0 1.26.91 2.48 1.04 2.65.14.16 1.8 2.79 4.36 3.91.61.26 1.08.42 1.45.54.61.2 1.17.17 1.6.1.49-.07 1.5-.61 1.71-1.21.21-.6.21-1.11.14-1.21-.07-.1-.23-.17-.47-.29z"/>
+            </svg>
           </a>
           <a href="https://instagram.com/metrixmidia" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="18" height="18" rx="5" stroke="#ffffff" stroke-width="2"/>
+              <circle cx="12" cy="12" r="4.5" stroke="#ffffff" stroke-width="2"/>
+              <circle cx="17.5" cy="6.5" r="1.5" fill="#ffffff"/>
+            </svg>
           </a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Metrix Mídia. Todos os direitos reservados. | <a href="/politica-de-privacidade" style="color: #8a8a8a; text-decoration: underline;">Política de Privacidade</a></p>
+        <p>&copy; 2026 Metrix Mídia. Todos os direitos reservados. | <a href="/politica-de-privacidade" style="color: #8a8a8a; text-decoration: underline;">Política de Privacidade</a></p>
       </div>
     </div>
   </footer>
 
-  <!-- WhatsApp Float Button -->
   <a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Metrix%20M%C3%ADdia%20e%20gostaria%20de%20saber%20mais." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contato via WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="#ffffff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>
