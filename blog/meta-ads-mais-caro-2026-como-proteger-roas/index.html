@@ -80,21 +80,69 @@
     ]
   }
   </script>
+
+  <!-- Apple-Gold Rebrand injected -->
+  <meta name="theme-color" content="#0a0a0a">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <style>
+    :root { --brand-dark: #0a0a0a; --brand-primary: #f5f5f5; --brand-accent: #EEDE5E; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--brand-dark); color: var(--brand-primary); }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Inter', sans-serif; letter-spacing: -0.02em; }
+    .glass-panel { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .card-hover { transition: transform 300ms ease, border-color 300ms ease; }
+    .card-hover:hover { transform: translateY(-4px) scale(1.01); border-color: rgba(238, 222, 94, 0.3); }
+    .btn-hover { transition: all 300ms ease; }
+    .btn-hover:hover { transform: scale(1.02); filter: brightness(1.1); }
+    .nav-link { position: relative; transition: color 200ms ease; }
+    .nav-link::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -4px; left: 0; background: var(--brand-accent); transition: width 300ms ease; }
+    .nav-link:hover::after, .nav-link-active::after { width: 100%; }
+    .nav-link-active { color: white; }
+    
+    /* Safely override old CSS for deep pages */
+    body { margin: 0; padding: 0; min-height: 100vh; display: flex; flex-direction: column; }
+    main { flex-grow: 1; padding-top: 100px !important; } /* accommodate fixed navbar */
+    .blog-post, .case-section, .case-header { max-width: 800px; margin: 0 auto; padding: 20px; }
+    .blog-post h1, .case-header h1 { font-size: 2.5rem; color: white; margin-bottom: 20px; }
+    .blog-post h2, .case-section h3 { font-size: 1.8rem; color: white; margin-top: 40px; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+    .blog-body p, .case-section p { color: #8a8a8a; line-height: 1.8; margin-bottom: 20px; font-weight: 300; }
+    .blog-body ul, .case-section ul { color: #8a8a8a; padding-left: 20px; margin-bottom: 20px; }
+    .blog-body li, .case-section li { margin-bottom: 10px; }
+    .image-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin: 30px 0; }
+    @media (min-width: 768px) { .image-grid { grid-template-columns: 1fr 1fr; } }
+    .image-grid img { width: 100%; border-radius: 1rem; border: 1px solid rgba(255,255,255,0.1); }
+    .image-grid .caption { color: #666; font-size: 0.8rem; text-align: center; margin-top: 10px; }
+    .blog-faq-item h3 { color: white; margin-top: 20px; font-size: 1.2rem; }
+    .blog-faq-item p { color: #8a8a8a; }
+    .badge, .blog-case-badge { display: inline-block; background: rgba(238, 222, 94, 0.1); color: #EEDE5E; padding: 4px 12px; border-radius: 99px; font-size: 0.8rem; font-weight: 600; margin-right: 8px; margin-bottom: 8px; }
+    .btn-primary, .btn-whatsapp { display: inline-block; background: #EEDE5E; color: black; padding: 12px 24px; border-radius: 99px; font-weight: 600; text-decoration: none; margin-top: 20px; transition: all 0.2s; }
+    .btn-primary:hover, .btn-whatsapp:hover { transform: scale(1.05); }
+    .blog-breadcrumb { max-width: 800px; margin: 0 auto; padding: 20px; color: #666; font-size: 0.9rem; margin-top: 100px; }
+    .blog-breadcrumb a { color: #EEDE5E; text-decoration: none; }
+    .blog-breadcrumb span { margin: 0 10px; }
+    .blog-case-box, .blog-cta-box { border: 1px solid rgba(238, 222, 94, 0.2); background: rgba(255,255,255,0.02); padding: 30px; border-radius: 1.5rem; margin: 40px 0; }
+  </style>
 </head>
-<body>
-  <nav class="navbar" id="navbar">
-    <div class="container nav-container">
-      <a href="/" class="nav-logo" aria-label="Metrix Mídia"><img src="/static/logo.svg" alt="Metrix Mídia" class="logo-img"></a>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="/#sobre" class="nav-link">Sobre</a></li>
-        <li><a href="/#planos" class="nav-link">Planos</a></li>
-        <li><a href="/case/" class="nav-link">Cases</a></li>
-        <li><a href="/blog/" class="nav-link active">Blog</a></li>
-        <li><a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Vi%20o%20artigo%20sobre%20o%20aumento%20do%20Meta%20Ads%20em%202026%20e%20quero%20entender%20como%20proteger%20meu%20ROAS." class="nav-cta" target="_blank" rel="noopener">Fale Conosco</a></li>
-      </ul>
-    </div>
+
+<body class="antialiased min-h-screen flex flex-col selection:bg-[#EEDE5E]/30 selection:text-white">
+  
+  <!-- Navbar Apple-style -->
+  <nav class="fixed w-full z-50 top-0 bg-[#0a0a0a]/70 backdrop-blur-xl border-b border-white/5" style="z-index: 9999;">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex justify-between items-center">
+          <a href="/" class="flex items-center gap-2 group">
+              <img src="/static/logo_new.png" alt="Metrix Mídia" class="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+          </a>
+          <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+              <a href="/" class="nav-link hover:text-white">Home</a>
+              <a href="https://metrixmidia.com.br/case/" class="nav-link hover:text-white">Cases</a>
+              <a href="/blog/" class="nav-link hover:text-white">Blog</a>
+          </div>
+          <a href="https://wa.me/5511983414590" class="btn-hover text-sm hidden md:inline-flex bg-white/10 hover:bg-white/15 border border-white/5 px-5 py-2.5 rounded-full font-medium backdrop-blur-md text-white">
+              Fale Conosco
+          </a>
+      </div>
   </nav>
+
 
   <div class="container">
     <nav class="blog-breadcrumb" aria-label="Navegação">
@@ -235,28 +283,28 @@
     </article>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <img src="/static/logo.svg" alt="Metrix Mídia" class="logo-img">
-          <p class="footer-tagline">Narrativas que sustentam propósito e geram resultado.</p>
-        </div>
-        <div class="footer-links">
-          <a href="/">Home</a>
-          <a href="/case/">Cases</a>
-          <a href="/blog/">Blog</a>
-        </div>
-        <div class="footer-social">
-          <a href="https://wa.me/5511983414590" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-          <a href="https://instagram.com/metrixmidia" target="_blank" rel="noopener" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
-        </div>
+  
+  <!-- Footer Apple-style -->
+  <footer class="py-16 px-6 lg:px-8 border-t border-white/5 bg-[#050505] mt-auto">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-10">
+          <div class="text-center md:text-left">
+              <a href="/" class="flex items-center gap-2 justify-center md:justify-start group text-decoration-none">
+                  <img src="/static/logo_new.png" alt="Metrix Mídia" class="h-8 w-auto object-contain transition-transform duration-300 transform group-hover:-translate-y-1">
+              </a>
+              <p class="text-gray-500 text-sm mt-4 font-light">Narrativas que sustentam propósito e geram resultado.</p>
+          </div>
+          
+          <div class="flex flex-wrap gap-8 text-sm text-gray-500 font-light justify-center">
+              <a href="/" class="hover:text-white transition-colors text-decoration-none">Home</a>
+              <a href="https://metrixmidia.com.br/case/" class="hover:text-white transition-colors text-decoration-none">Cases</a>
+              <a href="/blog/" class="hover:text-white transition-colors text-decoration-none">Blog</a>
+          </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Metrix Mídia. Todos os direitos reservados. | <a href="/politica-de-privacidade" style="color:#8a8a8a;text-decoration:underline;">Política de Privacidade</a></p>
+      <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 text-xs text-gray-600 font-light flex justify-center md:justify-start">
+          <p>© 2026 Metrix Mídia. Inovação guiada por propósito.</p>
       </div>
-    </div>
   </footer>
+
   <script src="/js/main.js"></script>
 </body>
 </html>
