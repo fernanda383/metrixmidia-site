@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="${item.thumb}" alt="Thumb ${item.title}" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
               </div>
-              <div class="text-[10px] font-medium text-[#EEDE5E] mb-3 tracking-widest uppercase">${item.segment}</div>
+              <div class="text-[10px] font-medium text-[#F2E846] mb-3 tracking-widest uppercase">${item.segment}</div>
               <div class="text-xl font-medium mb-4 text-white transition-colors leading-snug">${item.title}</div>
               <div class="flex flex-wrap gap-2 mb-6">
                 ${item.results.map(r => `<span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded-md text-gray-300 font-medium">${r}</span>`).join('')}
