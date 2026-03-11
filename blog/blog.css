@@ -1,0 +1,461 @@
+/* ==============================
+   METRIX MÍDIA — BLOG CSS
+   Todos os seletores têm prefixo
+   .blog-* para não vazar no site
+   ============================== */
+
+/* ── Hero da listagem ── */
+.blog-hero {
+  padding: 140px 0 60px;
+  text-align: center;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--gray-dark);
+}
+
+.blog-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.blog-hero p {
+  font-size: 1.1rem;
+  color: var(--gray-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ── Grid de artigos (listagem) ── */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+  padding: 60px 0;
+}
+
+/* ── Card de artigo ── */
+.blog-card {
+  background: var(--bg-card);
+  border: 1px solid var(--gray-dark);
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.blog-card:hover {
+  border-color: var(--yellow);
+  transform: translateY(-4px);
+}
+
+.blog-card-category {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  background: rgba(245, 230, 66, 0.1);
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.blog-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.35;
+  flex-grow: 1;
+}
+
+.blog-card-excerpt {
+  font-size: 0.9rem;
+  color: var(--gray-light);
+  line-height: 1.6;
+}
+
+.blog-card-meta {
+  font-size: 0.8rem;
+  color: var(--gray-mid);
+}
+
+.blog-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--yellow);
+  margin-top: 4px;
+  transition: gap var(--transition);
+}
+
+.blog-card-link:hover {
+  gap: 10px;
+}
+
+/* ── CTA na listagem ── */
+.blog-cta-section {
+  text-align: center;
+  padding: 48px 0 72px;
+  border-top: 1px solid var(--gray-dark);
+}
+
+.blog-cta-section p {
+  color: var(--gray-light);
+  margin-bottom: 20px;
+}
+
+/* ── Breadcrumb ── */
+.blog-breadcrumb {
+  padding: 120px 0 0;
+  font-size: 0.85rem;
+  color: var(--gray-mid);
+}
+
+.blog-breadcrumb a {
+  color: var(--gray-mid);
+  transition: color var(--transition);
+}
+
+.blog-breadcrumb a:hover {
+  color: var(--yellow);
+}
+
+.blog-breadcrumb span {
+  margin: 0 6px;
+}
+
+/* ── Artigo ── */
+.blog-post {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 40px 0 80px;
+}
+
+.blog-post-header {
+  margin-bottom: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--gray-dark);
+}
+
+.blog-category {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  background: rgba(245, 230, 66, 0.1);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.blog-post-header h1 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.blog-citability {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--gray-light);
+  line-height: 1.65;
+  border-left: 3px solid var(--yellow);
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.blog-meta {
+  font-size: 0.85rem;
+  color: var(--gray-mid);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ── Corpo do artigo ── */
+.blog-body {
+  line-height: 1.8;
+  color: var(--white);
+}
+
+.blog-body h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 40px 0 16px;
+  color: var(--white);
+}
+
+.blog-body p {
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.blog-body ul, .blog-body ol {
+  padding-left: 24px;
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.blog-body li {
+  margin-bottom: 8px;
+  list-style: disc;
+}
+
+.blog-body strong {
+  color: var(--white);
+  font-weight: 700;
+}
+
+/* ── Destaque numérico / stat ── */
+.blog-stat {
+  display: flex;
+  gap: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--gray-dark);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 32px 0;
+  flex-wrap: wrap;
+}
+
+.blog-stat-item {
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+}
+
+.blog-stat-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--yellow);
+  display: block;
+}
+
+.blog-stat-label {
+  font-size: 0.8rem;
+  color: var(--gray-light);
+}
+
+/* ── Case Box ── */
+.blog-case-box {
+  background: var(--bg-card);
+  border: 1px solid var(--yellow);
+  border-radius: 12px;
+  padding: 28px;
+  margin: 40px 0;
+}
+
+.blog-case-box h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--yellow);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+}
+
+.blog-case-box .blog-case-client {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.blog-case-box .blog-case-results {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.blog-case-badge {
+  background: rgba(245, 230, 66, 0.12);
+  color: var(--yellow);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 100px;
+}
+
+.blog-case-box p {
+  font-size: 0.9rem;
+  color: var(--gray-light);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.blog-case-box a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--yellow);
+}
+
+/* ── FAQ ── */
+.blog-faq {
+  margin: 48px 0;
+  border-top: 1px solid var(--gray-dark);
+  padding-top: 40px;
+}
+
+.blog-faq h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+
+.blog-faq-item {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--gray-dark);
+}
+
+.blog-faq-item:last-child {
+  border-bottom: none;
+}
+
+.blog-faq-item h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.blog-faq-item p {
+  font-size: 0.9rem;
+  color: var(--gray-light);
+  line-height: 1.65;
+}
+
+/* ── CTA Box ── */
+.blog-cta-box {
+  background: linear-gradient(135deg, var(--bg-card) 0%, #1e1e10 100%);
+  border: 1px solid var(--yellow);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  margin: 48px 0;
+}
+
+.blog-cta-box h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.blog-cta-box p {
+  color: var(--gray-light);
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25d366;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 14px 28px;
+  border-radius: 8px;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.btn-whatsapp:hover {
+  background: #1da851;
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+/* ── Relacionados ── */
+.blog-related {
+  margin: 48px 0 0;
+  padding-top: 40px;
+  border-top: 1px solid var(--gray-dark);
+}
+
+.blog-related h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.blog-related-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.blog-related-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gray-light);
+  font-size: 0.95rem;
+  transition: color var(--transition);
+}
+
+.blog-related-links a:hover {
+  color: var(--yellow);
+}
+
+.blog-related-links a::before {
+  content: "→";
+  color: var(--yellow);
+  font-weight: 700;
+}
+
+/* ── Mid-article CTA inline ── */
+.blog-inline-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245, 230, 66, 0.1);
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin: 24px 0;
+  transition: background var(--transition);
+}
+
+.blog-inline-cta:hover {
+  background: rgba(245, 230, 66, 0.18);
+  color: var(--yellow);
+}
+
+/* ── Responsivo ── */
+@media (max-width: 768px) {
+  .blog-hero {
+    padding: 120px 0 40px;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 40px 0;
+  }
+
+  .blog-post {
+    padding: 24px 0 60px;
+  }
+
+  .blog-stat {
+    gap: 16px;
+  }
+
+  .blog-cta-box {
+    padding: 28px 20px;
+  }
+}

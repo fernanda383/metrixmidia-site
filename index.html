@@ -3,22 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Metrix Mídia - Narrativas que sustentam propósito e geram resultado.">
     <title>Metrix Mídia | Narrativas que geram resultado</title>
-    
-    <!-- Favicons Preservados -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-    <!-- Tailwind CDN para o Redesign UX/UI -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- UX/UI Skill Applied: Fonte Inter Oficial -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -36,7 +26,7 @@
 
         h1, h2, h3, .font-serif-display {
             font-family: 'Inter', sans-serif;
-            letter-spacing: -0.02em; /* Apple-style negative tracking for Inter headings */
+            letter-spacing: -0.02em;
         }
 
         /* Apple-esque Glassmorphism and subtle animations */
@@ -105,9 +95,9 @@
                 <a href="#metodologia" class="nav-link hover:text-white">Metodologia</a>
                 <a href="#resultados" class="nav-link hover:text-white">Resultados</a>
                 <a href="#planos" class="nav-link hover:text-white">Planos</a>
-                <a href="/case/" class="nav-link hover:text-white">Cases</a>
+                <a href="#cases" class="nav-link hover:text-white">Cases</a>
             </div>
-            <a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Metrix%20M%C3%ADdia%20e%20gostaria%20de%20saber%20mais." class="btn-hover text-sm hidden md:inline-flex bg-white/10 hover:bg-white/15 border border-white/5 px-5 py-2.5 rounded-full font-medium backdrop-blur-md">
+            <a href="https://wa.me/5511983414590" class="btn-hover text-sm hidden md:inline-flex bg-white/10 hover:bg-white/15 border border-white/5 px-5 py-2.5 rounded-full font-medium backdrop-blur-md">
                 Fale Conosco
             </a>
         </div>
@@ -115,7 +105,7 @@
 
     <main class="flex-grow pt-24">
         <!-- Hero Section -->
-        <section class="relative pt-24 pb-20 md:pt-40 md:pb-32 px-6 lg:px-8 max-w-7xl mx-auto flex flex-col items-center text-center overflow-hidden" id="hero">
+        <section class="relative pt-24 pb-20 md:pt-40 md:pb-32 px-6 lg:px-8 max-w-7xl mx-auto flex flex-col items-center text-center overflow-hidden">
             <!-- Subtle Apple-like ambient glow (Golden) -->
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-[#EEDE5E]/5 blur-[120px] rounded-full point-events-none -z-10"></div>
 
@@ -133,7 +123,7 @@
             </p>
             
             <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Metrix%20M%C3%ADdia%20e%20gostaria%20de%20saber%20mais." aria-label="Fale pelo WhatsApp"
+                <a href="https://wa.me/5511983414590" aria-label="Fale pelo WhatsApp"
                    class="btn-hover bg-[#EEDE5E] text-black px-8 py-4 rounded-full font-medium text-lg shadow-[0_4px_24px_rgba(238,222,94,0.15)] flex items-center justify-center gap-2">
                    Falar com Especialista
                 </a>
@@ -156,7 +146,6 @@
                     <div class="absolute -z-10 -inset-4 bg-[#EEDE5E]/5 blur-3xl rounded-full"></div>
                 </div>
                 <div class="order-1 md:order-2">
-                    <p class="text-sm text-[#EEDE5E] tracking-widest uppercase mb-4 font-medium">Quem somos</p>
                     <h2 class="text-3xl md:text-5xl font-medium mb-8 leading-tight tracking-tight">Histórias são a base de tudo. <span class="text-gray-500">Não vendemos posts bonitos.</span></h2>
                     <p class="text-gray-400 text-lg mb-8 leading-relaxed font-light">
                         Construímos narrativas que conectam e convertem. O que nos move não é apenas fechar contratos. É construir parcerias que façam sentido.
@@ -184,12 +173,12 @@
         <section id="metodologia" class="py-32 px-6 lg:px-8 bg-[#050505] border-y border-white/5 relative overflow-hidden">
             <div class="max-w-7xl mx-auto relative z-10">
                 <div class="text-center mb-24 max-w-3xl mx-auto">
-                    <p class="text-sm text-[#EEDE5E] tracking-widest uppercase mb-4 font-medium">Como trabalhamos</p>
                     <h2 class="text-3xl md:text-5xl font-medium mb-6 tracking-tight">Metodologia Essencial</h2>
                     <p class="text-gray-400 text-lg font-light">Narrativas autênticas que conectam. Estratégia que gera resultado mensurável. Parcerias que transformam vidas.</p>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Clean, floating glass cards -->
                     <div class="p-10 rounded-[2rem] glass-panel card-hover group">
                         <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center mb-8 text-gray-400 font-serif-display text-xl transition-colors group-hover:text-[#EEDE5E] group-hover:border-[#EEDE5E]/30">1</div>
                         <h3 class="text-2xl font-medium mb-4">Escuta</h3>
@@ -213,22 +202,22 @@
         <section id="resultados" class="py-32 px-6 lg:px-8 max-w-7xl mx-auto">
             <div class="grid md:grid-cols-12 gap-16 items-center">
                 <div class="md:col-span-5">
-                    <p class="text-sm text-[#EEDE5E] tracking-widest uppercase mb-4 font-medium">Nossos números</p>
                     <h2 class="text-4xl md:text-6xl font-medium mb-6 tracking-tight leading-tight">Números são apenas <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-500 italic">consequência.</span></h2>
                     <p class="text-gray-400 text-lg font-light">O que realmente importa são as histórias que construímos por trás deles.</p>
                 </div>
                 <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div class="p-8 rounded-[2rem] glass-panel flex flex-col justify-center min-h-[160px]">
-                        <div class="text-4xl font-medium text-white mb-2">R$ 5M<span class="text-2xl text-gray-500">+</span></div>
+                        <div class="text-4xl font-medium text-white mb-2">Milhões</div>
                         <div class="text-sm text-gray-400">Faturados para nossos clientes</div>
                     </div>
                     <div class="p-8 rounded-[2rem] glass-panel flex flex-col justify-center min-h-[160px]">
-                        <div class="text-4xl font-medium text-white mb-2">R$ 1M<span class="text-2xl text-gray-500">+</span></div>
-                        <div class="text-sm text-gray-400">Geridos em tráfego pago</div>
+                        <div class="text-4xl font-medium text-white mb-2">Tráfego</div>
+                        <div class="text-sm text-gray-400">Milhões geridos em performance</div>
                     </div>
                     <div class="p-8 rounded-[2rem] glass-panel sm:col-span-2 relative overflow-hidden flex flex-col justify-center min-h-[160px]">
+                        <!-- Gold gradient accent -->
                         <div class="absolute inset-0 bg-gradient-to-r from-[#EEDE5E]/10 to-transparent"></div>
-                        <div class="text-4xl font-medium text-[#EEDE5E] mb-2 relative z-10">∞</div>
+                        <div class="text-4xl font-medium text-[#EEDE5E] mb-2 relative z-10">Incontáveis</div>
                         <div class="text-sm text-gray-300 relative z-10">Vidas transformadas através do conteúdo</div>
                     </div>
                 </div>
@@ -247,61 +236,93 @@
                     <!-- Standard Plan -->
                     <div class="card-hover glass-panel rounded-[2.5rem] p-10 flex flex-col">
                         <h3 class="text-2xl font-serif-display mb-2">Estratégia</h3>
-                        <p class="text-gray-500 text-sm mb-6 pb-6 border-b border-white/5">Ponto de partida seguro.</p>
+                        <p class="text-gray-500 text-sm mb-10 pb-6 border-b border-white/5">Ponto de partida seguro.</p>
                         <ul class="space-y-5 mb-10 flex-grow text-gray-300 text-sm">
                             <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-white/20 mt-2"></div> Pauta estratégica mensal</li>
                             <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-white/20 mt-2"></div> Calendário editorial</li>
                             <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-white/20 mt-2"></div> Copy profissional</li>
-                            <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-white/20 mt-2"></div> Reunião mensal</li>
                         </ul>
-                        <a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Estrat%C3%A9gia%20da%20Metrix%20M%C3%ADdia." target="_blank" class="btn-hover w-full py-4 rounded-full bg-white/5 border border-white/10 text-center text-sm font-medium hover:bg-white/10">Quero este plano</a>
+                        <a href="#" class="btn-hover w-full py-4 rounded-full bg-white/5 border border-white/10 text-center text-sm font-medium hover:bg-white/10">Selecionar Estratégia</a>
                     </div>
 
                     <!-- Pro Plan (Gold) -->
                     <div class="card-hover bg-gradient-to-b from-[#11110a] to-[#050505] border border-[#EEDE5E]/30 rounded-[2.5rem] p-10 flex flex-col relative md:-translate-y-4 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
                         <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#EEDE5E] text-black font-medium text-[10px] px-4 py-1.5 rounded-full tracking-widest uppercase">Mais Popular</div>
                         <h3 class="text-2xl font-serif-display mb-2 text-white">Performance</h3>
-                        <p class="text-[#EEDE5E]/70 text-sm mb-6 pb-6 border-b border-white/10">Aceleração de resultados.</p>
+                        <p class="text-[#EEDE5E]/70 text-sm mb-10 pb-6 border-b border-white/10">Aceleração de resultados.</p>
                         <ul class="space-y-5 mb-10 flex-grow text-gray-200 text-sm">
                             <li class="flex items-start gap-3 font-medium"><div class="w-1.5 h-1.5 rounded-full bg-[#EEDE5E] mt-2"></div> Tudo do Estratégia</li>
-                            <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#EEDE5E]/40 mt-2"></div> Gestão de tráfego pago (Google/Meta)</li>
+                            <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#EEDE5E]/40 mt-2"></div> Tráfego Pago (Google/Meta)</li>
                             <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#EEDE5E]/40 mt-2"></div> Criativos para anúncios</li>
-                            <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#EEDE5E]/40 mt-2"></div> Reunião quinzenal e relatórios</li>
+                            <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#EEDE5E]/40 mt-2"></div> Reunião quinzenal</li>
                         </ul>
-                        <a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Performance%20da%20Metrix%20M%C3%ADdia." target="_blank" class="btn-hover w-full py-4 rounded-full bg-[#EEDE5E] text-black text-center text-sm font-medium">Quero este plano</a>
+                        <a href="#" class="btn-hover w-full py-4 rounded-full bg-[#EEDE5E] text-black text-center text-sm font-medium">Selecionar Performance</a>
                     </div>
 
                     <!-- Ultra Plan -->
                     <div class="card-hover glass-panel rounded-[2.5rem] p-10 flex flex-col">
                         <h3 class="text-2xl font-serif-display mb-2">Legado</h3>
-                        <p class="text-gray-500 text-sm mb-6 pb-6 border-b border-white/5">Domínio e autoridade absoluta.</p>
+                        <p class="text-gray-500 text-sm mb-10 pb-6 border-b border-white/5">Domínio e autoridade absoluta.</p>
                         <ul class="space-y-5 mb-10 flex-grow text-gray-300 text-sm">
                             <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-white/50 mt-2"></div> Tudo do Performance</li>
-                            <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-white/20 mt-2"></div> Captações mensais in loco (foto e vídeo)</li>
+                            <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-white/20 mt-2"></div> Captações in loco (foto e vídeo)</li>
                             <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-white/20 mt-2"></div> Banco de conteúdo dedicado</li>
                         </ul>
-                        <a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Legado%20da%20Metrix%20M%C3%ADdia." target="_blank" class="btn-hover w-full py-4 rounded-full bg-white/5 border border-white/10 text-center text-sm font-medium hover:bg-white/10">Quero este plano</a>
+                        <a href="#" class="btn-hover w-full py-4 rounded-full bg-white/5 border border-white/10 text-center text-sm font-medium hover:bg-white/10">Selecionar Legado</a>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Content/Blog (Clean aesthetic) -->
+        <section id="cases" class="py-32 px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="mb-20 md:flex justify-between items-end">
+                <div class="max-w-2xl">
+                    <h2 class="text-4xl md:text-5xl font-medium mb-6 tracking-tight">Estratégia baseada<br />em <span class="italic text-gray-400">dados reais.</span></h2>
+                    <p class="text-gray-400 text-lg font-light">Não publicamos opinião. Publicamos o que funciona — rigorosamente documentado com números dos nossos clientes.</p>
+                </div>
+                <!-- Clean arrow link -->
+                <a href="/blog" class="hidden md:inline-flex items-center gap-3 text-sm font-medium text-white group hover:text-[#EEDE5E] transition-colors pb-2">
+                    Ver Artigos
+                    <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Blog Item 1 -->
+                <a href="#" class="group block p-8 rounded-[2rem] glass-panel card-hover">
+                    <div class="text-[10px] font-medium text-[#EEDE5E] mb-6 tracking-widest uppercase">Tráfego Pago</div>
+                    <h3 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Meta Ads mais caro em 2026: como proteger seu ROAS</h3>
+                    <p class="text-gray-500 text-sm font-light">A Reforma Tributária aumentou o custo dos anúncios. Um aumento de 10% no ROAS neutraliza o impacto.</p>
+                </a>
+                
+                <!-- Blog Item 2 -->
+                <a href="#" class="group block p-8 rounded-[2rem] glass-panel card-hover bg-white/5 border-white/10 hover:border-[#EEDE5E]/40">
+                    <div class="text-[10px] font-medium text-white mb-6 tracking-widest uppercase">Case Study</div>
+                    <h3 class="text-xl font-medium mb-4 text-white transition-colors leading-snug">Case Editora Recriar: ROAS 3.89x no Meta Ads</h3>
+                    <p class="text-gray-400 text-sm font-light">Dados reais de como reestruturamos segmentação e criativo para triplicar o retorno.</p>
+                </a>
+                
+                <!-- Blog Item 3 -->
+                <a href="#" class="group block p-8 rounded-[2rem] glass-panel card-hover">
+                    <div class="text-[10px] font-medium text-[#EEDE5E] mb-6 tracking-widest uppercase">Narrativa</div>
+                    <h3 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">O que é narrativa autêntica no marketing</h3>
+                    <p class="text-gray-500 text-sm font-light">Conteúdo bonito gera curtida. Narrativa autêntica gera cliente. A diferença é a especificidade.</p>
+                </a>
+            </div>
+        </section>
+
         <!-- CTA Final -->
-        <section class="py-32 px-6 lg:px-8 bg-[#0a0a0a] border-t border-white/5 relative overflow-hidden flex justify-center" id="contato">
+        <section class="py-32 px-6 lg:px-8 bg-[#0a0a0a] border-t border-white/5 relative overflow-hidden flex justify-center">
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[400px] bg-[#EEDE5E]/5 blur-[120px] rounded-[100%] point-events-none -z-10"></div>
             
             <div class="max-w-3xl mx-auto text-center relative z-10 glass-panel p-16 rounded-[3rem] border border-white/10 w-full">
                 <h2 class="text-4xl md:text-5xl font-medium mb-6 tracking-tight">Pronto para transformar sua narrativa?</h2>
                 <p class="text-gray-400 text-lg mb-12 max-w-xl mx-auto font-light">Inicie um diálogo sobre como a Metrix Mídia pode impulsionar o seu negócio com conteúdo autêntico.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Metrix%20M%C3%ADdia%20e%20gostaria%20de%20saber%20mais." class="btn-hover inline-flex items-center justify-center gap-2 bg-white text-black px-10 py-4 rounded-full font-medium text-sm shadow-[0_0_40px_rgba(255,255,255,0.1)]">
-                        Fale com nosso time
-                        <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>
-                    <a href="https://instagram.com/metrixmidia" class="btn-hover inline-flex items-center justify-center gap-2 bg-transparent text-white px-10 py-4 rounded-full font-medium text-sm border border-white/20">
-                        Siga no Instagram
-                    </a>
-                </div>
+                <a href="https://wa.me/5511983414590" class="btn-hover inline-flex items-center gap-2 bg-white text-black px-10 py-4 rounded-full font-medium text-sm shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+                    Fale com nosso time
+                    <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
             </div>
         </section>
     </main>
@@ -316,37 +337,16 @@
                     </div>
                     <span class="text-lg font-medium tracking-wide">Metrix</span>
                 </a>
-                <p class="text-gray-500 text-sm mt-4 font-light">Narrativas que sustentam propósito e geram resultado.</p>
+                <p class="text-gray-500 text-sm mt-4 font-light">Narrativas que geram resultado.</p>
             </div>
-            
-            <div class="flex flex-wrap gap-8 text-sm text-gray-500 font-light justify-center">
-                <a href="#sobre" class="hover:text-white transition-colors">Sobre</a>
-                <a href="#metodologia" class="hover:text-white transition-colors">Metodologia</a>
-                <a href="#resultados" class="hover:text-white transition-colors">Resultados</a>
-                <a href="#planos" class="hover:text-white transition-colors">Planos</a>
-                <a href="/case/" class="hover:text-white transition-colors">Cases</a>
-            </div>
-
-            <div class="flex gap-4 text-sm text-gray-500 font-light">
-                <a href="https://wa.me/5511983414590" class="hover:text-white transition-colors">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.04 2C6.57 2 2.13 6.44 2.13 11.91c0 1.73.46 3.41 1.34 4.9L2 22l5.27-1.38c1.44.78 3.06 1.19 4.77 1.19 5.47 0 9.91-4.44 9.91-9.91C21.95 6.44 17.51 2 12.04 2zm0 18.05c-1.48 0-2.92-.39-4.18-1.13l-.3-.17-3.12.82.83-3.04-.2-.31a8.07 8.07 0 01-1.23-4.31c0-4.45 3.62-8.06 8.07-8.06 2.16 0 4.19.84 5.72 2.36a8.02 8.02 0 012.35 5.7c0 4.45-3.62 8.06-8.06 8.06zm4.45-5.88c-.24-.12-1.43-.71-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.19-.72-.64-1.21-1.43-1.35-1.67-.14-.24-.01-.37.11-.49.12-.12.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.86-.2-.48-.41-.41-.56-.42-.14-.01-.31-.02-.49-.02-.18 0-.44.07-.67.33-.23.26-.88.87-.88 2.13 0 1.26.91 2.48 1.04 2.65.14.16 1.8 2.79 4.36 3.91.61.26 1.08.42 1.45.54.61.2 1.17.17 1.6.1.49-.07 1.5-.61 1.71-1.21.21-.6.21-1.11.14-1.21-.07-.1-.23-.17-.47-.29z"/>
-                    </svg>
-                </a>
-                <a href="https://instagram.com/metrixmidia" class="hover:text-white transition-colors">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/>
-                        <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="2"/>
-                        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
-                    </svg>
-                </a>
+            <div class="flex gap-8 text-sm text-gray-500 font-light">
+                <a href="https://instagram.com/metrixmidia" class="hover:text-white transition-colors">Instagram</a>
+                <a href="https://metrixmidia.com.br/politica-de-privacidade" class="hover:text-white transition-colors">Privacidade</a>
             </div>
         </div>
         <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 text-xs text-gray-600 font-light flex justify-center md:justify-start">
             <p>© 2026 Metrix Mídia. Inovação guiada por propósito.</p>
         </div>
     </footer>
-    
-    <script src="/js/main.js"></script>
 </body>
 </html>

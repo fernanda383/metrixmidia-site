@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Política de Privacidade - Metrix Mídia - Plataforma de Gerenciamento de Anúncios">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <title>Política de Privacidade | Metrix Mídia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #111111;
+      --bg-card: #1a1a1a;
+      --yellow: #f5e642;
+      --yellow-dark: #d4c636;
+      --white: #ffffff;
+      --gray-light: #b0b0b0;
+      --gray-mid: #8a8a8a;
+      --gray-dark: #333333;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--bg-primary);
+      color: var(--gray-light);
+      line-height: 1.8;
+    }
+
+    a {
+      color: var(--yellow);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: var(--yellow-dark);
+    }
+
+    ::selection {
+      background-color: var(--yellow);
+      color: var(--bg-primary);
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      background-color: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo-svg {
+      height: 36px;
+      width: auto;
+    }
+
+    .logo-img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gray-light);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-back:hover {
+      color: var(--white);
+    }
+
+    /* Content */
+    .privacy-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .privacy-header h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .privacy-header .subtitle {
+      font-size: 1.1rem;
+      color: var(--gray-mid);
+    }
+
+    .privacy-meta {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: var(--gray-mid);
+    }
+
+    .privacy-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .privacy-content {
+      padding: 60px 0 100px;
+    }
+
+    .privacy-content h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(245, 230, 66, 0.15);
+    }
+
+    .privacy-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .privacy-content h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+
+    .privacy-content p {
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+    }
+
+    .privacy-content ul {
+      list-style: none;
+      margin-bottom: 16px;
+      padding-left: 0;
+    }
+
+    .privacy-content ul li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .privacy-content ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--yellow);
+      opacity: 0.6;
+    }
+
+    .contact-box {
+      background: var(--bg-card);
+      border: 1px solid rgba(245, 230, 66, 0.15);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 20px 0;
+    }
+
+    .contact-box p {
+      margin-bottom: 8px;
+    }
+
+    .contact-box strong {
+      color: var(--white);
+    }
+
+    .highlight-box {
+      background: var(--bg-card);
+      border-left: 3px solid var(--yellow);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin: 24px 0;
+      font-style: italic;
+      color: var(--gray-light);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--bg-secondary);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 0.8rem;
+      color: var(--gray-mid);
+    }
+
+    .footer a {
+      color: var(--yellow);
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: var(--gray-dark); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--gray-mid); }
+
+    @media (max-width: 640px) {
+      .privacy-meta {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="/" class="nav-logo">
+        <svg viewBox="0 0 260 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+          <g fill="#f5e642">
+            <path d="M2 50V12c0-2 1-4 3-4h4c2 0 3 2 3 4v18c0 2-1 3-3 3h-1c-2 0-3 1-3 3v14z"/>
+            <path d="M14 50V12c0-2 1-4 3-4h4c2 0 3 2 3 4v18c0 2-1 3-3 3h-1c-2 0-3 1-3 3v14z"/>
+            <path d="M26 50V12c0-2 1-4 3-4h4c2 0 3 2 3 4v18c0 2-1 3-3 3h-1c-2 0-3 1-3 3v14z"/>
+          </g>
+          <text x="40" y="44" font-family="'Inter', Arial, sans-serif" font-weight="800" font-size="44" fill="#ffffff" letter-spacing="-2">etrix</text>
+          <text x="155" y="32" font-family="'Inter', Arial, sans-serif" font-weight="400" font-size="10" fill="#8a8a8a">®</text>
+          <text x="140" y="56" font-family="'Inter', Arial, sans-serif" font-weight="400" font-size="13" fill="#8a8a8a" letter-spacing="4">MÍDIA</text>
+        </svg>
+      </a>
+      <a href="/" class="nav-back">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Voltar ao site
+      </a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="privacy-header">
+    <div class="container">
+      <h1>Política de Privacidade</h1>
+      <p class="subtitle">Metrix Mídia — Plataforma de Gerenciamento de Anúncios</p>
+      <div class="privacy-meta">
+        <span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Data de vigência: Fevereiro de 2025
+        </span>
+        <span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Última atualização: Fevereiro de 2025
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="privacy-content">
+    <div class="container">
+
+      <h2>1. Introdução</h2>
+      <p>Bem-vindo à Metrix Mídia, plataforma de gerenciamento de anúncios. Esta Política de Privacidade explica como coletamos, utilizamos, protegemos e gerenciamos os dados pessoais de nossos usuários. Nosso compromisso é garantir transparência total sobre o tratamento de suas informações.</p>
+
+      <h2>2. Informações que Coletamos</h2>
+      <p>Coletamos as seguintes categorias de informações:</p>
+
+      <h3>2.1 Informações fornecidas diretamente pelo usuário:</h3>
+      <ul>
+        <li>Nome completo, endereço de e-mail e número de telefone</li>
+        <li>Dados de autenticação e credenciais de acesso</li>
+        <li>Informações da conta (nome de usuário, senha criptografada)</li>
+        <li>Detalhes de pagamento e faturamento</li>
+        <li>Documentação para verificação de identidade e conformidade</li>
+      </ul>
+
+      <h3>2.2 Informações coletadas automaticamente:</h3>
+      <ul>
+        <li>Dados de navegação e comportamento na plataforma</li>
+        <li>Informações do navegador (tipo, versão, idioma)</li>
+        <li>Endereço IP e localização geográfica</li>
+        <li>Cookies e tecnologias de rastreamento similares</li>
+        <li>Dados de interação com anúncios (impressões, cliques, conversões)</li>
+        <li>Informações de desempenho da conta</li>
+        <li>Dados de uso do Cloud Code (scripts, chamadas de API, logs de execução)</li>
+        <li>Horários e datas de acesso à plataforma</li>
+      </ul>
+
+      <h3>2.3 Informações de terceiros:</h3>
+      <ul>
+        <li>Dados de campanhas publicitárias sincronizadas com plataformas como Facebook, Google, Instagram</li>
+        <li>Informações de análise de desempenho fornecidas pelas redes publicitárias</li>
+        <li>Dados de webhooks e integrações externas</li>
+      </ul>
+
+      <h2>3. Propósito da Coleta e Processamento de Dados</h2>
+      <p>Utilizamos os dados coletados para os seguintes propósitos:</p>
+
+      <h3>3.1 Operação da plataforma:</h3>
+      <ul>
+        <li>Criar, manter e gerenciar sua conta</li>
+        <li>Fornecer acesso às funcionalidades de gerenciamento de anúncios</li>
+        <li>Executar scripts e automações através do Cloud Code</li>
+        <li>Processar requisições de API e sincronizações de dados</li>
+      </ul>
+
+      <h3>3.2 Aprimoramento de serviços:</h3>
+      <ul>
+        <li>Analisar desempenho e uso da plataforma</li>
+        <li>Melhorar a experiência do usuário</li>
+        <li>Desenvolver novas funcionalidades e recursos</li>
+        <li>Personalizar a interface conforme suas necessidades</li>
+      </ul>
+
+      <h3>3.3 Fins comerciais:</h3>
+      <ul>
+        <li>Processar pagamentos e gerenciar faturamento</li>
+        <li>Fornecer suporte técnico e ao cliente</li>
+        <li>Enviar notificações sobre sua conta e campanhas</li>
+        <li>Comunicar atualizações, novas funcionalidades e mudanças de política</li>
+      </ul>
+
+      <h3>3.4 Conformidade e segurança:</h3>
+      <ul>
+        <li>Garantir a segurança da plataforma</li>
+        <li>Prevenir fraudes e abuso</li>
+        <li>Cumprir obrigações legais e regulamentares</li>
+        <li>Investigar e resolver disputas</li>
+        <li>Proteger direitos, privacidade e segurança de nossos usuários</li>
+      </ul>
+
+      <h2>4. Base Legal para Processamento</h2>
+      <p>O processamento de seus dados é fundamentado em:</p>
+      <ul>
+        <li><strong>Consentimento:</strong> Você consentiu com esta Política ao criar sua conta</li>
+        <li><strong>Contrato:</strong> Necessário para fornecer os serviços contratados</li>
+        <li><strong>Interesse legítimo:</strong> Para melhorar serviços, prevenir fraudes e garantir segurança</li>
+        <li><strong>Obrigações legais:</strong> Para cumprir leis e regulamentações aplicáveis</li>
+      </ul>
+
+      <h2>5. Compartilhamento de Dados</h2>
+      <p>Podemos compartilhar seus dados com:</p>
+
+      <h3>5.1 Provedores de serviços:</h3>
+      <ul>
+        <li>Plataformas publicitárias (Meta, Google, etc.) para sincronização de campanhas</li>
+        <li>Provedores de hospedagem e infraestrutura</li>
+        <li>Serviços de pagamento e processamento de transações</li>
+        <li>Ferramentas de análise e monitoramento</li>
+      </ul>
+
+      <h3>5.2 Parceiros comerciais:</h3>
+      <ul>
+        <li>Integradores autorizados que ampliam funcionalidades</li>
+        <li>Consultores e agências que você autorizar</li>
+      </ul>
+
+      <h3>5.3 Conformidade legal:</h3>
+      <ul>
+        <li>Autoridades governamentais ou judiciais quando exigido por lei</li>
+        <li>Em caso de investigações de segurança ou conformidade</li>
+      </ul>
+
+      <h3>5.4 Transações comerciais:</h3>
+      <p>Em caso de fusão, aquisição ou venda de ativos, seus dados podem ser transferidos.</p>
+
+      <h2>6. Retenção de Dados</h2>
+      <p>Mantemos seus dados pelo tempo necessário para:</p>
+      <ul>
+        <li>Fornecer os serviços</li>
+        <li>Cumprir obrigações legais e contratuais</li>
+        <li>Resolver disputas</li>
+        <li>Proteger nossos interesses legítimos</li>
+      </ul>
+      <p>Você pode solicitar a exclusão de seus dados conforme descrito na seção 8. Após exclusão, não utilizaremos essas informações, exceto conforme exigido por lei.</p>
+
+      <h2>7. Segurança dos Dados</h2>
+      <p>Implementamos medidas técnicas e organizacionais para proteger suas informações:</p>
+      <ul>
+        <li>Criptografia de dados em trânsito (HTTPS/TLS)</li>
+        <li>Criptografia de dados sensíveis em repouso</li>
+        <li>Controle de acesso baseado em função (RBAC)</li>
+        <li>Autenticação multifator (2FA)</li>
+        <li>Monitoramento contínuo de segurança</li>
+        <li>Avaliações de vulnerabilidade regulares</li>
+        <li>Conformidade com padrões de segurança da indústria</li>
+      </ul>
+
+      <h2>8. Seus Direitos e Como Exercê-los</h2>
+      <p>Você possui os seguintes direitos:</p>
+      <ul>
+        <li><strong>Direito de acesso:</strong> Entre em contato conosco para solicitar uma cópia de seus dados pessoais que mantemos.</li>
+        <li><strong>Direito de correção:</strong> Você pode atualizar, corrigir ou completar seus dados através do painel de configurações da conta.</li>
+        <li><strong>Direito à exclusão:</strong> Você pode solicitar a exclusão de seus dados pessoais a qualquer momento.</li>
+        <li><strong>Direito à portabilidade:</strong> Você pode solicitar seus dados em formato estruturado e portável.</li>
+        <li><strong>Direito de objeção:</strong> Você pode se opor a certos tipos de processamento de dados.</li>
+      </ul>
+
+      <h2>9. Como Solicitar Exclusão de Dados</h2>
+      <p>Para solicitar a exclusão de sua conta e dados pessoais, entre em contato conosco:</p>
+
+      <div class="contact-box">
+        <p><strong>E-mail:</strong> adm@metrixmidia.com.br</p>
+        <p><strong>Telefone:</strong> (11) 98341-4590</p>
+        <p><strong>Endereço:</strong> Avenida Sara Ilhas, 328 - Apartamento 31, Bloco Quatro</p>
+        <p><strong>Horários:</strong> Segunda a sexta, horário comercial (09h às 18h)</p>
+      </div>
+
+      <p>Informações necessárias para a solicitação:</p>
+      <ul>
+        <li>Seu e-mail de conta</li>
+        <li>Seu nome completo</li>
+        <li>Justificativa da solicitação (opcional)</li>
+      </ul>
+      <p>Responderemos à sua solicitação em até 30 dias úteis. Após a confirmação, seus dados serão apagados em até 90 dias, salvo se houver obrigações legais de retenção.</p>
+
+      <h2>10. Cookies e Tecnologias Similares</h2>
+      <p>Utilizamos cookies para:</p>
+      <ul>
+        <li>Manter você conectado à sua sessão</li>
+        <li>Lembrar suas preferências</li>
+        <li>Analisar uso e desempenho</li>
+        <li>Melhorar a experiência do usuário</li>
+      </ul>
+      <p>Você pode controlar cookies através das configurações do seu navegador. Alguns cookies são essenciais para a operação da plataforma.</p>
+
+      <h2>11. Links para Terceiros</h2>
+      <p>Nossa plataforma pode conter links para sites e serviços de terceiros. Não somos responsáveis por suas práticas de privacidade. Recomendamos revisar suas políticas antes de fornecer informações pessoais.</p>
+
+      <h2>12. Privacidade de Menores</h2>
+      <p>Nossa plataforma não se destina a menores de 18 anos. Não coletamos dados de menores conscientemente. Se descobrirmos que coletamos dados de menor, removeremos essas informações imediatamente.</p>
+
+      <h2>13. Alterações a Esta Política</h2>
+      <p>Podemos atualizar esta Política periodicamente. Notificaremos você sobre mudanças materiais por e-mail ou através de aviso em destaque na plataforma. O uso continuado da plataforma após notificação constitui aceitação das alterações.</p>
+
+      <h2>14. Conformidade Regulatória</h2>
+      <p>Esta Política está em conformidade com:</p>
+      <ul>
+        <li>Lei Geral de Proteção de Dados (LGPD) — Brasil</li>
+        <li>Regulamento Geral de Proteção de Dados (GDPR) — União Europeia</li>
+        <li>Leis de privacidade internacionais aplicáveis</li>
+        <li>Termos da Plataforma Meta para desenvolvedores</li>
+      </ul>
+
+      <h2>15. Contato e Reclamações</h2>
+      <p>Para dúvidas, reclamações ou sugestões sobre esta Política:</p>
+
+      <div class="contact-box">
+        <p><strong>E-mail:</strong> adm@metrixmidia.com.br</p>
+        <p><strong>Telefone:</strong> (11) 98341-4590</p>
+        <p><strong>Endereço:</strong> Avenida Sara Ilhas, 328 - Apartamento 31, Bloco Quatro</p>
+        <p><strong>Horários:</strong> Segunda a sexta, horário comercial (09h às 18h)</p>
+      </div>
+
+      <p>Se não conseguirmos resolver sua reclamação, você tem direito de apresentar uma reclamação à autoridade de proteção de dados competente em sua jurisdição.</p>
+
+      <div class="highlight-box">
+        Na Metrix Mídia, sua privacidade é nossa prioridade. Comprometemo-nos a proteger seus dados com os mais altos padrões de segurança e transparência.
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Metrix Mídia. Todos os direitos reservados.</p>
+      <p style="margin-top: 8px;"><a href="/">Voltar ao site principal</a></p>
+    </div>
+  </footer>
+</body>
+</html>

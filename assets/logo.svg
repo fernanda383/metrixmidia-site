@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- Yellow M stripes -->
+  <g fill="#f5e642">
+    <path d="M8 70 Q8 10 28 10 L28 70 Q28 30 18 30 Q8 30 8 70Z"/>
+    <path d="M24 70 Q24 10 44 10 L44 70 Q44 30 34 30 Q24 30 24 70Z"/>
+    <path d="M40 70 Q40 10 60 10 L60 70 Q60 30 50 30 Q40 30 40 70Z"/>
+  </g>
+  <!-- "etrix" text -->
+  <text x="62" y="58" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="52" fill="#ffffff" letter-spacing="-1">etrix</text>
+  <!-- Registered symbol -->
+  <circle cx="228" cy="20" r="6" stroke="#ffffff" stroke-width="1.5" fill="none"/>
+  <text x="224" y="24" font-family="Arial" font-size="10" fill="#ffffff">R</text>
+  <!-- "MÍDIA" subtitle -->
+  <text x="178" y="75" font-family="Arial, sans-serif" font-weight="400" font-size="16" fill="#b0b0b0" letter-spacing="6">MÍDIA</text>
+</svg>
