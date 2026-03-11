@@ -1,227 +1,352 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Metrix Mídia - Narrativas que sustentam propósito e geram resultado.">
-  <title>Metrix Mídia | Narrativas que geram resultado</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Metrix Mídia - Narrativas que sustentam propósito e geram resultado.">
+    <title>Metrix Mídia | Narrativas que geram resultado</title>
+    
+    <!-- Favicons Preservados -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Tailwind CDN para o Redesign UX/UI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- UX/UI Skill Applied: Fonte Inter Oficial -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Palette updated to match the Golden Logo */
+            --brand-dark: #0a0a0a; 
+            --brand-primary: #f5f5f5;
+            --brand-accent: #EEDE5E; /* The exact logo Yellow/Gold */
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--brand-dark);
+            color: var(--brand-primary);
+        }
+
+        h1, h2, h3, .font-serif-display {
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -0.02em; /* Apple-style negative tracking for Inter headings */
+        }
+
+        /* Apple-esque Glassmorphism and subtle animations */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .card-hover {
+            transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1), border-color 300ms ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px) scale(1.01);
+            border-color: rgba(238, 222, 94, 0.3);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(238, 222, 94, 0.05);
+        }
+
+        .btn-hover {
+            transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn-hover:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 200ms ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background: var(--brand-accent);
+            transition: width 300ms ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        *:focus-visible {
+            outline: 2px solid var(--brand-accent);
+            outline-offset: 4px;
+        }
+    </style>
 </head>
-<body>
-  <nav class="navbar" id="navbar">
-    <div class="container nav-container">
-      <a href="#hero" class="nav-logo" aria-label="Metrix Mídia">
-        <img src="/static/logo.svg" alt="Metrix Mídia" class="logo-img">
-      </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="#sobre" class="nav-link">Sobre</a></li>
-        <li><a href="#metodologia" class="nav-link">Metodologia</a></li>
-        <li><a href="#resultados" class="nav-link">Resultados</a></li>
-        <li><a href="#planos" class="nav-link">Planos</a></li>
-        <li><a href="/case/" class="nav-link">Cases</a></li>
-        <li><a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Metrix%20M%C3%ADdia%20e%20gostaria%20de%20saber%20mais." class="nav-cta" target="_blank" rel="noopener">Fale Conosco</a></li>
-      </ul>
-    </div>
-  </nav>
+<body class="antialiased min-h-screen flex flex-col selection:bg-[#EEDE5E]/30 selection:text-white">
 
-  <section class="hero" id="hero">
-    <div class="hero-bg"></div>
-    <div class="container hero-content">
-      <p class="hero-tag animate-on-scroll">Agência de Marketing & Conteúdo</p>
-      <h1 class="hero-title animate-on-scroll">Narrativas que sustentam propósito<br>e geram <span class="highlight">resultado.</span></h1>
-      <p class="hero-subtitle animate-on-scroll">Não somos mais uma agência. Somos parceiros estratégicos que acreditam no <em>poder das histórias</em>.</p>
-      <div class="hero-actions animate-on-scroll">
-        <a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Metrix%20M%C3%ADdia%20e%20gostaria%20de%20saber%20mais." class="btn btn-primary" target="_blank" rel="noopener">Fale pelo WhatsApp</a>
-        <a href="#sobre" class="btn btn-ghost">Conheça a Metrix</a>
-      </div>
-    </div>
-    <div class="hero-scroll-indicator"></div>
-  </section>
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 bg-[#0a0a0a]/70 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Simplified, clean logo mark -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 rounded-md flex items-center justify-center bg-[#EEDE5E] text-black font-serif-display font-medium text-xl group-hover:bg-white transition-colors duration-300">
+                    M
+                </div>
+                <span class="text-xl font-medium tracking-wide">Metrix</span>
+            </a>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+                <a href="#sobre" class="nav-link hover:text-white">Sobre</a>
+                <a href="#metodologia" class="nav-link hover:text-white">Metodologia</a>
+                <a href="#resultados" class="nav-link hover:text-white">Resultados</a>
+                <a href="#planos" class="nav-link hover:text-white">Planos</a>
+                <a href="/case/" class="nav-link hover:text-white">Cases</a>
+            </div>
+            <a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Metrix%20M%C3%ADdia%20e%20gostaria%20de%20saber%20mais." class="btn-hover text-sm hidden md:inline-flex bg-white/10 hover:bg-white/15 border border-white/5 px-5 py-2.5 rounded-full font-medium backdrop-blur-md">
+                Fale Conosco
+            </a>
+        </div>
+    </nav>
 
-  <section class="section sobre" id="sobre">
-    <div class="container">
-      <div class="section-grid">
-        <div class="section-text">
-          <p class="section-tag animate-on-scroll">Quem somos</p>
-          <h2 class="section-title animate-on-scroll">Histórias são a base de tudo.<br>Não vendemos posts bonitos.</h2>
-          <p class="section-highlight animate-on-scroll">Construímos narrativas que conectam e convertem.</p>
-          <p class="section-desc animate-on-scroll">O que nos move não é apenas fechar contratos. É construir <strong>parcerias</strong> que façam sentido. Por isso, só trabalhamos com quem está disposto a:</p>
-          <ul class="check-list animate-on-scroll">
-            <li>Gravar conteúdos autênticos</li>
-            <li>Examinar e ajustar o comercial</li>
-            <li>Executar com a mesma intensidade que nós</li>
-          </ul>
-        </div>
-        <div class="section-visual animate-on-scroll">
-          <div class="placeholder">Se você não está disposto, talvez a METRIX não seja para você.</div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <main class="flex-grow pt-24">
+        <!-- Hero Section -->
+        <section class="relative pt-24 pb-20 md:pt-40 md:pb-32 px-6 lg:px-8 max-w-7xl mx-auto flex flex-col items-center text-center overflow-hidden" id="hero">
+            <!-- Subtle Apple-like ambient glow (Golden) -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-[#EEDE5E]/5 blur-[120px] rounded-full point-events-none -z-10"></div>
 
-  <section class="section metodologia" id="metodologia">
-    <div class="container">
-      <p class="section-tag center animate-on-scroll">Como trabalhamos</p>
-      <h2 class="section-title center animate-on-scroll">Nossa <span class="highlight">metodologia</span> é simples</h2>
-      <p class="section-subtitle center animate-on-scroll">Narrativas autênticas que conectam. Estratégia que gera resultado mensurável. Parcerias que transformam vidas.</p>
-      <div class="steps-grid">
-        <div class="step-card animate-on-scroll">
-          <div class="step-number">01</div><h3 class="step-title">Escuta</h3>
-          <p class="step-desc">Anamnese narrativa profunda para entender propósito e objetivos reais.</p>
-        </div>
-        <div class="step-card animate-on-scroll">
-          <div class="step-number">02</div><h3 class="step-title">Estratégia</h3>
-          <p class="step-desc">Construção de narrativa autêntica com calendário editorial estruturado.</p>
-        </div>
-        <div class="step-card animate-on-scroll">
-          <div class="step-number">03</div><h3 class="step-title">Execução</h3>
-          <p class="step-desc">Implementação com acompanhamento constante e ajustes baseados em dados.</p>
-        </div>
-      </div>
-      <div class="framework animate-on-scroll">
-        <p class="framework-label">Framework PONTE</p>
-        <p class="framework-desc">16 semanas de transformação estruturada</p>
-        <div class="framework-steps">
-          <span class="fw-step"><strong>P</strong>ropósito</span>
-          <span class="fw-arrow">→</span>
-          <span class="fw-step"><strong>O</strong>rganização</span>
-          <span class="fw-arrow">→</span>
-          <span class="fw-step"><strong>N</strong>arrativa</span>
-          <span class="fw-arrow">→</span>
-          <span class="fw-step"><strong>T</strong>estes</span>
-          <span class="fw-arrow">→</span>
-          <span class="fw-step"><strong>E</strong>scalabilidade</span>
-        </div>
-      </div>
-    </div>
-  </section>
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel text-xs font-medium tracking-wide mb-10 text-gray-300 border border-white/10">
+                Agência de Marketing & Conteúdo
+            </div>
 
-  <section class="section resultados" id="resultados">
-    <div class="container">
-      <p class="section-tag center animate-on-scroll">Nossos números</p>
-      <h2 class="section-title center animate-on-scroll">Números são apenas <span class="highlight">consequência.</span></h2>
-      <p class="section-subtitle center animate-on-scroll">O que realmente importa são as histórias por trás deles.</p>
-      <div class="results-grid">
-        <div class="result-card animate-on-scroll">
-          <div class="result-value">R$ 5M<span class="result-plus">+</span></div>
-          <p class="result-label">Faturados para nossos clientes</p>
-        </div>
-        <div class="result-card animate-on-scroll">
-          <div class="result-value">R$ 1M<span class="result-plus">+</span></div>
-          <p class="result-label">Geridos em tráfego pago</p>
-        </div>
-        <div class="result-card animate-on-scroll">
-          <div class="result-value">∞</div>
-          <p class="result-label">Vidas transformadas através do conteúdo</p>
-        </div>
-      </div>
-    </div>
-  </section>
+            <h1 class="text-5xl md:text-7xl lg:text-[5.5rem] font-medium tracking-tight mb-8 leading-[1.1]">
+                Narrativas que sustentam <br class="hidden md:block" />
+                <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-[#FFF5A5] to-[#EEDE5E]">propósito</span> e geram resultado.
+            </h1>
+            
+            <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-light">
+                Não somos mais uma agência. Somos parceiros estratégicos que acreditam no poder das histórias autênticas.
+            </p>
+            
+            <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Metrix%20M%C3%ADdia%20e%20gostaria%20de%20saber%20mais." aria-label="Fale pelo WhatsApp"
+                   class="btn-hover bg-[#EEDE5E] text-black px-8 py-4 rounded-full font-medium text-lg shadow-[0_4px_24px_rgba(238,222,94,0.15)] flex items-center justify-center gap-2">
+                   Falar com Especialista
+                </a>
+            </div>
+        </section>
 
-  <section class="section planos" id="planos">
-    <div class="container">
-      <p class="section-tag center animate-on-scroll">Nossos planos</p>
-      <h2 class="section-title center animate-on-scroll">Escolha o plano ideal para o seu <span class="highlight">crescimento</span></h2>
-      <div class="plans-grid">
-        <div class="plan-card animate-on-scroll">
-          <div class="plan-header">
-            <h3 class="plan-name">Estratégia</h3>
-            <div class="plan-price"><span class="currency">R$</span><span class="amount">1.200</span><span class="period">/mês</span></div>
-          </div>
-          <ul class="plan-features">
-            <li>Pauta de conteúdo estratégica mensal</li>
-            <li>Calendário editorial estruturado</li>
-            <li>Copy profissional</li>
-            <li>Reunião mensal</li>
-          </ul>
-          <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Estrat%C3%A9gia%20da%20Metrix%20M%C3%ADdia.">Quero este plano</a>
-        </div>
-        <div class="plan-card plan-featured animate-on-scroll">
-          <div class="plan-badge">Mais popular</div>
-          <div class="plan-header">
-            <h3 class="plan-name">Performance</h3>
-            <div class="plan-price"><span class="currency">R$</span><span class="amount">1.800</span><span class="period">/mês</span></div>
-          </div>
-          <ul class="plan-features">
-            <li>Tudo do Estratégia</li>
-            <li>Gestão de tráfego pago (Google/Meta)</li>
-            <li>Criativos para anúncios</li>
-            <li>Reunião quinzenal</li>
-            <li>Relatório semanal</li>
-          </ul>
-          <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Performance%20da%20Metrix%20M%C3%ADdia.">Quero este plano</a>
-        </div>
-        <div class="plan-card animate-on-scroll">
-          <div class="plan-header">
-            <h3 class="plan-name">Legado</h3>
-            <div class="plan-price"><span class="currency">R$</span><span class="amount">2.500</span><span class="period">/mês</span></div>
-          </div>
-          <ul class="plan-features">
-            <li>Tudo do Performance</li>
-            <li>Captações mensais (foto + vídeo)</li>
-            <li>Produção in loco</li>
-            <li>Banco de conteúdo profissional</li>
-          </ul>
-          <a class="btn btn-outline" target="_blank" rel="noopener" href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Legado%20da%20Metrix%20M%C3%ADdia.">Quero este plano</a>
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- Seção: Sobre -->
+        <section id="sobre" class="py-32 px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div class="order-2 md:order-1 relative">
+                    <!-- Clean, minimalist image placeholder Apple-style -->
+                    <div class="aspect-square rounded-[3rem] glass-panel p-2">
+                        <div class="w-full h-full rounded-[2.8rem] bg-[#050505] overflow-hidden flex items-center justify-center relative">
+                            <!-- Monogram -->
+                            <div class="text-[#EEDE5E]/20 font-serif-display text-[15rem] leading-none">M</div>
+                            <!-- Geometric overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#0a0a0a]/80"></div>
+                        </div>
+                    </div>
+                    <div class="absolute -z-10 -inset-4 bg-[#EEDE5E]/5 blur-3xl rounded-full"></div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <p class="text-sm text-[#EEDE5E] tracking-widest uppercase mb-4 font-medium">Quem somos</p>
+                    <h2 class="text-3xl md:text-5xl font-medium mb-8 leading-tight tracking-tight">Histórias são a base de tudo. <span class="text-gray-500">Não vendemos posts bonitos.</span></h2>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed font-light">
+                        Construímos narrativas que conectam e convertem. O que nos move não é apenas fechar contratos. É construir parcerias que façam sentido.
+                    </p>
+                    <p class="text-gray-200 font-medium mb-6">Só trabalhamos com quem está disposto a:</p>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-center gap-4">
+                            <div class="w-8 h-8 rounded-full glass-panel flex items-center justify-center text-[#EEDE5E] text-xs">01</div>
+                            Gravar conteúdos autênticos
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div class="w-8 h-8 rounded-full glass-panel flex items-center justify-center text-[#EEDE5E] text-xs">02</div>
+                            Examinar e ajustar o comercial
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div class="w-8 h-8 rounded-full glass-panel flex items-center justify-center text-[#EEDE5E] text-xs">03</div>
+                            Executar com a mesma intensidade que nós
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-  <section class="section cta-section" id="contato">
-    <div class="container">
-      <div class="cta-content animate-on-scroll">
-        <h2 class="cta-title">Pronto para construir uma narrativa que <span class="highlight">transforma</span>?</h2>
-        <p class="cta-desc">Vamos conversar sobre como a Metrix Mídia pode impulsionar o seu negócio com conteúdo autêntico e estratégico.</p>
-        <div class="cta-actions">
-          <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Metrix%20M%C3%ADdia%20e%20gostaria%20de%20saber%20mais.">Fale pelo WhatsApp</a>
-          <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://instagram.com/metrixmidia">Siga no Instagram</a>
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- Metodologia -->
+        <section id="metodologia" class="py-32 px-6 lg:px-8 bg-[#050505] border-y border-white/5 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="text-center mb-24 max-w-3xl mx-auto">
+                    <p class="text-sm text-[#EEDE5E] tracking-widest uppercase mb-4 font-medium">Como trabalhamos</p>
+                    <h2 class="text-3xl md:text-5xl font-medium mb-6 tracking-tight">Metodologia Essencial</h2>
+                    <p class="text-gray-400 text-lg font-light">Narrativas autênticas que conectam. Estratégia que gera resultado mensurável. Parcerias que transformam vidas.</p>
+                </div>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <img src="/static/logo.svg" alt="Metrix Mídia" class="logo-img">
-          <p class="footer-tagline">Narrativas que sustentam propósito e geram resultado.</p>
-        </div>
-        <div class="footer-links">
-          <a href="#sobre">Sobre</a>
-          <a href="#metodologia">Metodologia</a>
-          <a href="#resultados">Resultados</a>
-          <a href="#planos">Planos</a>
-          <a href="/case/">Cases</a>
-        </div>
-        <div class="footer-social">
-          <a href="https://wa.me/5511983414590" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12.04 2C6.57 2 2.13 6.44 2.13 11.91c0 1.73.46 3.41 1.34 4.9L2 22l5.27-1.38c1.44.78 3.06 1.19 4.77 1.19 5.47 0 9.91-4.44 9.91-9.91C21.95 6.44 17.51 2 12.04 2zm0 18.05c-1.48 0-2.92-.39-4.18-1.13l-.3-.17-3.12.82.83-3.04-.2-.31a8.07 8.07 0 01-1.23-4.31c0-4.45 3.62-8.06 8.07-8.06 2.16 0 4.19.84 5.72 2.36a8.02 8.02 0 012.35 5.7c0 4.45-3.62 8.06-8.06 8.06zm4.45-5.88c-.24-.12-1.43-.71-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.19-.72-.64-1.21-1.43-1.35-1.67-.14-.24-.01-.37.11-.49.12-.12.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.86-.2-.48-.41-.41-.56-.42-.14-.01-.31-.02-.49-.02-.18 0-.44.07-.67.33-.23.26-.88.87-.88 2.13 0 1.26.91 2.48 1.04 2.65.14.16 1.8 2.79 4.36 3.91.61.26 1.08.42 1.45.54.61.2 1.17.17 1.6.1.49-.07 1.5-.61 1.71-1.21.21-.6.21-1.11.14-1.21-.07-.1-.23-.17-.47-.29z"/>
-            </svg>
-          </a>
-          <a href="https://instagram.com/metrixmidia" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="3" y="3" width="18" height="18" rx="5" stroke="#ffffff" stroke-width="2"/>
-              <circle cx="12" cy="12" r="4.5" stroke="#ffffff" stroke-width="2"/>
-              <circle cx="17.5" cy="6.5" r="1.5" fill="#ffffff"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Metrix Mídia. Todos os direitos reservados.</p>
-      </div>
-    </div>
-  </footer>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="p-10 rounded-[2rem] glass-panel card-hover group">
+                        <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center mb-8 text-gray-400 font-serif-display text-xl transition-colors group-hover:text-[#EEDE5E] group-hover:border-[#EEDE5E]/30">1</div>
+                        <h3 class="text-2xl font-medium mb-4">Escuta</h3>
+                        <p class="text-gray-400 leading-relaxed font-light">Anamnese narrativa profunda para entender propósito e objetivos reais com clareza cristalina.</p>
+                    </div>
+                    <div class="p-10 rounded-[2rem] glass-panel card-hover group">
+                        <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center mb-8 text-gray-400 font-serif-display text-xl transition-colors group-hover:text-[#EEDE5E] group-hover:border-[#EEDE5E]/30">2</div>
+                        <h3 class="text-2xl font-medium mb-4">Estratégia</h3>
+                        <p class="text-gray-400 leading-relaxed font-light">Construção de narrativa autêntica arquitetada com um calendário editorial cirurgicamente projetado.</p>
+                    </div>
+                    <div class="p-10 rounded-[2rem] glass-panel card-hover group">
+                        <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center mb-8 text-gray-400 font-serif-display text-xl transition-colors group-hover:text-[#EEDE5E] group-hover:border-[#EEDE5E]/30">3</div>
+                        <h3 class="text-2xl font-medium mb-4">Execução</h3>
+                        <p class="text-gray-400 leading-relaxed font-light">Implementação com acompanhamento constante e ajustes finos e iterativos baseados em dados puros.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <script src="/js/main.js"></script>
+        <!-- Resultados -->
+        <section id="resultados" class="py-32 px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <div class="md:col-span-5">
+                    <p class="text-sm text-[#EEDE5E] tracking-widest uppercase mb-4 font-medium">Nossos números</p>
+                    <h2 class="text-4xl md:text-6xl font-medium mb-6 tracking-tight leading-tight">Números são apenas <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-500 italic">consequência.</span></h2>
+                    <p class="text-gray-400 text-lg font-light">O que realmente importa são as histórias que construímos por trás deles.</p>
+                </div>
+                <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-8 rounded-[2rem] glass-panel flex flex-col justify-center min-h-[160px]">
+                        <div class="text-4xl font-medium text-white mb-2">R$ 5M<span class="text-2xl text-gray-500">+</span></div>
+                        <div class="text-sm text-gray-400">Faturados para nossos clientes</div>
+                    </div>
+                    <div class="p-8 rounded-[2rem] glass-panel flex flex-col justify-center min-h-[160px]">
+                        <div class="text-4xl font-medium text-white mb-2">R$ 1M<span class="text-2xl text-gray-500">+</span></div>
+                        <div class="text-sm text-gray-400">Geridos em tráfego pago</div>
+                    </div>
+                    <div class="p-8 rounded-[2rem] glass-panel sm:col-span-2 relative overflow-hidden flex flex-col justify-center min-h-[160px]">
+                        <div class="absolute inset-0 bg-gradient-to-r from-[#EEDE5E]/10 to-transparent"></div>
+                        <div class="text-4xl font-medium text-[#EEDE5E] mb-2 relative z-10">∞</div>
+                        <div class="text-sm text-gray-300 relative z-10">Vidas transformadas através do conteúdo</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="planos" class="py-32 px-6 lg:px-8 bg-[#050505] border-y border-white/5 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20">
+                    <h2 class="text-3xl md:text-5xl font-medium mb-4 tracking-tight">Planos Estratégicos</h2>
+                    <p class="text-gray-400 text-lg font-light">A escolha ideal para a escalada da sua marca.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                    <!-- Standard Plan -->
+                    <div class="card-hover glass-panel rounded-[2.5rem] p-10 flex flex-col">
+                        <h3 class="text-2xl font-serif-display mb-2">Estratégia</h3>
+                        <p class="text-gray-500 text-sm mb-6 pb-6 border-b border-white/5">Ponto de partida seguro.</p>
+                        <ul class="space-y-5 mb-10 flex-grow text-gray-300 text-sm">
+                            <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-white/20 mt-2"></div> Pauta estratégica mensal</li>
+                            <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-white/20 mt-2"></div> Calendário editorial</li>
+                            <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-white/20 mt-2"></div> Copy profissional</li>
+                            <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-white/20 mt-2"></div> Reunião mensal</li>
+                        </ul>
+                        <a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Estrat%C3%A9gia%20da%20Metrix%20M%C3%ADdia." target="_blank" class="btn-hover w-full py-4 rounded-full bg-white/5 border border-white/10 text-center text-sm font-medium hover:bg-white/10">Quero este plano</a>
+                    </div>
+
+                    <!-- Pro Plan (Gold) -->
+                    <div class="card-hover bg-gradient-to-b from-[#11110a] to-[#050505] border border-[#EEDE5E]/30 rounded-[2.5rem] p-10 flex flex-col relative md:-translate-y-4 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#EEDE5E] text-black font-medium text-[10px] px-4 py-1.5 rounded-full tracking-widest uppercase">Mais Popular</div>
+                        <h3 class="text-2xl font-serif-display mb-2 text-white">Performance</h3>
+                        <p class="text-[#EEDE5E]/70 text-sm mb-6 pb-6 border-b border-white/10">Aceleração de resultados.</p>
+                        <ul class="space-y-5 mb-10 flex-grow text-gray-200 text-sm">
+                            <li class="flex items-start gap-3 font-medium"><div class="w-1.5 h-1.5 rounded-full bg-[#EEDE5E] mt-2"></div> Tudo do Estratégia</li>
+                            <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#EEDE5E]/40 mt-2"></div> Gestão de tráfego pago (Google/Meta)</li>
+                            <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#EEDE5E]/40 mt-2"></div> Criativos para anúncios</li>
+                            <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#EEDE5E]/40 mt-2"></div> Reunião quinzenal e relatórios</li>
+                        </ul>
+                        <a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Performance%20da%20Metrix%20M%C3%ADdia." target="_blank" class="btn-hover w-full py-4 rounded-full bg-[#EEDE5E] text-black text-center text-sm font-medium">Quero este plano</a>
+                    </div>
+
+                    <!-- Ultra Plan -->
+                    <div class="card-hover glass-panel rounded-[2.5rem] p-10 flex flex-col">
+                        <h3 class="text-2xl font-serif-display mb-2">Legado</h3>
+                        <p class="text-gray-500 text-sm mb-6 pb-6 border-b border-white/5">Domínio e autoridade absoluta.</p>
+                        <ul class="space-y-5 mb-10 flex-grow text-gray-300 text-sm">
+                            <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-white/50 mt-2"></div> Tudo do Performance</li>
+                            <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-white/20 mt-2"></div> Captações mensais in loco (foto e vídeo)</li>
+                            <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-white/20 mt-2"></div> Banco de conteúdo dedicado</li>
+                        </ul>
+                        <a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Tenho%20interesse%20no%20plano%20Legado%20da%20Metrix%20M%C3%ADdia." target="_blank" class="btn-hover w-full py-4 rounded-full bg-white/5 border border-white/10 text-center text-sm font-medium hover:bg-white/10">Quero este plano</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="py-32 px-6 lg:px-8 bg-[#0a0a0a] border-t border-white/5 relative overflow-hidden flex justify-center" id="contato">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[400px] bg-[#EEDE5E]/5 blur-[120px] rounded-[100%] point-events-none -z-10"></div>
+            
+            <div class="max-w-3xl mx-auto text-center relative z-10 glass-panel p-16 rounded-[3rem] border border-white/10 w-full">
+                <h2 class="text-4xl md:text-5xl font-medium mb-6 tracking-tight">Pronto para transformar sua narrativa?</h2>
+                <p class="text-gray-400 text-lg mb-12 max-w-xl mx-auto font-light">Inicie um diálogo sobre como a Metrix Mídia pode impulsionar o seu negócio com conteúdo autêntico.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://wa.me/5511983414590?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Metrix%20M%C3%ADdia%20e%20gostaria%20de%20saber%20mais." class="btn-hover inline-flex items-center justify-center gap-2 bg-white text-black px-10 py-4 rounded-full font-medium text-sm shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+                        Fale com nosso time
+                        <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                    <a href="https://instagram.com/metrixmidia" class="btn-hover inline-flex items-center justify-center gap-2 bg-transparent text-white px-10 py-4 rounded-full font-medium text-sm border border-white/20">
+                        Siga no Instagram
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-16 px-6 lg:px-8 border-t border-white/5 bg-[#050505]">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-10">
+            <div class="text-center md:text-left">
+                <a href="#" class="flex items-center gap-2 justify-center md:justify-start">
+                    <div class="w-6 h-6 rounded bg-[#EEDE5E] text-black font-serif-display font-medium text-xs flex items-center justify-center">
+                        M
+                    </div>
+                    <span class="text-lg font-medium tracking-wide">Metrix</span>
+                </a>
+                <p class="text-gray-500 text-sm mt-4 font-light">Narrativas que sustentam propósito e geram resultado.</p>
+            </div>
+            
+            <div class="flex flex-wrap gap-8 text-sm text-gray-500 font-light justify-center">
+                <a href="#sobre" class="hover:text-white transition-colors">Sobre</a>
+                <a href="#metodologia" class="hover:text-white transition-colors">Metodologia</a>
+                <a href="#resultados" class="hover:text-white transition-colors">Resultados</a>
+                <a href="#planos" class="hover:text-white transition-colors">Planos</a>
+                <a href="/case/" class="hover:text-white transition-colors">Cases</a>
+            </div>
+
+            <div class="flex gap-4 text-sm text-gray-500 font-light">
+                <a href="https://wa.me/5511983414590" class="hover:text-white transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.04 2C6.57 2 2.13 6.44 2.13 11.91c0 1.73.46 3.41 1.34 4.9L2 22l5.27-1.38c1.44.78 3.06 1.19 4.77 1.19 5.47 0 9.91-4.44 9.91-9.91C21.95 6.44 17.51 2 12.04 2zm0 18.05c-1.48 0-2.92-.39-4.18-1.13l-.3-.17-3.12.82.83-3.04-.2-.31a8.07 8.07 0 01-1.23-4.31c0-4.45 3.62-8.06 8.07-8.06 2.16 0 4.19.84 5.72 2.36a8.02 8.02 0 012.35 5.7c0 4.45-3.62 8.06-8.06 8.06zm4.45-5.88c-.24-.12-1.43-.71-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.19-.72-.64-1.21-1.43-1.35-1.67-.14-.24-.01-.37.11-.49.12-.12.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.86-.2-.48-.41-.41-.56-.42-.14-.01-.31-.02-.49-.02-.18 0-.44.07-.67.33-.23.26-.88.87-.88 2.13 0 1.26.91 2.48 1.04 2.65.14.16 1.8 2.79 4.36 3.91.61.26 1.08.42 1.45.54.61.2 1.17.17 1.6.1.49-.07 1.5-.61 1.71-1.21.21-.6.21-1.11.14-1.21-.07-.1-.23-.17-.47-.29z"/>
+                    </svg>
+                </a>
+                <a href="https://instagram.com/metrixmidia" class="hover:text-white transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 text-xs text-gray-600 font-light flex justify-center md:justify-start">
+            <p>© 2026 Metrix Mídia. Inovação guiada por propósito.</p>
+        </div>
+    </footer>
+    
+    <script src="/js/main.js"></script>
 </body>
 </html>
