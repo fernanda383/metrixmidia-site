@@ -81,24 +81,24 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(cases => {
         caseList.innerHTML = '';
         cases.forEach(item => {
-          const card = document.createElement('article');
-          card.className = 'case-card';
+          const card = document.createElement('a');
+          card.href = `/case/${item.slug}/`;
+          card.className = 'group block p-8 rounded-[2rem] glass-panel card-hover flex flex-col justify-between cursor-pointer';
           card.innerHTML = `
-            <div class="case-thumb">
-              <img src="${item.thumb}" alt="Thumb ${item.title}" loading="lazy">
-              <div class="case-thumb-text">
-                <span class="case-thumb-title">${item.title}</span>
-                <span class="case-thumb-segment">${item.segment}</span>
+            <div>
+              <div class="relative w-full h-48 rounded-[1.5rem] mb-6 overflow-hidden bg-black/50 border border-white/5">
+                <img src="${item.thumb}" alt="Thumb ${item.title}" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
               </div>
+              <div class="text-[10px] font-medium text-[#EEDE5E] mb-3 tracking-widest uppercase">${item.segment}</div>
+              <div class="text-xl font-medium mb-4 text-white transition-colors leading-snug">${item.title}</div>
+              <div class="flex flex-wrap gap-2 mb-6">
+                ${item.results.map(r => `<span class="text-xs bg-white/5 border border-white/10 px-2 py-1 rounded-md text-gray-300 font-medium">${r}</span>`).join('')}
+              </div>
+              <div class="text-xs text-gray-500 mb-6 font-light">${item.tags.join(' • ')}</div>
             </div>
-            <div class="case-body">
-              <div class="case-title">${item.title}</div>
-              <div class="case-segment">${item.segment}</div>
-              <div class="case-results">${item.results.map(r => `<span class='badge'>${r}</span>`).join('')}</div>
-              <div class="tag">${item.tags.join(' • ')}</div>
-            </div>
-            <div class="case-footer">
-              <a class="btn btn-outline" href="/case/${item.slug}/">Ver case</a>
+            <div class="mt-auto">
+              <span class="inline-block w-full py-3 rounded-full bg-white/5 border border-white/10 text-center text-sm font-medium group-hover:bg-white/10 text-white transition-colors">Ver case detalhado</span>
             </div>`;
           caseList.appendChild(card);
         });
