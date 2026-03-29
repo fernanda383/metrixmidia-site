@@ -416,23 +416,53 @@
 
 /* ── Mid-article CTA inline ── */
 .blog-inline-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  display: block;
   background: rgba(245, 230, 66, 0.1);
   border: 1px solid var(--yellow);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 32px 0;
+  transition: background var(--transition);
+}
+
+.blog-inline-cta p {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.blog-inline-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   color: var(--yellow);
   font-weight: 600;
   font-size: 0.9rem;
-  padding: 10px 20px;
-  border-radius: 8px;
-  margin: 24px 0;
-  transition: background var(--transition);
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+
+.blog-inline-cta a:hover {
+  opacity: 0.8;
 }
 
 .blog-inline-cta:hover {
   background: rgba(245, 230, 66, 0.18);
-  color: var(--yellow);
+}
+
+/* ── Stats block (4-column grid) ── */
+.blog-stats-block {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+
+@media (max-width: 640px) {
+  .blog-stats-block {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ── Responsivo ── */
