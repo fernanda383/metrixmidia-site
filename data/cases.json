@@ -12,17 +12,17 @@
     "slug": "editora-recriar",
     "title": "Editora Recriar",
     "segment": "E-commerce | Educação",
-    "summary": "Case focado em performance de tráfego pago",
-    "results": ["ROAS 3,89x", "CPC R$0,34", "131 conversões"],
-    "tags": ["Ads", "Meta", "Performance"],
+    "summary": "De ROAS 3,89x para 5,95x no Meta Ads e 9,15x no Google Desktop",
+    "results": ["ROAS 5,95x", "Google Desktop 9,15x", "+53% crescimento"],
+    "tags": ["Ads", "Meta", "Google", "Performance"],
     "thumb": "/static/cases/editora-recriar/thumb.webp"
   },
   {
     "slug": "labtem",
     "title": "Labtem",
     "segment": "Educação | Pós-graduação",
-    "summary": "Tráfego pago com foco em ROAS e baixo CPC",
-    "results": ["ROAS 2,16x", "CPC R$0,13", "24 conversões"],
+    "summary": "De ROAS 2,16x para 4,05x com segmentação por curso e budget flex",
+    "results": ["ROAS 4,05x", "+87% crescimento", "85% acima da mediana"],
     "tags": ["Ads", "Meta", "Performance"],
     "thumb": "/static/cases/labtem/thumb.webp"
   },

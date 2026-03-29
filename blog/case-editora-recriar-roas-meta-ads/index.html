@@ -154,19 +154,24 @@
 </head>
 
 <body class="antialiased min-h-screen flex flex-col selection:bg-[#F2E846]/30 selection:text-white">
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="/" class="nav-logo" aria-label="Metrix Mídia"><img src="/static/logo.svg" alt="Metrix Mídia" class="logo-img"></a>
-      <ul class="nav-links">
-        <li><a href="/#sobre">Sobre</a></li>
-        <li><a href="/#planos">Planos</a></li>
-        <li><a href="/case/">Cases</a></li>
-        <li><a href="/blog/" class="active">Blog</a></li>
-        <li><a href="https://wa.me/5511983414590" class="btn-primary" target="_blank" rel="noopener">Fale Conosco</a></li>
-      </ul>
-      <button class="mobile-menu-btn" aria-label="Menu">&#9776;</button>
-    </div>
-  </nav>
+  
+    <!-- Navbar Apple-style FIXED -->
+    <nav class="fixed w-full z-50 top-0 bg-[#0a0a0a]/70 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2 group">
+                <img src="/static/logo_new.png" alt="Metrix Mídia" class="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+            </a>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+                <a href="/" class="nav-link hover:text-white">Home</a>
+                <a href="/case/" class="nav-link hover:text-white">Cases</a>
+                <a href="/blog/" class="nav-link nav-link-active text-white">Blog</a>
+            </div>
+            <a href="https://wa.me/5511983414590" class="btn-hover text-sm hidden md:inline-flex bg-white/10 hover:bg-white/15 border border-white/5 px-5 py-2.5 rounded-full font-medium backdrop-blur-md">
+                Fale Conosco
+            </a>
+        </div>
+    </nav>
+
 
   <nav class="blog-breadcrumb">
     <div class="container">
@@ -252,6 +257,7 @@
         <h2>O que vem a seguir para a Editora Recriar</h2>
         <p>Com o ROAS validado acima de 3x, o próximo passo é testar aumento de orçamento na campanha de conversão — com a regra de não aumentar mais de 20% por semana para não desestabilizar o algoritmo. Paralelamente, estamos desenvolvendo criativos em vídeo para testar em Reels, formato com o maior alcance orgânico atual no Instagram.</p>
         <p>O objetivo de médio prazo é ROAS 5x — viável com o público e o produto da editora — à medida que a base de lookalike melhora com mais dados de conversão.</p>
+        <p style="margin-top: 24px; padding: 16px 20px; border-left: 3px solid #F2E846; background: rgba(242,232,70,0.05); border-radius: 0 8px 8px 0; color: #aaa; font-size: 0.9rem;"><strong style="color: #F2E846;">Atualização — março de 2026:</strong> a meta de ROAS 5x foi alcançada. Em menos de 30 dias após a publicação deste artigo, o ROAS de 7 dias no Meta Ads atingiu 5.95x — e o Google Ads desktop chegou a 9.15x. <a href="/blog/case-editora-recriar-roas-5x-meta-google-ads-update/" style="color: #F2E846;">Leia o update completo com as 6 otimizações que fizeram isso acontecer →</a></p>
 
       </section>
 
@@ -295,6 +301,7 @@
       <nav class="blog-related">
         <h3>Continue lendo</h3>
         <ul>
+          <li><a href="/blog/case-editora-recriar-roas-5x-meta-google-ads-update/">Case Editora Recriar — Update: ROAS 5.95x no Meta Ads e 9.15x no Google Desktop →</a></li>
           <li><a href="/blog/como-melhorar-roas-meta-ads/">Como melhorar o ROAS no Meta Ads: o que funciona de verdade →</a></li>
           <li><a href="/blog/meta-ads-mais-caro-2026-como-proteger-roas/">Meta Ads vai ficar 12,15% mais caro em 2026: como proteger seu ROAS →</a></li>
         </ul>
