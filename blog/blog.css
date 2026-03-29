@@ -432,7 +432,7 @@
   margin-bottom: 12px;
 }
 
-.blog-inline-cta a {
+.blog-inline-cta a:not([class]) {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -443,7 +443,7 @@
   transition: opacity var(--transition);
 }
 
-.blog-inline-cta a:hover {
+.blog-inline-cta a:not([class]):hover {
   opacity: 0.8;
 }
 
