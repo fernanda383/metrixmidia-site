@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Blog da Metrix Mídia — artigos sobre tráfego pago, gestão de redes sociais e narrativa autêntica para negócios que querem resultado real.">
     <meta name="theme-color" content="#0a0a0a">
-    
+
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    
+
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Blog | Metrix Mídia — Estratégia de Marketing que Funciona">
@@ -21,12 +21,12 @@
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Fonte Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    
+
     <!-- Schema Markup -->
     <script type="application/ld+json">
     {
@@ -46,14 +46,14 @@
 
     <style>
         :root {
-            --brand-dark: #0a0a0a; 
+            --brand-dark: #0a0a0a;
             --brand-primary: #f5f5f5;
             --brand-accent: #F2E846;
         }
-        
+
         body { font-family: 'Inter', sans-serif; background-color: var(--brand-dark); color: var(--brand-primary); }
-        h1, h2, h3, .font-serif-display { font-family: 'Inter', sans-serif; letter-spacing: -0.02em; }
-        
+        h1, h2, h3 { font-family: 'Inter', sans-serif; letter-spacing: -0.02em; }
+
         .glass-panel {
             background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08);
         }
@@ -63,11 +63,32 @@
 
         .btn-hover { transition: all 300ms ease; }
         .btn-hover:hover { transform: scale(1.02); filter: brightness(1.1); }
-        
+
         .nav-link { position: relative; transition: color 200ms ease; }
         .nav-link::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -4px; left: 0; background: var(--brand-accent); transition: width 300ms ease; }
         .nav-link:hover::after, .nav-link-active::after { width: 100%; }
         .nav-link-active { color: white; }
+
+        /* Badges */
+        .badge { display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 9999px; margin-bottom: 1.5rem; }
+        .badge-yellow { color: #F2E846; background: rgba(242, 232, 70, 0.1); }
+        .badge-white { color: #f5f5f5; background: rgba(255, 255, 255, 0.1); }
+
+        /* Filter tabs */
+        .filter-tab { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); color: #6a6a6a; font-size: 0.75rem; font-weight: 500; padding: 0.5rem 1.125rem; border-radius: 9999px; cursor: pointer; transition: background 200ms ease, color 200ms ease, border-color 200ms ease; white-space: nowrap; }
+        .filter-tab:hover { background: rgba(255,255,255,0.08); color: #d4d4d4; border-color: rgba(255,255,255,0.12); }
+        .filter-tab.active { background: rgba(242,232,70,0.12); border-color: rgba(242,232,70,0.35); color: #F2E846; }
+        .filter-tab:focus-visible { outline: 2px solid #F2E846; outline-offset: 2px; }
+
+        /* Card arrow */
+        .card-arrow { display: inline-flex; align-items: center; gap: 4px; font-size: 0.7rem; font-weight: 500; color: #3a3a3a; transition: color 200ms ease, gap 200ms ease; margin-top: auto; padding-top: 0.75rem; }
+        .group:hover .card-arrow { color: #F2E846; gap: 8px; }
+
+        /* Card flex layout */
+        a.blog-card { display: flex; flex-direction: column; }
+
+        /* Filter hidden */
+        .card-hidden { display: none !important; }
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col selection:bg-[#F2E846]/30 selection:text-white">
@@ -82,7 +103,7 @@
       <a href="https://wa.me/5511983414590" style="font-size:1.2rem;font-weight:700;color:#000;background:#F2E846;padding:.75rem 2rem;border-radius:99px;text-decoration:none;">Fale Conosco</a>
     </div>
 
-    <!-- Navbar Apple-style -->
+    <!-- Navbar -->
     <nav id="navbar" class="fixed w-full z-50 top-0 bg-[#0a0a0a]/70 backdrop-blur-xl border-b border-white/5" aria-label="Navegação principal">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex justify-between items-center">
             <a href="/" class="flex items-center gap-2 group">
@@ -107,207 +128,239 @@
     </nav>
 
     <main class="flex-grow pt-32 pb-24" id="main-content">
-        <!-- Hero Apple-style -->
-        <header class="relative px-6 lg:px-8 max-w-7xl mx-auto text-center mb-20 overflow-hidden">
+        <!-- Hero -->
+        <header class="relative px-6 lg:px-8 max-w-7xl mx-auto text-center mb-16 overflow-hidden">
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50vw] h-[50vw] max-w-[600px] bg-[#F2E846]/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
-            
+
             <p class="text-sm text-[#F2E846] tracking-widest uppercase mb-4 font-medium mt-10">Conhecimento que converte</p>
-            <h1 class="text-4xl md:text-6xl font-medium tracking-tight mb-6">
+            <h1 class="text-4xl md:text-6xl font-semibold tracking-tight mb-6">
                 Blog <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-[#FFF5A5] to-[#F2E846]">Metrix Mídia</span>
             </h1>
-            <p class="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed font-light">
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed font-light mb-6">
                 Estratégia de marketing para negócios que querem resultado real — não promessa bonita ou "AI slop".
             </p>
+            <p class="text-xs text-gray-600 tracking-wider">23 artigos · dados reais de campanhas ativas</p>
         </header>
 
         <!-- Blog Grid -->
         <section class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Filter Tabs -->
+            <div class="flex gap-2 flex-wrap mb-10 overflow-x-auto pb-1" role="group" aria-label="Filtrar artigos por categoria">
+                <button class="filter-tab active" data-filter="all">Todos</button>
+                <button class="filter-tab" data-filter="trafego-pago">Tráfego Pago</button>
+                <button class="filter-tab" data-filter="cases">Cases</button>
+                <button class="filter-tab" data-filter="redes-sociais">Redes Sociais</button>
+                <button class="filter-tab" data-filter="seo">SEO &amp; IA</button>
+                <button class="filter-tab" data-filter="estrategia">Estratégia</button>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="blog-grid">
 
                 <!-- Artigos Abril 2026: Dores por Nicho -->
-                <a href="/blog/marketing-para-restaurante-como-sair-do-ifood/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
-                    <span class="inline-block text-[10px] font-medium text-[#F2E846] mb-6 tracking-widest uppercase bg-[#F2E846]/10 px-3 py-1 rounded-full">Tráfego Pago</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Marketing para restaurante: como parar de depender do iFood</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">O iFood cobra 12% a 27% por pedido. Como construir um canal próprio de delivery com tráfego pago e recuperar sua margem.</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 7 min · Abr 2026</div>
+                <a href="/blog/marketing-para-restaurante-como-sair-do-ifood/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="trafego-pago">
+                    <span class="badge badge-yellow">Tráfego Pago</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">Marketing para restaurante: como parar de depender do iFood</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">O iFood cobra 12% a 27% por pedido. Como construir um canal próprio de delivery com tráfego pago e recuperar sua margem.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 7 min · Abr 2026</div>
+                    <span class="card-arrow">Ler artigo <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
-                <a href="/blog/marketing-para-academia-matriculas-trafego-pago/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
-                    <span class="inline-block text-[10px] font-medium text-[#F2E846] mb-6 tracking-widest uppercase bg-[#F2E846]/10 px-3 py-1 rounded-full">Tráfego Pago</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Marketing para academia: como transformar seguidores em matrículas</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">Case ISATM: R$4,85 por conversa, 128 conversas e 5 matrículas em março com tráfego focado em WhatsApp.</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 7 min · Abr 2026</div>
+                <a href="/blog/marketing-para-academia-matriculas-trafego-pago/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="trafego-pago">
+                    <span class="badge badge-yellow">Tráfego Pago</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">Marketing para academia: como transformar seguidores em matrículas</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">Case ISATM: R$4,85 por conversa, 128 conversas e 5 matrículas em março com tráfego focado em WhatsApp.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 7 min · Abr 2026</div>
+                    <span class="card-arrow">Ler artigo <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
-                <a href="/blog/trafego-pago-para-cursos-como-vender-vagas/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
-                    <span class="inline-block text-[10px] font-medium text-[#F2E846] mb-6 tracking-widest uppercase bg-[#F2E846]/10 px-3 py-1 rounded-full">Tráfego Pago</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Tráfego pago para cursos: como vender vagas sem queimar orçamento</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">Case Labtem: de ROAS 2,16x para 4,05x segmentando por curso e com budget flex. Dados reais de março de 2026.</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 8 min · Abr 2026</div>
+                <a href="/blog/trafego-pago-para-cursos-como-vender-vagas/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="trafego-pago">
+                    <span class="badge badge-yellow">Tráfego Pago</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">Tráfego pago para cursos: como vender vagas sem queimar orçamento</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">Case Labtem: de ROAS 2,16x para 4,05x segmentando por curso e com budget flex. Dados reais de março de 2026.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 8 min · Abr 2026</div>
+                    <span class="card-arrow">Ler artigo <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
-                <a href="/blog/marketing-digital-editora-vender-livros-anuncios/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
-                    <span class="inline-block text-[10px] font-medium text-[#F2E846] mb-6 tracking-widest uppercase bg-[#F2E846]/10 px-3 py-1 rounded-full">Tráfego Pago</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Marketing digital para editora: como vender livros com anúncios online</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">Case Recriar: ROAS 5,95x no Meta Ads e 9,15x no Google Desktop. Estratégia completa para o mercado editorial.</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 8 min · Abr 2026</div>
+                <a href="/blog/marketing-digital-editora-vender-livros-anuncios/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="trafego-pago">
+                    <span class="badge badge-yellow">Tráfego Pago</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">Marketing digital para editora: como vender livros com anúncios online</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">Case Recriar: ROAS 5,95x no Meta Ads e 9,15x no Google Desktop. Estratégia completa para o mercado editorial.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 8 min · Abr 2026</div>
+                    <span class="card-arrow">Ler artigo <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
-                <a href="/blog/marketing-loja-veiculos-vender-carros-trafego-pago/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
-                    <span class="inline-block text-[10px] font-medium text-gray-400 mb-6 tracking-widest uppercase">Tráfego Pago</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Marketing para loja de veículos: como vender carros com tráfego pago</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">Como sair da dependência de OLX e Webmotors e construir um canal próprio de leads qualificados via WhatsApp.</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 7 min · Abr 2026</div>
+                <a href="/blog/marketing-loja-veiculos-vender-carros-trafego-pago/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="trafego-pago">
+                    <span class="badge badge-yellow">Tráfego Pago</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">Marketing para loja de veículos: como vender carros com tráfego pago</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">Como sair da dependência de OLX e Webmotors e construir um canal próprio de leads qualificados via WhatsApp.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 7 min · Abr 2026</div>
+                    <span class="card-arrow">Ler artigo <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
-                <a href="/blog/marketing-salao-beleza-estudio-estetica/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
-                    <span class="inline-block text-[10px] font-medium text-gray-400 mb-6 tracking-widest uppercase">Gestão de Redes</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Marketing para salão de beleza e estúdio de estética: o básico que funciona</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">Presença digital consistente que gera agendamentos previsíveis — sem depender de boca a boca ou promoções que corroem a margem.</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 7 min · Abr 2026</div>
+                <a href="/blog/marketing-salao-beleza-estudio-estetica/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="redes-sociais">
+                    <span class="badge badge-yellow">Gestão de Redes</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">Marketing para salão de beleza e estúdio de estética: o básico que funciona</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">Presença digital consistente que gera agendamentos previsíveis — sem depender de boca a boca ou promoções que corroem a margem.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 7 min · Abr 2026</div>
+                    <span class="card-arrow">Ler artigo <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
-                <a href="/blog/marketing-hotel-pousada-reduzir-dependencia-booking/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
-                    <span class="inline-block text-[10px] font-medium text-gray-400 mb-6 tracking-widest uppercase">Tráfego Pago</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Marketing para hotel e pousada: como reduzir a dependência do Booking</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">Booking cobra 15% a 20% por reserva. Como construir um canal próprio e fazer hóspedes anteriores voltarem direto.</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 8 min · Abr 2026</div>
+                <a href="/blog/marketing-hotel-pousada-reduzir-dependencia-booking/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="trafego-pago">
+                    <span class="badge badge-yellow">Tráfego Pago</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">Marketing para hotel e pousada: como reduzir a dependência do Booking</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">Booking cobra 15% a 20% por reserva. Como construir um canal próprio e fazer hóspedes anteriores voltarem direto.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 8 min · Abr 2026</div>
+                    <span class="card-arrow">Ler artigo <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
                 <!-- Case Update: Recriar -->
-                <a href="/blog/case-editora-recriar-roas-5x-meta-google-ads-update/" class="group block p-8 rounded-[2rem] glass-panel card-hover sm:col-span-2 lg:col-span-3 lg:w-2/3 mx-auto relative overflow-hidden">
+                <a href="/blog/case-editora-recriar-roas-5x-meta-google-ads-update/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover sm:col-span-2 lg:col-span-3 lg:w-2/3 mx-auto relative overflow-hidden" data-category="cases">
                     <div class="absolute inset-0 bg-gradient-to-r from-[#F2E846]/5 to-transparent pointer-events-none"></div>
                     <div class="flex items-center gap-3 mb-6 relative z-10">
-                        <span class="inline-block text-[10px] font-medium text-white tracking-widest uppercase bg-white/10 px-3 py-1 rounded-full">Case Study</span>
-                        <span class="inline-block text-[10px] font-medium text-[#F2E846] tracking-widest uppercase bg-[#F2E846]/15 border border-[#F2E846]/30 px-3 py-1 rounded-full">Update — Mar 2026</span>
+                        <span class="badge badge-white" style="margin-bottom:0;">Case Study</span>
+                        <span class="badge badge-yellow" style="margin-bottom:0;border:1px solid rgba(242,232,70,0.3);">Update — Mar 2026</span>
                     </div>
                     <h2 class="text-2xl font-medium mb-4 text-white leading-snug relative z-10">Case Editora Recriar — Update: de ROAS 3.89x para 5.95x no Meta Ads (e 9.15x no Google Desktop)</h2>
-                    <p class="text-gray-400 text-sm font-light mb-6 relative z-10">A meta de ROAS 5x declarada no artigo original foi alcançada. Seis otimizações documentadas — consolidação de ad sets, negativação Google, segmentação por dispositivo.</p>
-                    <div class="text-xs text-gray-500 font-medium relative z-10">Por Fernanda Vitorino · 8 min · Mar 2026</div>
+                    <p class="text-gray-400 text-sm font-light mb-3 relative z-10">A meta de ROAS 5x declarada no artigo original foi alcançada. Seis otimizações documentadas — consolidação de ad sets, negativação Google, segmentação por dispositivo.</p>
+                    <div class="text-xs text-gray-500 font-medium mb-2 relative z-10">Por Fernanda Vitorino · 8 min · Mar 2026</div>
+                    <span class="card-arrow relative z-10">Ler case <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
                 <!-- Case Academia Tênis de Mesa -->
-                <a href="/blog/case-academia-tenis-de-mesa-matriculas-meta-ads-pindamonhangaba/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
-                    <span class="inline-block text-[10px] font-medium text-white mb-6 tracking-widest uppercase bg-white/10 px-3 py-1 rounded-full">Case Study</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Case Academia de Tênis de Mesa: R$4,85 custo/conversa, 128 conversas e 5 matrículas em março</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">Como reposicionamento de narrativa, conteúdo com alunos reais e tráfego local geraram 128 conversas, CTR de 2,12% e matrículas reais em Pindamonhangaba.</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 9 min · Mar 2026</div>
+                <a href="/blog/case-academia-tenis-de-mesa-matriculas-meta-ads-pindamonhangaba/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="cases">
+                    <span class="badge badge-white">Case Study</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">Case Academia de Tênis de Mesa: R$4,85 custo/conversa, 128 conversas e 5 matrículas em março</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">Como reposicionamento de narrativa, conteúdo com alunos reais e tráfego local geraram 128 conversas, CTR de 2,12% e matrículas reais em Pindamonhangaba.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 9 min · Mar 2026</div>
+                    <span class="card-arrow">Ler case <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
                 <!-- Case Labtem -->
-                <a href="/blog/case-labtem-roas-4x-meta-ads-cursos/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
-                    <span class="inline-block text-[10px] font-medium text-white mb-6 tracking-widest uppercase bg-white/10 px-3 py-1 rounded-full">Case Study</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Case Labtem: de ROAS 2.16x para 4.05x segmentando por curso no Meta Ads</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">Como a estruturação de ad sets por linha de curso, criativos específicos e budget flex levaram o ROAS 85% acima da mediana brasileira.</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 9 min · Mar 2026</div>
+                <a href="/blog/case-labtem-roas-4x-meta-ads-cursos/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="cases">
+                    <span class="badge badge-white">Case Study</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">Case Labtem: de ROAS 2.16x para 4.05x segmentando por curso no Meta Ads</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">Como a estruturação de ad sets por linha de curso, criativos específicos e budget flex levaram o ROAS 85% acima da mediana brasileira.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 9 min · Mar 2026</div>
+                    <span class="card-arrow">Ler case <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
-
-                <!-- Novo Artigo 1: GEO -->
-                <a href="/blog/como-otimizar-marca-recomendacao-ia-geo-2026/" class="group block p-8 rounded-[2rem] glass-panel card-hover bg-gradient-to-br from-white/5 to-transparent border-[#F2E846]/20">
-                    <span class="inline-block text-[10px] font-medium text-[#F2E846] mb-6 tracking-widest uppercase bg-[#F2E846]/10 px-3 py-1 rounded-full">SEO & Tecnologia</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">GEO em 2026: Como Fazer o ChatGPT e Gemini Recomendarem Sua Marca</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">Aprenda o que é Generative Engine Optimization (GEO) e como estruturar o site da sua empresa para ser recomendado por IAs.</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 5 min · Mar 2026</div>
+                <!-- GEO -->
+                <a href="/blog/como-otimizar-marca-recomendacao-ia-geo-2026/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="seo">
+                    <span class="badge badge-yellow">SEO &amp; Tecnologia</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">GEO em 2026: Como Fazer o ChatGPT e Gemini Recomendarem Sua Marca</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">Aprenda o que é Generative Engine Optimization (GEO) e como estruturar o site da sua empresa para ser recomendado por IAs.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 5 min · Mar 2026</div>
+                    <span class="card-arrow">Ler artigo <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
-                <!-- Novo Artigo 2: Zero Click -->
-                <a href="/blog/zero-click-marketing-automacao-dms-2026/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
-                    <span class="inline-block text-[10px] font-medium text-gray-400 mb-6 tracking-widest uppercase">Redes Sociais</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">A Era do "Zero-Click Marketing": Chegou o Fim da Landing Page?</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">Aprenda a gerar leads qualificados sem tirar o usuário do aplicativo, usando automação de DMs no Instagram.</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 6 min · Mar 2026</div>
+                <!-- Zero Click -->
+                <a href="/blog/zero-click-marketing-automacao-dms-2026/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="redes-sociais">
+                    <span class="badge badge-yellow">Redes Sociais</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">A Era do "Zero-Click Marketing": Chegou o Fim da Landing Page?</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">Aprenda a gerar leads qualificados sem tirar o usuário do aplicativo, usando automação de DMs no Instagram.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 6 min · Mar 2026</div>
+                    <span class="card-arrow">Ler artigo <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
-                <!-- Novo Artigo 3: Fadiga Criativa -->
-                <a href="/blog/fadiga-criativa-acelerada-meta-ads-advantage-plus/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
-                    <span class="inline-block text-[10px] font-medium text-gray-400 mb-6 tracking-widest uppercase">Tráfego Pago</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Fadiga Criativa Acelerada: O que mudou no Meta Ads Advantage+</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">Entenda por que a IA do Meta está matando criativos mais rápido do que nunca e como estruturar Módulos de Teste Rápido.</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 5 min · Mar 2026</div>
+                <!-- Fadiga Criativa -->
+                <a href="/blog/fadiga-criativa-acelerada-meta-ads-advantage-plus/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="trafego-pago">
+                    <span class="badge badge-yellow">Tráfego Pago</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">Fadiga Criativa Acelerada: O que mudou no Meta Ads Advantage+</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">Entenda por que a IA do Meta está matando criativos mais rápido do que nunca e como estruturar Módulos de Teste Rápido.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 5 min · Mar 2026</div>
+                    <span class="card-arrow">Ler artigo <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
-                <!-- Novo Artigo 4: Video SEO -->
-                <a href="/blog/google-sge-video-seo-reels-tiktok-buscas/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
-                    <span class="inline-block text-[10px] font-medium text-gray-400 mb-6 tracking-widest uppercase">SEO & Tecnologia</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Google SGE e Video SEO: Por que as Buscas Respondem Direto com Reels</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">O Google agora prioriza Shorts e Reels no próprio motor de busca. Entenda as regras do Video SEO e como posicionar sua marca.</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 5 min · Mar 2026</div>
+                <!-- Video SEO -->
+                <a href="/blog/google-sge-video-seo-reels-tiktok-buscas/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="seo">
+                    <span class="badge badge-yellow">SEO &amp; Tecnologia</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">Google SGE e Video SEO: Por que as Buscas Respondem Direto com Reels</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">O Google agora prioriza Shorts e Reels no próprio motor de busca. Entenda as regras do Video SEO e como posicionar sua marca.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 5 min · Mar 2026</div>
+                    <span class="card-arrow">Ler artigo <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
-                <!-- Novo Artigo 5: ROAS to POAS -->
-                <a href="/blog/de-roas-para-poas-mudanca-trafego-pago-2026/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
-                    <span class="inline-block text-[10px] font-medium text-gray-400 mb-6 tracking-widest uppercase">Estratégia</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Transição de ROAS para POAS: Por que Lucrar é Diferente de Faturar Alto</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">Como a transição para Profit on Ad Spend ajuda a escalar campanhas baseadas no lucro real em vez de faturamento.</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 4 min · Mar 2026</div>
+                <!-- POAS -->
+                <a href="/blog/de-roas-para-poas-mudanca-trafego-pago-2026/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="estrategia">
+                    <span class="badge badge-yellow">Estratégia</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">Transição de ROAS para POAS: Por que Lucrar é Diferente de Faturar Alto</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">Como a transição para Profit on Ad Spend ajuda a escalar campanhas baseadas no lucro real em vez de faturamento.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 4 min · Mar 2026</div>
+                    <span class="card-arrow">Ler artigo <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
-                <!-- Novo Artigo 6: Google Content Penalty -->
-                <a href="/blog/punicao-google-conteudo-ia-e-e-a-t-2026/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
-                    <span class="inline-block text-[10px] font-medium text-[#F2E846] mb-6 tracking-widest uppercase bg-[#F2E846]/10 px-3 py-1 rounded-full">E-E-A-T</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">A Punição a Conteúdos Genéricos de IA e o papel do E-E-A-T</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">Entenda a punição massiva a blogs com conteúdo gerado por IA e como o E-E-A-T pode blindar o seu tráfego.</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 5 min · Mar 2026</div>
+                <!-- Conteúdo IA -->
+                <a href="/blog/punicao-google-conteudo-ia-e-e-a-t-2026/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="seo">
+                    <span class="badge badge-yellow">E-E-A-T</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">A Punição a Conteúdos Genéricos de IA e o papel do E-E-A-T</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">Entenda a punição massiva a blogs com conteúdo gerado por IA e como o E-E-A-T pode blindar o seu tráfego.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 5 min · Mar 2026</div>
+                    <span class="card-arrow">Ler artigo <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
-                <!-- Novo Artigo 7: WhatsApp Funnels -->
-                <a href="/blog/funil-whatsapp-blindado-mudancas-algoritmo-2026/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
-                    <span class="inline-block text-[10px] font-medium text-gray-400 mb-6 tracking-widest uppercase">Base Escalonável</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Ativos Próprios: Criando Funis de WhatsApp Blindados a Mudanças</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">Reduza a dependência de algoritmos criando listas de WhatsApp com campanhas consistentes de geração de cadastro.</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 4 min · Mar 2026</div>
+                <!-- WhatsApp -->
+                <a href="/blog/funil-whatsapp-blindado-mudancas-algoritmo-2026/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="redes-sociais">
+                    <span class="badge badge-yellow">Base Escalonável</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">Ativos Próprios: Criando Funis de WhatsApp Blindados a Mudanças</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">Reduza a dependência de algoritmos criando listas de WhatsApp com campanhas consistentes de geração de cadastro.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 4 min · Mar 2026</div>
+                    <span class="card-arrow">Ler artigo <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
-                <!-- Artigo 1 -->
-
-                <a href="/blog/meta-ads-mais-caro-2026-como-proteger-roas/" class="group block p-8 rounded-[2rem] glass-panel card-hover bg-gradient-to-br from-white/5 to-transparent border-[#F2E846]/20">
-                    <span class="inline-block text-[10px] font-medium text-[#F2E846] mb-6 tracking-widest uppercase bg-[#F2E846]/10 px-3 py-1 rounded-full">Tráfego Pago</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Meta Ads vai ficar 12,15% mais caro em 2026: como proteger seu ROAS</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">A Reforma Tributária passou a incluir PIS/Cofins + ISS nas faturas da Meta. Veja o impacto real e as estratégias...</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 8 min · Mar 2026</div>
+                <!-- Meta Ads 2026 -->
+                <a href="/blog/meta-ads-mais-caro-2026-como-proteger-roas/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="trafego-pago">
+                    <span class="badge badge-yellow">Tráfego Pago</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">Meta Ads vai ficar 12,15% mais caro em 2026: como proteger seu ROAS</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">A Reforma Tributária passou a incluir PIS/Cofins + ISS nas faturas da Meta. Veja o impacto real e as estratégias.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 8 min · Mar 2026</div>
+                    <span class="card-arrow">Ler artigo <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
-                <!-- Artigo 2 -->
-                <a href="/blog/o-que-e-trafego-pago/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
-                    <span class="inline-block text-[10px] font-medium text-gray-400 mb-6 tracking-widest uppercase">Tráfego Pago</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">O que é tráfego pago e como funciona no Meta Ads e Google Ads</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">Entenda como funciona o modelo de cobrança e quando usar Meta Ads ou Google Ads para gerar conversões...</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 7 min · Mar 2026</div>
+                <!-- O que é tráfego pago -->
+                <a href="/blog/o-que-e-trafego-pago/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="trafego-pago">
+                    <span class="badge badge-yellow">Tráfego Pago</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">O que é tráfego pago e como funciona no Meta Ads e Google Ads</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">Entenda como funciona o modelo de cobrança e quando usar Meta Ads ou Google Ads para gerar conversões.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 7 min · Mar 2026</div>
+                    <span class="card-arrow">Ler artigo <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
-                <!-- Artigo 3 -->
-                <a href="/blog/como-melhorar-roas-meta-ads/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
-                    <span class="inline-block text-[10px] font-medium text-gray-400 mb-6 tracking-widest uppercase">Tráfego Pago</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Como melhorar o ROAS no Meta Ads: o que funciona de verdade</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">A mediana do mercado é 2.19x. Nossos clientes chegam a 3.89x. Veja estratégias práticas...</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 9 min · Mar 2026</div>
+                <!-- Melhorar ROAS -->
+                <a href="/blog/como-melhorar-roas-meta-ads/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="trafego-pago">
+                    <span class="badge badge-yellow">Tráfego Pago</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">Como melhorar o ROAS no Meta Ads: o que funciona de verdade</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">A mediana do mercado é 2.19x. Nossos clientes chegam a 3.89x. Veja estratégias práticas com dados reais.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 9 min · Mar 2026</div>
+                    <span class="card-arrow">Ler artigo <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
-                <!-- Artigo 4 -->
-                <a href="/blog/como-escolher-agencia-trafego-pago/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
-                    <span class="inline-block text-[10px] font-medium text-gray-400 mb-6 tracking-widest uppercase">Estratégia</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">7 perguntas cruciais antes de escolher sua Agência de Tráfego</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">Saiba o que exigir e quais sinais revelam uma parceria que realmente entrega resultado comprovado em relatórios.</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 7 min · Mar 2026</div>
+                <!-- Escolher agência -->
+                <a href="/blog/como-escolher-agencia-trafego-pago/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="estrategia">
+                    <span class="badge badge-yellow">Estratégia</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">7 perguntas cruciais antes de escolher sua Agência de Tráfego</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">Saiba o que exigir e quais sinais revelam uma parceria que realmente entrega resultado comprovado em relatórios.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 7 min · Mar 2026</div>
+                    <span class="card-arrow">Ler artigo <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
-                <!-- Artigo 5 -->
-                <a href="/blog/gestao-redes-sociais-pequenos-negocios/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
-                    <span class="inline-block text-[10px] font-medium text-gray-400 mb-6 tracking-widest uppercase">Redes Sociais</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Gestão de redes sociais: o que realmente muda o resultado</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">Não é sobre postar todo dia. É sobre consistência, narrativa e integração absoluta com a estratégia de vendas.</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 6 min · Mar 2026</div>
+                <!-- Gestão de redes -->
+                <a href="/blog/gestao-redes-sociais-pequenos-negocios/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="redes-sociais">
+                    <span class="badge badge-yellow">Redes Sociais</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">Gestão de redes sociais: o que realmente muda o resultado</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">Não é sobre postar todo dia. É sobre consistência, narrativa e integração absoluta com a estratégia de vendas.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 6 min · Mar 2026</div>
+                    <span class="card-arrow">Ler artigo <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
 
-                <!-- Artigo 6 -->
-                <a href="/blog/o-que-e-narrativa-autentica-marketing/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
-                    <span class="inline-block text-[10px] font-medium text-[#F2E846] mb-6 tracking-widest uppercase bg-[#F2E846]/10 px-3 py-1 rounded-full">Narrativa</span>
-                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">O que é narrativa autêntica e por que ela supera o conteúdo bonito</h2>
-                    <p class="text-gray-500 text-sm font-light mb-6">Post bonito não vende. Narrativa sim. Entenda o Framework PONTE que transforma marcas em gigantes de conversão.</p>
-                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 8 min · Mar 2026</div>
+                <!-- Narrativa autêntica -->
+                <a href="/blog/o-que-e-narrativa-autentica-marketing/" class="group blog-card p-8 rounded-[2rem] glass-panel card-hover" data-category="estrategia">
+                    <span class="badge badge-yellow">Narrativa</span>
+                    <h2 class="text-xl font-medium mb-3 group-hover:text-white text-gray-200 transition-colors leading-snug">O que é narrativa autêntica e por que ela supera o conteúdo bonito</h2>
+                    <p class="text-gray-500 text-sm font-light mb-3">Post bonito não vende. Narrativa sim. Entenda o Framework PONTE que transforma marcas em gigantes de conversão.</p>
+                    <div class="text-xs text-gray-600 font-medium mb-2">Por Fernanda Vitorino · 8 min · Mar 2026</div>
+                    <span class="card-arrow">Ler artigo <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></span>
                 </a>
-
 
             </div>
         </section>
@@ -322,7 +375,7 @@
         </section>
     </main>
 
-    <!-- Footer Apple-style -->
+    <!-- Footer -->
     <footer class="py-16 px-6 lg:px-8 border-t border-white/5 bg-[#050505]">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-10">
             <div class="text-center md:text-left">
@@ -331,7 +384,6 @@
                 </a>
                 <p class="text-gray-500 text-sm mt-4 font-light">Narrativas que sustentam propósito e geram resultado.</p>
             </div>
-            
             <div class="flex flex-wrap gap-8 text-sm text-gray-500 font-light justify-center">
                 <a href="/" class="hover:text-white transition-colors">Home</a>
                 <a href="/case/" class="hover:text-white transition-colors">Cases</a>
@@ -342,6 +394,7 @@
             <p>© 2026 Metrix Mídia. Inovação guiada por propósito.</p>
         </div>
     </footer>
+
     <script>
       (function () {
         var openBtn = document.getElementById('mobile-menu-open');
@@ -354,6 +407,26 @@
         closeBtn.addEventListener('click', closeMenu);
         menu.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
         menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
+      })();
+
+      // Category filter
+      (function () {
+        var tabs = document.querySelectorAll('.filter-tab');
+        var cards = document.querySelectorAll('#blog-grid [data-category]');
+        tabs.forEach(function (tab) {
+          tab.addEventListener('click', function () {
+            var filter = this.getAttribute('data-filter');
+            tabs.forEach(function (t) { t.classList.remove('active'); });
+            this.classList.add('active');
+            cards.forEach(function (card) {
+              if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                card.classList.remove('card-hidden');
+              } else {
+                card.classList.add('card-hidden');
+              }
+            });
+          });
+        });
       })();
     </script>
 </body>
