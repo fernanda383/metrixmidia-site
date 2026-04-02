@@ -4,6 +4,55 @@ Registro de todas as alterações no site da Metrix Mídia. Atualizar a cada ses
 
 ---
 
+## [2026-03-30] — UX/Usabilidade global: nav mobile, acessibilidade, correções estruturais
+
+### Acessibilidade (todo o site — 28 páginas)
+- Skip link "Ir para o conteúdo" adicionado em todas as páginas
+- `aria-label="Navegação principal"` adicionado em todos os `<nav>`
+- `aria-current="page"` no link ativo por página
+- `aria-label`, `aria-expanded`, `aria-controls` no botão hamburger
+
+### Nav mobile (todo o site — 28 páginas)
+- Hamburger button adicionado em todas as páginas (visível apenas em mobile)
+- Overlay de navegação mobile com foco gerenciado (focus trap, Escape para fechar, body scroll locked)
+- 3 artigos antigos (`instagram-reels`, `linkedin`, `prompt-library`) completamente sem navbar — navbar + footer adicionados
+
+### Homepage (`index.html`)
+- Logo href corrigido: `#` → `/`
+- Footer: links Cases e Blog adicionados (antes só tinha Instagram + Privacidade)
+- Planos: botões "Selecionar X" agora abrem WhatsApp com contexto pré-preenchido (antes eram `href="#"` mortos)
+- Seção "Só trabalhamos com quem está disposto a:" removida a pedido
+- `id="navbar"` adicionado ao `<nav>` (necessário para scroll effect do main.js)
+- URL absoluta `metrixmidia.com.br/case/` → `/case/`
+
+### Cases hub (`case/index.html`)
+- CTA "E o seu próximo case?" → "Quer ser o próximo case?"
+- `id="navbar"` adicionado
+- `id="main-content"` adicionado ao `<main>`
+
+### Blog hub (`blog/index.html`)
+- `id="navbar"` adicionado
+- `id="main-content"` adicionado ao `<main>`
+
+### Case detail pages — labtem, academia, victor-azevedo
+- Hero full-width restaurado: `.case-header` removida do seletor `max-width: 800px` (bug herdado do template)
+- h3 → h2 nas seções do `<main>` (hierarquia semântica: h1 no header, h2 nas seções)
+- Import duplicado de Inter removido
+- Caption `color: #666` → `#999` (reprovava WCAG 4.5:1)
+- URL absoluta Cases corrigida
+
+### Case `editora-recriar` (corrigido em sessão anterior, deploy hoje)
+- Mesmas correções aplicadas: hero, captions, headings, ARIA, hamburger, skip link
+
+### Blog articles (21 arquivos com template padrão)
+- Import duplicado de Inter removido
+- `.case-header` removida do seletor `max-width: 800px`
+- Caption e breadcrumb `#666` → `#999`
+- URL absoluta Cases → `/case/`
+- `aria-label` no nav, hamburger adicionado
+
+---
+
 ## [2026-03-29] — Blog UX fixes + novos artigos e cases março 2026
 
 ### Novos arquivos

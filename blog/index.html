@@ -72,24 +72,41 @@
 </head>
 <body class="antialiased min-h-screen flex flex-col selection:bg-[#F2E846]/30 selection:text-white">
 
+    <a href="#main-content" style="position:absolute;top:-100px;left:1rem;z-index:10000;background:#F2E846;color:#000;font-weight:700;padding:.75rem 1.5rem;border-radius:0 0 .5rem .5rem;transition:top 200ms ease;text-decoration:none;font-size:.9rem;" onfocus="this.style.top='0'" onblur="this.style.top='-100px'">Ir para o conteúdo</a>
+
+    <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu de navegação" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(10,10,10,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:2rem;">
+      <button id="mobile-menu-close" aria-label="Fechar menu" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;cursor:pointer;color:#f5f5f5;font-size:1.5rem;padding:.5rem;line-height:1;">✕</button>
+      <a href="/" style="font-size:1.4rem;font-weight:600;color:#f5f5f5;text-decoration:none;">Home</a>
+      <a href="/case/" style="font-size:1.4rem;font-weight:600;color:#f5f5f5;text-decoration:none;">Cases</a>
+      <a href="/blog/" aria-current="page" style="font-size:1.4rem;font-weight:600;color:#F2E846;text-decoration:none;">Blog</a>
+      <a href="https://wa.me/5511983414590" style="font-size:1.2rem;font-weight:700;color:#000;background:#F2E846;padding:.75rem 2rem;border-radius:99px;text-decoration:none;">Fale Conosco</a>
+    </div>
+
     <!-- Navbar Apple-style -->
-    <nav class="fixed w-full z-50 top-0 bg-[#0a0a0a]/70 backdrop-blur-xl border-b border-white/5">
+    <nav id="navbar" class="fixed w-full z-50 top-0 bg-[#0a0a0a]/70 backdrop-blur-xl border-b border-white/5" aria-label="Navegação principal">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex justify-between items-center">
             <a href="/" class="flex items-center gap-2 group">
-                <img src="/static/logo_new.png" alt="Metrix Mídia" class="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                <img src="/static/logo_new.png" alt="Metrix Mídia — página inicial" class="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
             </a>
             <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
                 <a href="/" class="nav-link hover:text-white">Home</a>
                 <a href="/case/" class="nav-link hover:text-white">Cases</a>
-                <a href="/blog/" class="nav-link nav-link-active text-white">Blog</a>
+                <a href="/blog/" class="nav-link nav-link-active text-white" aria-current="page">Blog</a>
             </div>
-            <a href="https://wa.me/5511983414590" class="btn-hover text-sm hidden md:inline-flex bg-white/10 hover:bg-white/15 border border-white/5 px-5 py-2.5 rounded-full font-medium backdrop-blur-md">
-                Fale Conosco
-            </a>
+            <div class="flex items-center gap-3">
+              <a href="https://wa.me/5511983414590" class="btn-hover text-sm hidden md:inline-flex bg-white/10 hover:bg-white/15 border border-white/5 px-5 py-2.5 rounded-full font-medium backdrop-blur-md">
+                  Fale Conosco
+              </a>
+              <button id="mobile-menu-open" class="md:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-white/10 transition-colors duration-200" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span class="block w-6 h-0.5 bg-white"></span>
+                <span class="block w-6 h-0.5 bg-white"></span>
+                <span class="block w-4 h-0.5 bg-white"></span>
+              </button>
+            </div>
         </div>
     </nav>
 
-    <main class="flex-grow pt-32 pb-24">
+    <main class="flex-grow pt-32 pb-24" id="main-content">
         <!-- Hero Apple-style -->
         <header class="relative px-6 lg:px-8 max-w-7xl mx-auto text-center mb-20 overflow-hidden">
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50vw] h-[50vw] max-w-[600px] bg-[#F2E846]/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
@@ -106,6 +123,56 @@
         <!-- Blog Grid -->
         <section class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Artigos Abril 2026: Dores por Nicho -->
+                <a href="/blog/marketing-para-restaurante-como-sair-do-ifood/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
+                    <span class="inline-block text-[10px] font-medium text-[#F2E846] mb-6 tracking-widest uppercase bg-[#F2E846]/10 px-3 py-1 rounded-full">Tráfego Pago</span>
+                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Marketing para restaurante: como parar de depender do iFood</h2>
+                    <p class="text-gray-500 text-sm font-light mb-6">O iFood cobra 12% a 27% por pedido. Como construir um canal próprio de delivery com tráfego pago e recuperar sua margem.</p>
+                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 7 min · Abr 2026</div>
+                </a>
+
+                <a href="/blog/marketing-para-academia-matriculas-trafego-pago/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
+                    <span class="inline-block text-[10px] font-medium text-[#F2E846] mb-6 tracking-widest uppercase bg-[#F2E846]/10 px-3 py-1 rounded-full">Tráfego Pago</span>
+                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Marketing para academia: como transformar seguidores em matrículas</h2>
+                    <p class="text-gray-500 text-sm font-light mb-6">Case ISATM: R$4,85 por conversa, 128 conversas e 5 matrículas em março com tráfego focado em WhatsApp.</p>
+                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 7 min · Abr 2026</div>
+                </a>
+
+                <a href="/blog/trafego-pago-para-cursos-como-vender-vagas/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
+                    <span class="inline-block text-[10px] font-medium text-[#F2E846] mb-6 tracking-widest uppercase bg-[#F2E846]/10 px-3 py-1 rounded-full">Tráfego Pago</span>
+                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Tráfego pago para cursos: como vender vagas sem queimar orçamento</h2>
+                    <p class="text-gray-500 text-sm font-light mb-6">Case Labtem: de ROAS 2,16x para 4,05x segmentando por curso e com budget flex. Dados reais de março de 2026.</p>
+                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 8 min · Abr 2026</div>
+                </a>
+
+                <a href="/blog/marketing-digital-editora-vender-livros-anuncios/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
+                    <span class="inline-block text-[10px] font-medium text-[#F2E846] mb-6 tracking-widest uppercase bg-[#F2E846]/10 px-3 py-1 rounded-full">Tráfego Pago</span>
+                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Marketing digital para editora: como vender livros com anúncios online</h2>
+                    <p class="text-gray-500 text-sm font-light mb-6">Case Recriar: ROAS 5,95x no Meta Ads e 9,15x no Google Desktop. Estratégia completa para o mercado editorial.</p>
+                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 8 min · Abr 2026</div>
+                </a>
+
+                <a href="/blog/marketing-loja-veiculos-vender-carros-trafego-pago/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
+                    <span class="inline-block text-[10px] font-medium text-gray-400 mb-6 tracking-widest uppercase">Tráfego Pago</span>
+                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Marketing para loja de veículos: como vender carros com tráfego pago</h2>
+                    <p class="text-gray-500 text-sm font-light mb-6">Como sair da dependência de OLX e Webmotors e construir um canal próprio de leads qualificados via WhatsApp.</p>
+                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 7 min · Abr 2026</div>
+                </a>
+
+                <a href="/blog/marketing-salao-beleza-estudio-estetica/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
+                    <span class="inline-block text-[10px] font-medium text-gray-400 mb-6 tracking-widest uppercase">Gestão de Redes</span>
+                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Marketing para salão de beleza e estúdio de estética: o básico que funciona</h2>
+                    <p class="text-gray-500 text-sm font-light mb-6">Presença digital consistente que gera agendamentos previsíveis — sem depender de boca a boca ou promoções que corroem a margem.</p>
+                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 7 min · Abr 2026</div>
+                </a>
+
+                <a href="/blog/marketing-hotel-pousada-reduzir-dependencia-booking/" class="group block p-8 rounded-[2rem] glass-panel card-hover">
+                    <span class="inline-block text-[10px] font-medium text-gray-400 mb-6 tracking-widest uppercase">Tráfego Pago</span>
+                    <h2 class="text-xl font-medium mb-4 group-hover:text-white text-gray-200 transition-colors leading-snug">Marketing para hotel e pousada: como reduzir a dependência do Booking</h2>
+                    <p class="text-gray-500 text-sm font-light mb-6">Booking cobra 15% a 20% por reserva. Como construir um canal próprio e fazer hóspedes anteriores voltarem direto.</p>
+                    <div class="text-xs text-gray-600 font-medium">Por Fernanda Vitorino · 8 min · Abr 2026</div>
+                </a>
 
                 <!-- Case Update: Recriar -->
                 <a href="/blog/case-editora-recriar-roas-5x-meta-google-ads-update/" class="group block p-8 rounded-[2rem] glass-panel card-hover sm:col-span-2 lg:col-span-3 lg:w-2/3 mx-auto relative overflow-hidden">
@@ -275,5 +342,19 @@
             <p>© 2026 Metrix Mídia. Inovação guiada por propósito.</p>
         </div>
     </footer>
+    <script>
+      (function () {
+        var openBtn = document.getElementById('mobile-menu-open');
+        var closeBtn = document.getElementById('mobile-menu-close');
+        var menu = document.getElementById('mobile-menu');
+        if (!openBtn || !closeBtn || !menu) return;
+        function openMenu() { menu.style.display = 'flex'; openBtn.setAttribute('aria-expanded', 'true'); closeBtn.focus(); document.body.style.overflow = 'hidden'; }
+        function closeMenu() { menu.style.display = 'none'; openBtn.setAttribute('aria-expanded', 'false'); openBtn.focus(); document.body.style.overflow = ''; }
+        openBtn.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        menu.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+        menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
+      })();
+    </script>
 </body>
 </html>

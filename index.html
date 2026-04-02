@@ -80,28 +80,47 @@
 </head>
 <body class="antialiased min-h-screen flex flex-col selection:bg-[#F2E846]/30 selection:text-white">
 
+    <a href="#main-content" class="skip-link" style="position:absolute;top:-100px;left:1rem;z-index:10000;background:#F2E846;color:#000;font-weight:700;padding:.75rem 1.5rem;border-radius:0 0 .5rem .5rem;transition:top 200ms ease;text-decoration:none;font-size:.9rem;">Ir para o conteúdo</a>
+
+    <!-- Mobile nav overlay -->
+    <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu de navegação" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(10,10,10,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:2rem;">
+      <button id="mobile-menu-close" aria-label="Fechar menu" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;cursor:pointer;color:#f5f5f5;font-size:1.5rem;padding:.5rem;line-height:1;">✕</button>
+      <a href="#sobre" style="font-size:1.4rem;font-weight:600;color:#f5f5f5;text-decoration:none;padding:.5rem 1rem;">Sobre</a>
+      <a href="#metodologia" style="font-size:1.4rem;font-weight:600;color:#f5f5f5;text-decoration:none;padding:.5rem 1rem;">Metodologia</a>
+      <a href="#planos" style="font-size:1.4rem;font-weight:600;color:#f5f5f5;text-decoration:none;padding:.5rem 1rem;">Planos</a>
+      <a href="/case/" style="font-size:1.4rem;font-weight:600;color:#f5f5f5;text-decoration:none;padding:.5rem 1rem;">Cases</a>
+      <a href="/blog/" style="font-size:1.4rem;font-weight:600;color:#f5f5f5;text-decoration:none;padding:.5rem 1rem;">Blog</a>
+      <a href="https://wa.me/5511983414590" style="font-size:1.2rem;font-weight:700;color:#000;background:#F2E846;padding:.75rem 2rem;border-radius:99px;text-decoration:none;">Fale Conosco</a>
+    </div>
+
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 top-0 bg-[#0a0a0a]/70 backdrop-blur-xl border-b border-white/5">
+    <nav id="navbar" class="fixed w-full z-50 top-0 bg-[#0a0a0a]/70 backdrop-blur-xl border-b border-white/5" aria-label="Navegação principal">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex justify-between items-center">
-            <!-- Simplified, clean logo mark -->
-            <a href="#" class="flex items-center gap-2 group">
-                <img src="/static/logo_new.png" alt="Metrix Mídia" class="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+            <a href="/" class="flex items-center gap-2 group">
+                <img src="/static/logo_new.png" alt="Metrix Mídia — página inicial" class="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
             </a>
             <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
                 <a href="#sobre" class="nav-link hover:text-white">Sobre</a>
                 <a href="#metodologia" class="nav-link hover:text-white">Metodologia</a>
                 <a href="#resultados" class="nav-link hover:text-white">Resultados</a>
                 <a href="#planos" class="nav-link hover:text-white">Planos</a>
-                <a href="https://metrixmidia.com.br/case/" class="nav-link hover:text-white">Cases</a>
+                <a href="/case/" class="nav-link hover:text-white">Cases</a>
                 <a href="/blog/" class="nav-link hover:text-white">Blog</a>
             </div>
-            <a href="https://wa.me/5511983414590" class="btn-hover text-sm hidden md:inline-flex bg-white/10 hover:bg-white/15 border border-white/5 px-5 py-2.5 rounded-full font-medium backdrop-blur-md">
-                Fale Conosco
-            </a>
+            <div class="flex items-center gap-3">
+              <a href="https://wa.me/5511983414590" class="btn-hover text-sm hidden md:inline-flex bg-white/10 hover:bg-white/15 border border-white/5 px-5 py-2.5 rounded-full font-medium backdrop-blur-md">
+                  Fale Conosco
+              </a>
+              <button id="mobile-menu-open" class="md:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-white/10 transition-colors duration-200" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span class="block w-6 h-0.5 bg-white"></span>
+                <span class="block w-6 h-0.5 bg-white"></span>
+                <span class="block w-4 h-0.5 bg-white"></span>
+              </button>
+            </div>
         </div>
     </nav>
 
-    <main class="flex-grow pt-24">
+    <main class="flex-grow pt-24" id="main-content">
         <!-- Hero Section -->
         <section class="relative pt-24 pb-20 md:pt-40 md:pb-32 px-6 lg:px-8 max-w-7xl mx-auto flex flex-col items-center text-center overflow-hidden">
             <!-- Subtle Apple-like ambient glow (Golden) -->
@@ -135,23 +154,6 @@
                 <p class="text-gray-400 text-lg mb-12 max-w-3xl leading-relaxed font-light">
                     Construímos narrativas que conectam e convertem. O que nos move não é apenas fechar contratos. É construir parcerias que façam sentido.
                 </p>
-                <div class="glass-panel p-8 md:p-12 rounded-[2rem] text-left w-full max-w-2xl bg-white/5 border border-white/10">
-                    <p class="text-gray-200 font-medium mb-6 text-lg">Só trabalhamos com quem está disposto a:</p>
-                    <ul class="space-y-5 text-gray-400">
-                        <li class="flex items-center gap-4">
-                            <div class="w-10 h-10 flex-shrink-0 rounded-full glass-panel flex items-center justify-center text-[#F2E846] text-sm font-medium">01</div>
-                            <span class="text-base">Gravar conteúdos autênticos</span>
-                        </li>
-                        <li class="flex items-center gap-4">
-                            <div class="w-10 h-10 flex-shrink-0 rounded-full glass-panel flex items-center justify-center text-[#F2E846] text-sm font-medium">02</div>
-                            <span class="text-base">Examinar e ajustar o comercial</span>
-                        </li>
-                        <li class="flex items-center gap-4">
-                            <div class="w-10 h-10 flex-shrink-0 rounded-full glass-panel flex items-center justify-center text-[#F2E846] text-sm font-medium">03</div>
-                            <span class="text-base">Executar com a mesma intensidade que nós</span>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </section>
 
@@ -228,7 +230,7 @@
                             <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-white/20 mt-2"></div> Calendário editorial</li>
                             <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-white/20 mt-2"></div> Copy profissional</li>
                         </ul>
-                        <a href="#" class="btn-hover w-full py-4 rounded-full bg-white/5 border border-white/10 text-center text-sm font-medium hover:bg-white/10">Selecionar Estratégia</a>
+                        <a href="https://wa.me/5511983414590?text=Tenho%20interesse%20no%20plano%20Estrat%C3%A9gia%20da%20Metrix%20M%C3%ADdia" class="btn-hover w-full py-4 rounded-full bg-white/5 border border-white/10 text-center text-sm font-medium hover:bg-white/10">Selecionar Estratégia</a>
                     </div>
 
                     <!-- Pro Plan (Gold) -->
@@ -242,7 +244,7 @@
                             <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#F2E846]/40 mt-2"></div> Criativos para anúncios</li>
                             <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-[#F2E846]/40 mt-2"></div> Reunião quinzenal</li>
                         </ul>
-                        <a href="#" class="btn-hover w-full py-4 rounded-full bg-[#F2E846] text-black text-center text-sm font-medium">Selecionar Performance</a>
+                        <a href="https://wa.me/5511983414590?text=Tenho%20interesse%20no%20plano%20Performance%20da%20Metrix%20M%C3%ADdia" class="btn-hover w-full py-4 rounded-full bg-[#F2E846] text-black text-center text-sm font-medium">Selecionar Performance</a>
                     </div>
 
                     <!-- Ultra Plan -->
@@ -254,7 +256,7 @@
                             <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-white/20 mt-2"></div> Captações in loco (foto e vídeo)</li>
                             <li class="flex items-start gap-3"><div class="w-1.5 h-1.5 rounded-full bg-white/20 mt-2"></div> Banco de conteúdo dedicado</li>
                         </ul>
-                        <a href="#" class="btn-hover w-full py-4 rounded-full bg-white/5 border border-white/10 text-center text-sm font-medium hover:bg-white/10">Selecionar Legado</a>
+                        <a href="https://wa.me/5511983414590?text=Tenho%20interesse%20no%20plano%20Legado%20da%20Metrix%20M%C3%ADdia" class="btn-hover w-full py-4 rounded-full bg-white/5 border border-white/10 text-center text-sm font-medium hover:bg-white/10">Selecionar Legado</a>
                     </div>
                 </div>
             </div>
@@ -322,14 +324,33 @@
                 </a>
                 <p class="text-gray-500 text-sm mt-4 font-light">Narrativas que geram resultado.</p>
             </div>
-            <div class="flex gap-8 text-sm text-gray-500 font-light">
+            <div class="flex flex-wrap gap-8 text-sm text-gray-500 font-light justify-center">
+                <a href="/case/" class="hover:text-white transition-colors">Cases</a>
+                <a href="/blog/" class="hover:text-white transition-colors">Blog</a>
                 <a href="https://instagram.com/metrixmidia" class="hover:text-white transition-colors">Instagram</a>
-                <a href="https://metrixmidia.com.br/politica-de-privacidade" class="hover:text-white transition-colors">Privacidade</a>
+                <a href="/politica-de-privacidade" class="hover:text-white transition-colors">Privacidade</a>
             </div>
         </div>
         <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 text-xs text-gray-600 font-light flex justify-center md:justify-start">
             <p>© 2026 Metrix Mídia. Inovação guiada por propósito.</p>
         </div>
     </footer>
+  <script>
+    (function () {
+      var openBtn = document.getElementById('mobile-menu-open');
+      var closeBtn = document.getElementById('mobile-menu-close');
+      var menu = document.getElementById('mobile-menu');
+      if (!openBtn || !closeBtn || !menu) return;
+      function openMenu() { menu.style.display = 'flex'; openBtn.setAttribute('aria-expanded', 'true'); closeBtn.focus(); document.body.style.overflow = 'hidden'; }
+      function closeMenu() { menu.style.display = 'none'; openBtn.setAttribute('aria-expanded', 'false'); openBtn.focus(); document.body.style.overflow = ''; }
+      openBtn.addEventListener('click', openMenu);
+      closeBtn.addEventListener('click', closeMenu);
+      menu.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+      menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
+    })();
+  </script>
+  <style>
+    .skip-link:focus { top: 0 !important; outline: 3px solid #000; outline-offset: 2px; }
+  </style>
 </body>
 </html>
