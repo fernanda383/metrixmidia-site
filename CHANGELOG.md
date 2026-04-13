@@ -4,6 +4,41 @@ Registro de todas as alterações no site da Metrix Mídia. Atualizar a cada ses
 
 ---
 
+## [2026-04-13] — Case Smash House + artigo hamburgueria + correção matrículas Academia
+
+### Novo case: Smash House (`case/smash-house/`)
+- Hamburgueria artesanal de Pindamonhangaba: comparativo 01–12/mar × 01–12/abr/2026 com dados reais da Meta Marketing API
+- Resultado: pedidos 20 → 64 (+220%), valor R$1.479 → R$3.991 (+170%), ROAS 3,48x → 7,07x (+103%), CPA R$9,04 → R$3,20 (−65%), com o mesmo budget (~R$205)
+- Hero com 6 metric cards, 8 seções (contexto, diagnóstico, estratégia, conteúdo, comparativo, prova social, aprendizados, CTA final)
+- 6 imagens do feed Instagram @smashousepinda capturadas via Instagram Graph API (`/media` endpoint)
+- Entrada adicionada em `data/cases.json` (posição 2, entre academia e editora recriar)
+- Link externo para `https://www.instagram.com/smashousepinda/` no case
+
+### Novo artigo: marketing para hamburgueria (`blog/marketing-hamburgueria-canal-proprio/`)
+- Ângulo: construir canal próprio + reduzir dependência dos apps de delivery, sem abandonar o iFood/99Food
+- Estrutura: H1 + citability + 5 H2s (Por quê, O quê, Como, Quando, Quem), inline CTA, case box Smash House, H2 case resumido, 5 FAQs, CTA final, related
+- 3 blocos JSON-LD (Article datePublished=2026-04-13, BreadcrumbList, FAQPage com 5 Q&A)
+- Card hardcoded adicionado no topo de `blog/index.html` com `data-category="trafego-pago"`
+- Contador do header atualizado: 23 → 24 artigos
+
+### Correção global: Academia de Tênis de Mesa — 5 → 7 matrículas
+- `case/academia-de-tenis-de-mesa/index.html` — badge, metric-card e parágrafo "Update março 2026"
+- `data/cases.json` — `summary` e `results`
+- `blog/case-academia-tenis-de-mesa-matriculas-meta-ads-pindamonhangaba/index.html` — title, meta desc, og:title, og:description, JSON-LD Article headline/description, JSON-LD Breadcrumb name, JSON-LD FAQ, H1, citability, stat card, parágrafo "fecha a conta", parágrafo "Lead é o começo", FAQ; dateModified bumped para 2026-04-13
+- `blog/marketing-para-academia-matriculas-trafego-pago/index.html` — meta desc, og:description, JSON-LD Article description, JSON-LD FAQ, citability, bullet matrículas, blog-case-badge, FAQ, related link
+- `blog/index.html` — card do case ISATM e card do artigo academia
+- Verificação: grep "5 matrícul" retorna 0 em arquivos ativos (apenas CHANGELOG histórico)
+
+### Sitemap
+- Adicionadas URLs: `/case/smash-house/` e `/blog/marketing-hamburgueria-canal-proprio/` com `lastmod=2026-04-13`
+
+### Observações técnicas
+- Dados da Meta API consolidados via `/tmp/smash_house_12d_compare.py` (script one-shot usando `urllib`, conforme CLAUDE.md)
+- Markdown legível salvo em `analysis/smash_house_12d_compare_2026-04-13.md` para referência futura
+- IG handle resolvido via Graph API v20.0 `/{page_id}?fields=instagram_business_account{username}` — handle confirmado: @smashousepinda (1991 seguidores, 15 posts)
+
+---
+
 ## [2026-03-30] — UX/Usabilidade global: nav mobile, acessibilidade, correções estruturais
 
 ### Acessibilidade (todo o site — 28 páginas)

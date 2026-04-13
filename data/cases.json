@@ -3,10 +3,19 @@
     "slug": "academia-de-tenis-de-mesa",
     "title": "Academia de Tênis de Mesa",
     "segment": "Esporte & Educação",
-    "summary": "R$4,85 custo/conversa, 128 conversas e 5 matrículas em março de 2026",
-    "results": ["R$4,85 custo/conversa", "128 conversas — Mar 2026", "5 matrículas"],
+    "summary": "R$4,85 custo/conversa, 128 conversas e 7 matrículas em março de 2026",
+    "results": ["R$4,85 custo/conversa", "128 conversas — Mar 2026", "7 matrículas"],
     "tags": ["Reposicionamento", "Social", "Ads"],
     "thumb": "/static/cases/academia-tenis-de-mesa/thumb.webp"
+  },
+  {
+    "slug": "smash-house",
+    "title": "Smash House",
+    "segment": "Delivery Local | Hamburgueria Artesanal",
+    "summary": "Pedidos triplicaram (20 → 64) e ROAS dobrou (3,48x → 7,07x) comparando 12 dias de abril com os mesmos 12 dias de março — mesmo budget",
+    "results": ["ROAS 7,07x — Abr 01-12", "+220% em pedidos", "CPA R$3,20 (−65%)"],
+    "tags": ["Local", "Meta", "Delivery"],
+    "thumb": "/static/cases/smash-house/thumb.jpg"
   },
   {
     "slug": "editora-recriar",
