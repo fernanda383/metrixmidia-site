@@ -4,6 +4,18 @@ Registro de todas as alterações no site da Metrix Mídia. Atualizar a cada ses
 
 ---
 
+## [2026-06-16] — Nova página: Pesquisa de Evolução da Parceria (`pesquisa-satisfacao/`)
+
+### Página `pesquisa-satisfacao/index.html`
+- Formulário de satisfação (diagnóstico da parceria) — origem: task Asana 1215768799715665. As 14 perguntas + opções saíram literais do doc de referência (Pesquisa de Evolução da Parceria); nada inventado
+- Estrutura: Identificação (empresa/nome/cargo) + 3 pilares (Experiência e relacionamento / Avaliação dos serviços / Valor percebido e oportunidades). NPS 0-10, escalas 1-5 com opção N/A explicada, múltipla escolha e respostas abertas
+- `noindex` (link interno enviado a clientes, não indexável)
+- Submit → POST webhook n8n `https://ops.metrixmidia.com.br/webhook/pesquisa-satisfacao` (workflow hcyocwOkmvrEE78t) → tela de agradecimento
+- Integração Asana: cada resposta vira card no projeto **[Metrix]** / coluna **Entrada de tarefas**, responsável **Guilherme Oliveira**, due = dia em que o cliente respondeu. n8n calcula o **ÍSC (Índice de Saúde do Cliente)** ponderado 30/30/25/15 e classifica 🟢/🟡/🔴 no título do card; notas trazem breakdown + NPS + todas as respostas
+- Validado end-to-end (2 leads de teste: ISC 90 🟢 e ISC 66 🔴, N/A excluído do cálculo; cards removidos)
+
+---
+
 ## [2026-06-16] — Nova página: Programa de Indicação (`indicacao/`)
 
 ### Página `indicacao/index.html`

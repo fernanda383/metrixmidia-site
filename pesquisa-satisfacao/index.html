@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pesquisa de evolução da parceria — Metrix Mídia. Seu feedback molda nossa próxima etapa juntos.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Favicons Oficiais -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <title>Pesquisa de Evolução da Parceria | Metrix Mídia</title>
+
+    <!-- Tailwind CDN para UX/UI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonte Inter Oficial -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-dark: #0a0a0a;
+            --brand-primary: #f5f5f5;
+            --brand-accent: #F2E846;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--brand-dark);
+            color: var(--brand-primary);
+        }
+
+        h1, h2, h3, .font-serif-display {
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .btn-hover { transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1); }
+        .btn-hover:hover { transform: scale(1.02); filter: brightness(1.1); }
+
+        *:focus-visible {
+            outline: 2px solid var(--brand-accent);
+            outline-offset: 4px;
+        }
+
+        .skip-link:focus { top: 0 !important; outline: 3px solid #000; outline-offset: 2px; }
+
+        /* Form fields */
+        .field-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: 0.85rem;
+            padding: 0.85rem 1rem;
+            color: var(--brand-primary);
+            font-size: 0.95rem;
+            transition: border-color 200ms ease, background 200ms ease;
+        }
+        .field-input::placeholder { color: #6b7280; }
+        .field-input:focus {
+            outline: none;
+            border-color: rgba(242, 232, 70, 0.5);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        select.field-input option { background: #0a0a0a; color: #f5f5f5; }
+
+        .q-block { padding: 1.75rem; border-radius: 1.5rem; }
+        .q-label { display: block; font-size: 1.05rem; font-weight: 500; color: #f5f5f5; margin-bottom: 0.35rem; line-height: 1.45; }
+        .q-help { display: block; font-size: 0.85rem; color: #9ca3af; margin-bottom: 1rem; font-weight: 300; }
+
+        /* Scale / radio pills */
+        .scale { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .scale input { position: absolute; opacity: 0; width: 0; height: 0; }
+        .scale label {
+            cursor: pointer;
+            min-width: 3rem;
+            text-align: center;
+            padding: 0.65rem 0.9rem;
+            border-radius: 0.75rem;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.02);
+            color: #d1d5db;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 180ms ease;
+            user-select: none;
+        }
+        .scale label:hover { border-color: rgba(242,232,70,0.4); color: #fff; }
+        .scale input:checked + label {
+            background: var(--brand-accent);
+            border-color: var(--brand-accent);
+            color: #000;
+            font-weight: 600;
+        }
+        .scale input:focus-visible + label { outline: 2px solid var(--brand-accent); outline-offset: 2px; }
+
+        .scale-ends { display: flex; justify-content: space-between; font-size: 0.75rem; color: #6b7280; margin-top: 0.5rem; }
+
+        /* Choice list (vertical radios) */
+        .choices { display: flex; flex-direction: column; gap: 0.5rem; }
+        .choices input { position: absolute; opacity: 0; width: 0; height: 0; }
+        .choices label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.85rem 1rem;
+            border-radius: 0.85rem;
+            border: 1px solid rgba(255,255,255,0.10);
+            background: rgba(255,255,255,0.02);
+            color: #d1d5db;
+            font-size: 0.95rem;
+            transition: all 180ms ease;
+        }
+        .choices label:hover { border-color: rgba(242,232,70,0.35); color: #fff; }
+        .choices label::before {
+            content: '';
+            width: 1.05rem; height: 1.05rem;
+            border-radius: 99px;
+            border: 2px solid rgba(255,255,255,0.3);
+            flex-shrink: 0;
+            transition: all 180ms ease;
+        }
+        .choices input:checked + label { border-color: var(--brand-accent); color: #fff; background: rgba(242,232,70,0.06); }
+        .choices input:checked + label::before { border-color: var(--brand-accent); background: var(--brand-accent); box-shadow: inset 0 0 0 3px #0a0a0a; }
+        .choices input:focus-visible + label { outline: 2px solid var(--brand-accent); outline-offset: 2px; }
+
+        .pillar-tag { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #F2E846; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col selection:bg-[#F2E846]/30 selection:text-white">
+
+    <a href="#main-content" class="skip-link" style="position:absolute;top:-100px;left:1rem;z-index:10000;background:#F2E846;color:#000;font-weight:700;padding:.75rem 1.5rem;border-radius:0 0 .5rem .5rem;transition:top 200ms ease;text-decoration:none;font-size:.9rem;">Ir para o conteúdo</a>
+
+    <!-- Navbar (simplificada) -->
+    <nav class="fixed w-full z-50 top-0 bg-[#0a0a0a]/70 backdrop-blur-xl border-b border-white/5" aria-label="Navegação principal">
+        <div class="max-w-3xl mx-auto px-6 lg:px-8 py-4 flex justify-center items-center">
+            <a href="/" class="flex items-center gap-2 group">
+                <img src="/static/logo_new.png" alt="Metrix Mídia" class="h-8 md:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+            </a>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-24" id="main-content">
+
+        <!-- Hero -->
+        <section class="relative pt-16 pb-10 md:pt-24 md:pb-12 px-6 lg:px-8 max-w-3xl mx-auto text-center overflow-hidden">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[700px] max-h-[700px] bg-[#F2E846]/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel text-xs font-medium tracking-wide mb-8 text-gray-300 border border-white/10">
+                Pesquisa de Evolução da Parceria
+            </div>
+
+            <h1 class="text-3xl md:text-5xl font-medium tracking-tight mb-6 leading-[1.15]">
+                Sua opinião molda <br class="hidden md:block" />
+                <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-[#FFF5A5] to-[#F2E846] pr-[0.1em]">nossa próxima etapa juntos.</span>
+            </h1>
+
+            <p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-light">
+                Não é uma pesquisa de satisfação comum — é um diagnóstico honesto da nossa parceria. Leva poucos minutos e ajuda a Metrix a melhorar onde mais importa pra você.
+            </p>
+        </section>
+
+        <!-- Form -->
+        <section class="px-6 lg:px-8 max-w-3xl mx-auto pb-28">
+            <form id="pesquisa-form" class="space-y-5" novalidate>
+
+                <!-- Identificação -->
+                <div class="glass-panel q-block">
+                    <span class="pillar-tag">Identificação</span>
+                    <div class="mt-5 space-y-5">
+                        <div>
+                            <label class="q-label" for="empresa">Qual o nome da sua empresa? *</label>
+                            <input class="field-input" type="text" id="empresa" name="empresa" placeholder="Nome da empresa / marca" required>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="q-label" for="respondente_nome">Seu nome</label>
+                                <input class="field-input" type="text" id="respondente_nome" name="respondente_nome" placeholder="Quem está respondendo">
+                            </div>
+                            <div>
+                                <label class="q-label" for="respondente_cargo">Seu cargo / função</label>
+                                <input class="field-input" type="text" id="respondente_cargo" name="respondente_cargo" placeholder="Ex.: sócio, gestor de marketing">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PILAR 1: Experiência e relacionamento -->
+                <div class="pt-6 pb-2 px-2">
+                    <span class="pillar-tag">Pilar 1 — Experiência e relacionamento</span>
+                </div>
+
+                <div class="glass-panel q-block">
+                    <label class="q-label">1. De 0 a 10, qual a probabilidade de você recomendar nossa agência para outra empresa? *</label>
+                    <span class="q-help">Métrica NPS.</span>
+                    <div class="scale" id="scale-nps" data-name="p1_nps" role="radiogroup" aria-label="Nota de 0 a 10"></div>
+                    <div class="scale-ends"><span>Nada provável</span><span>Muito provável</span></div>
+                    <div class="mt-4 text-sm text-gray-400 bg-[#F2E846]/5 border border-[#F2E846]/20 rounded-xl p-4 font-light">
+                        💡 Você já conhece nosso <a href="/indicacao/" class="text-[#F2E846] underline underline-offset-2" target="_blank" rel="noopener">programa de indicação</a>? Ao indicar alguém que se torne nosso cliente, você pode receber comissões, créditos ou benefícios exclusivos. <a href="/indicacao/" class="text-[#F2E846] underline underline-offset-2" target="_blank" rel="noopener">Saiba mais</a>.
+                    </div>
+                </div>
+
+                <div class="glass-panel q-block">
+                    <label class="q-label">2. Como você avalia sua experiência geral com nossa agência? *</label>
+                    <span class="q-help">Escala de 1 a 5.</span>
+                    <div class="scale" data-name="p2_experiencia" data-min="1" data-max="5" role="radiogroup" aria-label="Nota de 1 a 5"></div>
+                </div>
+
+                <div class="glass-panel q-block">
+                    <label class="q-label">3. Qual o principal impacto que nossa parceria trouxe para sua empresa?</label>
+                    <div class="choices" data-name="p3_impacto">
+                        <input type="radio" id="p3a" name="p3_impacto" value="Maior presença digital"><label for="p3a">Maior presença digital</label>
+                        <input type="radio" id="p3b" name="p3_impacto" value="Mais oportunidades comerciais"><label for="p3b">Mais oportunidades comerciais</label>
+                        <input type="radio" id="p3c" name="p3_impacto" value="Melhor posicionamento da marca"><label for="p3c">Melhor posicionamento da marca</label>
+                        <input type="radio" id="p3d" name="p3_impacto" value="Economia de tempo e organização"><label for="p3d">Economia de tempo e organização</label>
+                        <input type="radio" id="p3e" name="p3_impacto" value="Conteúdo mais profissional"><label for="p3e">Conteúdo mais profissional</label>
+                        <input type="radio" id="p3f" name="p3_impacto" value="Ainda não percebi impactos significativos"><label for="p3f">Ainda não percebi impactos significativos</label>
+                        <input type="radio" id="p3g" name="p3_impacto" value="Outro"><label for="p3g">Outro</label>
+                    </div>
+                </div>
+
+                <!-- PILAR 2: Avaliação dos serviços -->
+                <div class="pt-6 pb-2 px-2">
+                    <span class="pillar-tag">Pilar 2 — Avaliação dos serviços</span>
+                    <p class="text-gray-400 text-sm mt-2 font-light">Avalie apenas os serviços que fazem parte da sua parceria. A opção <strong class="text-gray-200">N/A</strong> (não se aplica) é pra quando você <strong class="text-gray-200">não contrata aquele serviço</strong> — ou simplesmente <strong class="text-gray-200">prefere não pontuar</strong> aquele item. Marcar N/A não prejudica sua avaliação: o item fica de fora do cálculo.</p>
+                </div>
+
+                <div class="glass-panel q-block">
+                    <label class="q-label">Tráfego Pago</label>
+                    <span class="q-help">4. Como você avalia nossa gestão de campanhas e busca por melhoria dos resultados? (1 a 5)</span>
+                    <div class="scale" data-name="p4_trafego_gestao" data-min="1" data-max="5" data-na="true" role="radiogroup" aria-label="Nota de 1 a 5"></div>
+                </div>
+
+                <div class="glass-panel q-block">
+                    <label class="q-label">Tráfego Pago</label>
+                    <span class="q-help">5. Você sente que existe uma evolução estratégica nas campanhas ao longo do tempo? (1 a 5)</span>
+                    <div class="scale" data-name="p5_trafego_evolucao" data-min="1" data-max="5" data-na="true" role="radiogroup" aria-label="Nota de 1 a 5"></div>
+                </div>
+
+                <div class="glass-panel q-block">
+                    <label class="q-label">Produção de Conteúdo (Fotos e Vídeos)</label>
+                    <span class="q-help">6. Como você avalia a qualidade dos materiais produzidos pela nossa equipe? (1 a 5)</span>
+                    <div class="scale" data-name="p6_conteudo_qualidade" data-min="1" data-max="5" data-na="true" role="radiogroup" aria-label="Nota de 1 a 5"></div>
+                </div>
+
+                <div class="glass-panel q-block">
+                    <label class="q-label">Produção de Conteúdo (Fotos e Vídeos)</label>
+                    <span class="q-help">7. Os conteúdos produzidos representam bem a identidade e posicionamento da sua empresa? (1 a 5)</span>
+                    <div class="scale" data-name="p7_conteudo_identidade" data-min="1" data-max="5" data-na="true" role="radiogroup" aria-label="Nota de 1 a 5"></div>
+                </div>
+
+                <div class="glass-panel q-block">
+                    <label class="q-label">Captação e Eventos</label>
+                    <span class="q-help">8. Como você avalia a possibilidade de utilizarmos mais conteúdos captados profissionalmente (eventos, bastidores, rotina, produtos ou equipe) para fortalecer sua comunicação?</span>
+                    <div class="choices" data-name="p8_captacao">
+                        <input type="radio" id="p8a" name="p8_captacao" value="Já utilizamos e vejo muito valor"><label for="p8a">Já utilizamos e vejo muito valor</label>
+                        <input type="radio" id="p8b" name="p8_captacao" value="Tenho interesse em utilizar mais"><label for="p8b">Tenho interesse em utilizar mais</label>
+                        <input type="radio" id="p8c" name="p8_captacao" value="Tenho interesse, mas ainda não priorizamos"><label for="p8c">Tenho interesse, mas ainda não priorizamos</label>
+                        <input type="radio" id="p8d" name="p8_captacao" value="Não vejo necessidade atualmente"><label for="p8d">Não vejo necessidade atualmente</label>
+                    </div>
+                </div>
+
+                <div class="glass-panel q-block">
+                    <label class="q-label">Relatórios e acompanhamento</label>
+                    <span class="q-help">9. Como você avalia nosso acompanhamento, comunicação e apresentação de resultados? (1 a 5)</span>
+                    <div class="scale" data-name="p9_relatorios" data-min="1" data-max="5" role="radiogroup" aria-label="Nota de 1 a 5"></div>
+                </div>
+
+                <div class="glass-panel q-block">
+                    <label class="q-label">Estratégia</label>
+                    <span class="q-help">10. Você sente que nossa equipe entende o seu negócio e atua de forma estratégica, propondo melhorias e oportunidades? (1 a 5)</span>
+                    <div class="scale" data-name="p10_estrategia" data-min="1" data-max="5" role="radiogroup" aria-label="Nota de 1 a 5"></div>
+                </div>
+
+                <div class="glass-panel q-block">
+                    <label class="q-label">Inteligência Artificial e Automações</label>
+                    <span class="q-help">11. Atualmente, sua empresa possui interesse em utilizar inteligência artificial ou automações para melhorar processos?</span>
+                    <div class="choices" data-name="p11_ia">
+                        <input type="radio" id="p11a" name="p11_ia" value="Já utilizamos"><label for="p11a">Já utilizamos</label>
+                        <input type="radio" id="p11b" name="p11_ia" value="Tenho interesse em conhecer possibilidades"><label for="p11b">Tenho interesse em conhecer possibilidades</label>
+                        <input type="radio" id="p11c" name="p11_ia" value="Talvez no futuro"><label for="p11c">Talvez no futuro</label>
+                        <input type="radio" id="p11d" name="p11_ia" value="Não tenho interesse atualmente"><label for="p11d">Não tenho interesse atualmente</label>
+                    </div>
+                </div>
+
+                <!-- PILAR 3: Valor percebido e oportunidades -->
+                <div class="pt-6 pb-2 px-2">
+                    <span class="pillar-tag">Pilar 3 — Valor percebido e oportunidades</span>
+                </div>
+
+                <div class="glass-panel q-block">
+                    <label class="q-label">12. Comparando o investimento realizado e as entregas recebidas, como você avalia nossa parceria? *</label>
+                    <div class="choices" data-name="p12_valor">
+                        <input type="radio" id="p12a" name="p12_valor" value="Muito abaixo da expectativa"><label for="p12a">Muito abaixo da expectativa</label>
+                        <input type="radio" id="p12b" name="p12_valor" value="Abaixo da expectativa"><label for="p12b">Abaixo da expectativa</label>
+                        <input type="radio" id="p12c" name="p12_valor" value="Dentro da expectativa"><label for="p12c">Dentro da expectativa</label>
+                        <input type="radio" id="p12d" name="p12_valor" value="Acima da expectativa"><label for="p12d">Acima da expectativa</label>
+                        <input type="radio" id="p12e" name="p12_valor" value="Muito acima da expectativa"><label for="p12e">Muito acima da expectativa</label>
+                    </div>
+                </div>
+
+                <div class="glass-panel q-block">
+                    <label class="q-label" for="p13_melhorar">13. O que poderíamos melhorar para aumentar ainda mais o valor da nossa parceria?</label>
+                    <textarea class="field-input" id="p13_melhorar" name="p13_melhorar" rows="3" placeholder="Pode ser direto — é assim que evoluímos."></textarea>
+                </div>
+
+                <div class="glass-panel q-block">
+                    <label class="q-label" for="p14_oportunidade">14. Existe algum serviço ou oportunidade que você gostaria que explorássemos juntos?</label>
+                    <textarea class="field-input" id="p14_oportunidade" name="p14_oportunidade" rows="3" placeholder="Uma ideia, um projeto, um sonho da marca..."></textarea>
+                </div>
+
+                <!-- Submit -->
+                <div class="pt-4">
+                    <button type="submit" id="submit-btn"
+                        class="btn-hover w-full py-4 rounded-full bg-[#F2E846] text-black text-center font-medium text-lg">
+                        Enviar respostas
+                    </button>
+                    <p id="form-status" class="text-center text-sm text-gray-400 font-light min-h-[1.25rem] mt-4" role="status" aria-live="polite"></p>
+                </div>
+            </form>
+
+            <!-- Thank-you (hidden) -->
+            <div id="thanks" class="glass-panel rounded-[2.5rem] p-12 text-center" style="display:none;">
+                <div class="text-5xl mb-6">🤝</div>
+                <h2 class="text-3xl font-medium mb-4 tracking-tight">Obrigado pelo seu tempo!</h2>
+                <p class="text-gray-400 text-lg font-light max-w-xl mx-auto">Suas respostas chegaram à nossa equipe. Vamos usá-las pra deixar nossa parceria ainda melhor — e logo voltamos a conversar.</p>
+                <a href="/" class="btn-hover inline-flex items-center gap-2 mt-10 bg-white/5 border border-white/10 text-white px-8 py-3 rounded-full font-medium text-sm hover:bg-white/10">Voltar ao site</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 lg:px-8 border-t border-white/5 bg-[#050505]">
+        <div class="max-w-3xl mx-auto text-center">
+            <p class="text-gray-600 text-xs font-light">© 2026 Metrix Mídia. Narrativas que geram resultado.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Render scale pills (NPS 0-10 and 1-5 scales)
+        (function () {
+            // NPS 0-10
+            var nps = document.getElementById('scale-nps');
+            if (nps) {
+                for (var i = 0; i <= 10; i++) {
+                    var id = 'nps-' + i;
+                    var inp = document.createElement('input');
+                    inp.type = 'radio'; inp.name = 'p1_nps'; inp.value = String(i); inp.id = id;
+                    var lab = document.createElement('label'); lab.setAttribute('for', id); lab.textContent = String(i);
+                    nps.appendChild(inp); nps.appendChild(lab);
+                }
+            }
+            // 1-5 scales
+            document.querySelectorAll('.scale[data-min]').forEach(function (el) {
+                var name = el.getAttribute('data-name');
+                var min = parseInt(el.getAttribute('data-min'), 10);
+                var max = parseInt(el.getAttribute('data-max'), 10);
+                var hasNA = el.getAttribute('data-na') === 'true';
+                for (var v = min; v <= max; v++) {
+                    var id = name + '-' + v;
+                    var inp = document.createElement('input');
+                    inp.type = 'radio'; inp.name = name; inp.value = String(v); inp.id = id;
+                    var lab = document.createElement('label'); lab.setAttribute('for', id); lab.textContent = String(v);
+                    el.appendChild(inp); el.appendChild(lab);
+                }
+                if (hasNA) {
+                    var idna = name + '-na';
+                    var inpna = document.createElement('input');
+                    inpna.type = 'radio'; inpna.name = name; inpna.value = 'na'; inpna.id = idna;
+                    var labna = document.createElement('label'); labna.setAttribute('for', idna); labna.textContent = 'N/A';
+                    labna.style.minWidth = 'auto';
+                    el.appendChild(inpna); el.appendChild(labna);
+                }
+            });
+        })();
+
+        // Form submit
+        (function () {
+            var WEBHOOK_URL = 'https://ops.metrixmidia.com.br/webhook/pesquisa-satisfacao';
+
+            var form = document.getElementById('pesquisa-form');
+            var statusEl = document.getElementById('form-status');
+            var submitBtn = document.getElementById('submit-btn');
+            var thanks = document.getElementById('thanks');
+            if (!form) return;
+
+            function val(name) {
+                var el = form.querySelector('input[name="' + name + '"]:checked');
+                return el ? el.value : '';
+            }
+            function txt(name) {
+                var el = form.querySelector('[name="' + name + '"]');
+                return el ? el.value.trim() : '';
+            }
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                var empresa = txt('empresa');
+                var required = { 'empresa': empresa, 'p1_nps': val('p1_nps'), 'p2_experiencia': val('p2_experiencia'), 'p12_valor': val('p12_valor') };
+                var missing = Object.keys(required).filter(function (k) { return !required[k]; });
+                if (missing.length) {
+                    statusEl.textContent = 'Por favor, responda os campos obrigatórios (*) antes de enviar.';
+                    statusEl.style.color = '#fca5a5';
+                    var firstEl = form.querySelector('[name="' + missing[0] + '"]');
+                    if (firstEl && firstEl.scrollIntoView) firstEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    return;
+                }
+
+                var data = {
+                    empresa: empresa,
+                    respondente_nome: txt('respondente_nome'),
+                    respondente_cargo: txt('respondente_cargo'),
+                    p1_nps: val('p1_nps'),
+                    p2_experiencia: val('p2_experiencia'),
+                    p3_impacto: val('p3_impacto'),
+                    p4_trafego_gestao: val('p4_trafego_gestao'),
+                    p5_trafego_evolucao: val('p5_trafego_evolucao'),
+                    p6_conteudo_qualidade: val('p6_conteudo_qualidade'),
+                    p7_conteudo_identidade: val('p7_conteudo_identidade'),
+                    p8_captacao: val('p8_captacao'),
+                    p9_relatorios: val('p9_relatorios'),
+                    p10_estrategia: val('p10_estrategia'),
+                    p11_ia: val('p11_ia'),
+                    p12_valor: val('p12_valor'),
+                    p13_melhorar: txt('p13_melhorar'),
+                    p14_oportunidade: txt('p14_oportunidade'),
+                    origem: 'site/pesquisa-satisfacao',
+                    enviado_em: new Date().toISOString()
+                };
+
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.6';
+                statusEl.style.color = '';
+                statusEl.textContent = 'Enviando suas respostas...';
+
+                function done() {
+                    form.style.display = 'none';
+                    thanks.style.display = 'block';
+                    thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                function fail() {
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                    statusEl.style.color = '#fca5a5';
+                    statusEl.textContent = 'Não conseguimos enviar agora. Tente novamente em instantes.';
+                }
+
+                fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                }).then(function (r) { return r.ok ? done() : fail(); }).catch(fail);
+            });
+        })();
+    </script>
+</body>
+</html>
