@@ -13,6 +13,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://metrixmidia.com.br/indicacao/</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://metrixmidia.com.br/blog/</loc>
     <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>

@@ -4,6 +4,20 @@ Registro de todas as alterações no site da Metrix Mídia. Atualizar a cada ses
 
 ---
 
+## [2026-06-16] — Nova página: Programa de Indicação (`indicacao/`)
+
+### Página `indicacao/index.html`
+- Sessão "Programa de Indicação / Parceria" — origem: task Asana 1215768799715666 (subtask de "Formulário de pesquisa de satisfação e expansão de contratos"); alvo do link "Saiba mais" na Pergunta 1 (NPS) do formulário de satisfação
+- Estrutura: hero ("Conheça nosso Plano de Indicação") + Como funciona (3 passos: Indique → Nós conduzimos → Você ganha) + Tabela de comissões + Cadastro de parceiro
+- Tabela de comissões (fonte: imagem de comissionamento anexa à task): Estratégia 15%, Performance 20% (destaque "Mais Popular"), Legado 25% — todas sobre a 1ª mensalidade do cliente indicado
+- Form de cadastro: dados do parceiro (nome, WhatsApp, e-mail) + dados do indicado (nome, contato, plano de interesse, observação)
+- Fluxo de envio: ao submeter, faz POST para `WEBHOOK_URL` (n8n `https://ops.metrixmidia.com.br/webhook/indicacao-parceiro`, workflow id 93BANqMBOqpGEbuy) e só então abre o WhatsApp do time pré-preenchido com todos os dados. WhatsApp só dispara depois do form preenchido
+- Destino do lead no Asana: projeto **[Setor] Comercial** → 1ª coluna **Entrada de leads**, responsável **Guilherme Oliveira**, due = dia do envio (timezone America/Sao_Paulo). Validado end-to-end com 2 leads de teste (webhook direto + browser/CORS)
+- Reusa head/styles/nav/footer/mobile-menu padrão do site (dark + accent #F2E846 + Inter)
+- Adicionada ao `sitemap.xml` (priority 0.7)
+
+---
+
 ## [2026-04-13] — Case Smash House + artigo hamburgueria + correção matrículas Academia
 
 ### Novo case: Smash House (`case/smash-house/`)

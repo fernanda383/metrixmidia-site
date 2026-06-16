@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Programa de Indicação Metrix Mídia — indique uma empresa e ganhe comissão por cada cliente fechado.">
+
+    <!-- Favicons Oficiais -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <title>Programa de Indicação | Metrix Mídia</title>
+
+    <!-- Tailwind CDN para UX/UI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonte Inter Oficial -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-dark: #0a0a0a;
+            --brand-primary: #f5f5f5;
+            --brand-accent: #F2E846;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--brand-dark);
+            color: var(--brand-primary);
+        }
+
+        h1, h2, h3, .font-serif-display {
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .card-hover {
+            transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1), border-color 300ms ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px) scale(1.01);
+            border-color: rgba(242, 232, 70, 0.3);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(242, 232, 70, 0.05);
+        }
+
+        .btn-hover { transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1); }
+        .btn-hover:hover { transform: scale(1.02); filter: brightness(1.1); }
+
+        .nav-link { position: relative; transition: color 200ms ease; }
+        .nav-link::after {
+            content: ''; position: absolute; width: 0; height: 1px;
+            bottom: -4px; left: 0; background: var(--brand-accent); transition: width 300ms ease;
+        }
+        .nav-link:hover::after, .nav-link-active::after { width: 100%; }
+        .nav-link-active { color: white; }
+
+        *:focus-visible {
+            outline: 2px solid var(--brand-accent);
+            outline-offset: 4px;
+        }
+
+        .skip-link:focus { top: 0 !important; outline: 3px solid #000; outline-offset: 2px; }
+
+        /* Form fields */
+        .field-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: 0.85rem;
+            padding: 0.85rem 1rem;
+            color: var(--brand-primary);
+            font-size: 0.95rem;
+            transition: border-color 200ms ease, background 200ms ease;
+        }
+        .field-input::placeholder { color: #6b7280; }
+        .field-input:focus {
+            outline: none;
+            border-color: rgba(242, 232, 70, 0.5);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .field-label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #d1d5db;
+            margin-bottom: 0.5rem;
+        }
+        select.field-input option { background: #0a0a0a; color: #f5f5f5; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col selection:bg-[#F2E846]/30 selection:text-white">
+
+    <a href="#main-content" class="skip-link" style="position:absolute;top:-100px;left:1rem;z-index:10000;background:#F2E846;color:#000;font-weight:700;padding:.75rem 1.5rem;border-radius:0 0 .5rem .5rem;transition:top 200ms ease;text-decoration:none;font-size:.9rem;">Ir para o conteúdo</a>
+
+    <!-- Mobile nav overlay -->
+    <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu de navegação" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(10,10,10,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:2rem;">
+      <button id="mobile-menu-close" aria-label="Fechar menu" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;cursor:pointer;color:#f5f5f5;font-size:1.5rem;padding:.5rem;line-height:1;">✕</button>
+      <a href="/#sobre" style="font-size:1.4rem;font-weight:600;color:#f5f5f5;text-decoration:none;padding:.5rem 1rem;">Sobre</a>
+      <a href="/#metodologia" style="font-size:1.4rem;font-weight:600;color:#f5f5f5;text-decoration:none;padding:.5rem 1rem;">Metodologia</a>
+      <a href="/#planos" style="font-size:1.4rem;font-weight:600;color:#f5f5f5;text-decoration:none;padding:.5rem 1rem;">Planos</a>
+      <a href="/case/" style="font-size:1.4rem;font-weight:600;color:#f5f5f5;text-decoration:none;padding:.5rem 1rem;">Cases</a>
+      <a href="/blog/" style="font-size:1.4rem;font-weight:600;color:#f5f5f5;text-decoration:none;padding:.5rem 1rem;">Blog</a>
+      <a href="#cadastro" style="font-size:1.2rem;font-weight:700;color:#000;background:#F2E846;padding:.75rem 2rem;border-radius:99px;text-decoration:none;">Quero ser parceiro</a>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 top-0 bg-[#0a0a0a]/70 backdrop-blur-xl border-b border-white/5" aria-label="Navegação principal">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2 group">
+                <img src="/static/logo_new.png" alt="Metrix Mídia — página inicial" class="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+            </a>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+                <a href="/#sobre" class="nav-link hover:text-white">Sobre</a>
+                <a href="/#metodologia" class="nav-link hover:text-white">Metodologia</a>
+                <a href="/#planos" class="nav-link hover:text-white">Planos</a>
+                <a href="/case/" class="nav-link hover:text-white">Cases</a>
+                <a href="/blog/" class="nav-link hover:text-white">Blog</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <a href="#cadastro" class="btn-hover text-sm hidden md:inline-flex bg-[#F2E846] text-black px-5 py-2.5 rounded-full font-medium">
+                  Quero ser parceiro
+              </a>
+              <button id="mobile-menu-open" class="md:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-white/10 transition-colors duration-200" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span class="block w-6 h-0.5 bg-white"></span>
+                <span class="block w-6 h-0.5 bg-white"></span>
+                <span class="block w-4 h-0.5 bg-white"></span>
+              </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-24" id="main-content">
+
+        <!-- Hero -->
+        <section class="relative pt-20 pb-16 md:pt-32 md:pb-24 px-6 lg:px-8 max-w-5xl mx-auto flex flex-col items-center text-center overflow-hidden">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-[#F2E846]/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel text-xs font-medium tracking-wide mb-10 text-gray-300 border border-white/10">
+                Programa de Indicação
+            </div>
+
+            <h1 class="text-4xl md:text-6xl lg:text-[4.5rem] font-medium tracking-tight mb-8 leading-[1.1]">
+                Conheça nosso <br class="hidden md:block" />
+                <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-[#FFF5A5] to-[#F2E846] pr-[0.1em]">Plano de Indicação</span>
+            </h1>
+
+            <p class="mt-2 text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-light">
+                Indique uma empresa que você acredita e <span class="text-gray-200 font-medium">ganhe comissão por cada cliente fechado</span>. Sua rede de confiança vira renda.
+            </p>
+
+            <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#cadastro"
+                   class="btn-hover bg-[#F2E846] text-black px-8 py-4 rounded-full font-medium text-lg shadow-[0_4px_24px_rgba(242,232,70,0.15)] flex items-center justify-center gap-2">
+                   Quero ser parceiro
+                </a>
+                <a href="#comissoes"
+                   class="btn-hover bg-white/5 border border-white/10 text-white px-8 py-4 rounded-full font-medium text-lg flex items-center justify-center gap-2 hover:bg-white/10">
+                   Ver tabela de comissões
+                </a>
+            </div>
+        </section>
+
+        <!-- Como funciona -->
+        <section id="como-funciona" class="py-24 px-6 lg:px-8 bg-[#050505] border-y border-white/5 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="text-center mb-20 max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-5xl font-medium mb-6 tracking-tight">Como funciona</h2>
+                    <p class="text-gray-400 text-lg font-light">Três passos simples. Sem burocracia. Você indica, nós cuidamos do resto.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="p-10 rounded-[2rem] glass-panel card-hover group">
+                        <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center mb-8 text-gray-400 font-serif-display text-xl transition-colors group-hover:text-[#F2E846] group-hover:border-[#F2E846]/30">1</div>
+                        <h3 class="text-2xl font-medium mb-4">Indique</h3>
+                        <p class="text-gray-400 leading-relaxed font-light">Preencha o cadastro com seus dados e os de quem você quer indicar. Leva menos de um minuto.</p>
+                    </div>
+                    <div class="p-10 rounded-[2rem] glass-panel card-hover group">
+                        <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center mb-8 text-gray-400 font-serif-display text-xl transition-colors group-hover:text-[#F2E846] group-hover:border-[#F2E846]/30">2</div>
+                        <h3 class="text-2xl font-medium mb-4">Nós conduzimos</h3>
+                        <p class="text-gray-400 leading-relaxed font-light">Nossa equipe entra em contato, apresenta a proposta e conduz toda a negociação com profissionalismo.</p>
+                    </div>
+                    <div class="p-10 rounded-[2rem] glass-panel card-hover group">
+                        <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center mb-8 text-gray-400 font-serif-display text-xl transition-colors group-hover:text-[#F2E846] group-hover:border-[#F2E846]/30">3</div>
+                        <h3 class="text-2xl font-medium mb-4">Você ganha</h3>
+                        <p class="text-gray-400 leading-relaxed font-light">Cliente fechou? Você recebe sua comissão sobre a primeira mensalidade do plano contratado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabela de comissões -->
+        <section id="comissoes" class="py-24 px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-medium mb-4 tracking-tight">Tabela de comissões</h2>
+                <p class="text-gray-400 text-lg font-light">Quanto maior o plano fechado, maior a sua recompensa. Comissão sobre a 1ª mensalidade.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <!-- Estratégia -->
+                <div class="card-hover glass-panel rounded-[2.5rem] p-10 flex flex-col">
+                    <h3 class="text-2xl font-serif-display mb-2">Estratégia</h3>
+                    <p class="text-gray-500 text-sm mb-8 pb-6 border-b border-white/5">Ponto de partida seguro.</p>
+                    <div class="mb-2 text-5xl font-medium text-white">15<span class="text-2xl text-gray-400">%</span></div>
+                    <p class="text-gray-400 text-sm mb-10 flex-grow">da 1ª mensalidade do cliente indicado.</p>
+                </div>
+
+                <!-- Performance (destaque) -->
+                <div class="card-hover bg-gradient-to-b from-[#11110a] to-[#050505] border border-[#F2E846]/30 rounded-[2.5rem] p-10 flex flex-col relative md:-translate-y-4 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#F2E846] text-black font-medium text-[10px] px-4 py-1.5 rounded-full tracking-widest uppercase">Mais Popular</div>
+                    <h3 class="text-2xl font-serif-display mb-2 text-white">Performance</h3>
+                    <p class="text-[#F2E846]/70 text-sm mb-8 pb-6 border-b border-white/10">Aceleração de resultados.</p>
+                    <div class="mb-2 text-5xl font-medium text-[#F2E846]">20<span class="text-2xl text-[#F2E846]/70">%</span></div>
+                    <p class="text-gray-300 text-sm mb-10 flex-grow">da 1ª mensalidade do cliente indicado.</p>
+                </div>
+
+                <!-- Legado -->
+                <div class="card-hover glass-panel rounded-[2.5rem] p-10 flex flex-col">
+                    <h3 class="text-2xl font-serif-display mb-2">Legado</h3>
+                    <p class="text-gray-500 text-sm mb-8 pb-6 border-b border-white/5">Domínio e autoridade absoluta.</p>
+                    <div class="mb-2 text-5xl font-medium text-white">25<span class="text-2xl text-gray-400">%</span></div>
+                    <p class="text-gray-400 text-sm mb-10 flex-grow">da 1ª mensalidade do cliente indicado.</p>
+                </div>
+            </div>
+
+            <p class="text-center text-gray-600 text-xs mt-10 max-w-2xl mx-auto font-light">
+                A comissão é paga após a confirmação do fechamento e do primeiro pagamento do cliente indicado. Condições alinhadas individualmente com cada parceiro.
+            </p>
+        </section>
+
+        <!-- Cadastro -->
+        <section id="cadastro" class="py-24 px-6 lg:px-8 bg-[#050505] border-y border-white/5 relative overflow-hidden">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[700px] h-[400px] bg-[#F2E846]/5 blur-[120px] rounded-[100%] pointer-events-none -z-10"></div>
+
+            <div class="max-w-2xl mx-auto relative z-10">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-5xl font-medium mb-4 tracking-tight">Quero ser parceiro</h2>
+                    <p class="text-gray-400 text-lg font-light">Preencha o cadastro abaixo. Ao enviar, você fala direto com nosso time pelo WhatsApp para concluir.</p>
+                </div>
+
+                <form id="indicacao-form" class="glass-panel rounded-[2.5rem] p-8 md:p-10 space-y-6" novalidate>
+                    <div class="pb-2">
+                        <h3 class="text-sm font-medium text-[#F2E846] tracking-widest uppercase">Seus dados</h3>
+                    </div>
+
+                    <div>
+                        <label class="field-label" for="parceiro_nome">Seu nome completo *</label>
+                        <input class="field-input" type="text" id="parceiro_nome" name="parceiro_nome" placeholder="Como podemos te chamar?" required autocomplete="name">
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="field-label" for="parceiro_whatsapp">Seu WhatsApp *</label>
+                            <input class="field-input" type="tel" id="parceiro_whatsapp" name="parceiro_whatsapp" placeholder="(11) 99999-9999" required autocomplete="tel">
+                        </div>
+                        <div>
+                            <label class="field-label" for="parceiro_email">Seu e-mail</label>
+                            <input class="field-input" type="email" id="parceiro_email" name="parceiro_email" placeholder="voce@email.com" autocomplete="email">
+                        </div>
+                    </div>
+
+                    <div class="pt-4 pb-2 border-t border-white/5">
+                        <h3 class="text-sm font-medium text-[#F2E846] tracking-widest uppercase">Quem você indica</h3>
+                    </div>
+
+                    <div>
+                        <label class="field-label" for="indicado_nome">Nome da empresa ou pessoa indicada *</label>
+                        <input class="field-input" type="text" id="indicado_nome" name="indicado_nome" placeholder="Empresa ou contato que você quer indicar" required>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="field-label" for="indicado_contato">Contato do indicado</label>
+                            <input class="field-input" type="text" id="indicado_contato" name="indicado_contato" placeholder="WhatsApp, e-mail ou @ do Instagram">
+                        </div>
+                        <div>
+                            <label class="field-label" for="indicado_plano">Plano de interesse</label>
+                            <select class="field-input" id="indicado_plano" name="indicado_plano">
+                                <option value="Não sei ainda">Não sei ainda</option>
+                                <option value="Estratégia">Estratégia (15%)</option>
+                                <option value="Performance">Performance (20%)</option>
+                                <option value="Legado">Legado (25%)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="field-label" for="mensagem">Algo que devemos saber? (opcional)</label>
+                        <textarea class="field-input" id="mensagem" name="mensagem" rows="3" placeholder="Contexto da indicação, melhor horário de contato, etc."></textarea>
+                    </div>
+
+                    <button type="submit" id="submit-btn"
+                        class="btn-hover w-full py-4 rounded-full bg-[#F2E846] text-black text-center font-medium text-lg flex items-center justify-center gap-2">
+                        Enviar e falar no WhatsApp
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.737-.979zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    </button>
+
+                    <p id="form-status" class="text-center text-sm text-gray-400 font-light min-h-[1.25rem]" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-16 px-6 lg:px-8 border-t border-white/5 bg-[#050505]">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-10">
+            <div class="text-center md:text-left">
+                <a href="/" class="flex items-center gap-2 justify-center md:justify-start group">
+                    <img src="/static/logo_new.png" alt="Metrix Mídia" class="h-8 w-auto object-contain transition-transform duration-300 transform group-hover:-translate-y-1">
+                </a>
+                <p class="text-gray-500 text-sm mt-4 font-light">Narrativas que geram resultado.</p>
+            </div>
+            <div class="flex flex-wrap gap-8 text-sm text-gray-500 font-light justify-center">
+                <a href="/case/" class="hover:text-white transition-colors">Cases</a>
+                <a href="/blog/" class="hover:text-white transition-colors">Blog</a>
+                <a href="https://instagram.com/metrixmidia" class="hover:text-white transition-colors">Instagram</a>
+                <a href="/politica-de-privacidade" class="hover:text-white transition-colors">Privacidade</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 text-xs text-gray-600 font-light flex justify-center md:justify-start">
+            <p>© 2026 Metrix Mídia. Inovação guiada por propósito.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu
+        (function () {
+            var openBtn = document.getElementById('mobile-menu-open');
+            var closeBtn = document.getElementById('mobile-menu-close');
+            var menu = document.getElementById('mobile-menu');
+            if (!openBtn || !closeBtn || !menu) return;
+            function openMenu() { menu.style.display = 'flex'; openBtn.setAttribute('aria-expanded', 'true'); closeBtn.focus(); document.body.style.overflow = 'hidden'; }
+            function closeMenu() { menu.style.display = 'none'; openBtn.setAttribute('aria-expanded', 'false'); openBtn.focus(); document.body.style.overflow = ''; }
+            openBtn.addEventListener('click', openMenu);
+            closeBtn.addEventListener('click', closeMenu);
+            menu.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+            menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
+        })();
+
+        // Referral form
+        (function () {
+            // WhatsApp do time Metrix (mesmo número usado no site).
+            var WHATSAPP_NUMBER = '5511983414590';
+
+            // Webhook de integração (n8n → Asana [Setor] Comercial / Entrada de leads,
+            // responsável Guilherme, due = dia do envio).
+            // Workflow n8n: "Indicação - Form Parceiro → Asana Comercial" (id 93BANqMBOqpGEbuy).
+            // Se ficar vazio, o cadastro segue funcionando só via WhatsApp.
+            var WEBHOOK_URL = 'https://ops.metrixmidia.com.br/webhook/indicacao-parceiro';
+
+            var form = document.getElementById('indicacao-form');
+            var statusEl = document.getElementById('form-status');
+            var submitBtn = document.getElementById('submit-btn');
+            if (!form) return;
+
+            function buildWhatsappMessage(d) {
+                var lines = [
+                    'Olá, Metrix! Quero participar do Programa de Indicação.',
+                    '',
+                    '*Meus dados*',
+                    'Nome: ' + d.parceiro_nome,
+                    'WhatsApp: ' + d.parceiro_whatsapp,
+                ];
+                if (d.parceiro_email) lines.push('E-mail: ' + d.parceiro_email);
+                lines.push('');
+                lines.push('*Indicação*');
+                lines.push('Empresa/pessoa: ' + d.indicado_nome);
+                if (d.indicado_contato) lines.push('Contato: ' + d.indicado_contato);
+                lines.push('Plano de interesse: ' + d.indicado_plano);
+                if (d.mensagem) { lines.push(''); lines.push('Obs: ' + d.mensagem); }
+                return lines.join('\n');
+            }
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                }
+
+                var data = {
+                    parceiro_nome: form.parceiro_nome.value.trim(),
+                    parceiro_whatsapp: form.parceiro_whatsapp.value.trim(),
+                    parceiro_email: form.parceiro_email.value.trim(),
+                    indicado_nome: form.indicado_nome.value.trim(),
+                    indicado_contato: form.indicado_contato.value.trim(),
+                    indicado_plano: form.indicado_plano.value,
+                    mensagem: form.mensagem.value.trim(),
+                    origem: 'site/indicacao',
+                    enviado_em: new Date().toISOString()
+                };
+
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.6';
+                statusEl.textContent = 'Registrando sua indicação...';
+
+                var waUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(buildWhatsappMessage(data));
+
+                function goToWhatsapp() {
+                    statusEl.textContent = 'Tudo certo! Abrindo o WhatsApp para concluir...';
+                    window.location.href = waUrl;
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                }
+
+                // Best-effort: registra no Asana via webhook antes de abrir o WhatsApp.
+                // Só leva o parceiro ao WhatsApp depois de tentar registrar o formulário.
+                if (WEBHOOK_URL) {
+                    fetch(WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                    }).then(goToWhatsapp).catch(goToWhatsapp);
+                } else {
+                    goToWhatsapp();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
