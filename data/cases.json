@@ -1,5 +1,14 @@
 [
   {
+    "slug": "encantos-artes-sagradas",
+    "title": "Encantos e Artes Sagradas",
+    "segment": "E-commerce | Artigos Religiosos",
+    "summary": "Primeiro mês sob gestão Metrix: faturamento bruto de R$70.291,65, lucro líquido de R$56.538,90 com 80.4% de margem e ROAS consolidado de 7.86x.",
+    "results": ["ROAS 7,86x", "80.4% Margem Líq.", "R$70.291,65 Faturamento"],
+    "tags": ["E-commerce", "Performance", "Multicanal"],
+    "thumb": "/static/cases/encantos-artes-sagradas/thumb.png"
+  },
+  {
     "slug": "academia-de-tenis-de-mesa",
     "title": "Academia de Tênis de Mesa",
     "segment": "Esporte & Educação",
