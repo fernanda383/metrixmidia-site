@@ -135,6 +135,7 @@
         .choices input:checked + label { border-color: var(--brand-accent); color: #fff; background: rgba(242,232,70,0.06); }
         .choices input:checked + label::before { border-color: var(--brand-accent); background: var(--brand-accent); box-shadow: inset 0 0 0 3px #0a0a0a; }
         .choices input:focus-visible + label { outline: 2px solid var(--brand-accent); outline-offset: 2px; }
+        .choices input[type="checkbox"] + label::before { border-radius: 0.25rem; }
 
         .pillar-tag { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #F2E846; }
     </style>
@@ -220,14 +221,15 @@
 
                 <div class="glass-panel q-block">
                     <label class="q-label">3. Qual o principal impacto que nossa parceria trouxe para sua empresa?</label>
+                    <span class="q-help">Pode marcar mais de uma opção.</span>
                     <div class="choices" data-name="p3_impacto">
-                        <input type="radio" id="p3a" name="p3_impacto" value="Maior presença digital"><label for="p3a">Maior presença digital</label>
-                        <input type="radio" id="p3b" name="p3_impacto" value="Mais oportunidades comerciais"><label for="p3b">Mais oportunidades comerciais</label>
-                        <input type="radio" id="p3c" name="p3_impacto" value="Melhor posicionamento da marca"><label for="p3c">Melhor posicionamento da marca</label>
-                        <input type="radio" id="p3d" name="p3_impacto" value="Economia de tempo e organização"><label for="p3d">Economia de tempo e organização</label>
-                        <input type="radio" id="p3e" name="p3_impacto" value="Conteúdo mais profissional"><label for="p3e">Conteúdo mais profissional</label>
-                        <input type="radio" id="p3f" name="p3_impacto" value="Ainda não percebi impactos significativos"><label for="p3f">Ainda não percebi impactos significativos</label>
-                        <input type="radio" id="p3g" name="p3_impacto" value="Outro"><label for="p3g">Outro</label>
+                        <input type="checkbox" id="p3a" name="p3_impacto" value="Maior presença digital"><label for="p3a">Maior presença digital</label>
+                        <input type="checkbox" id="p3b" name="p3_impacto" value="Mais oportunidades comerciais"><label for="p3b">Mais oportunidades comerciais</label>
+                        <input type="checkbox" id="p3c" name="p3_impacto" value="Melhor posicionamento da marca"><label for="p3c">Melhor posicionamento da marca</label>
+                        <input type="checkbox" id="p3d" name="p3_impacto" value="Economia de tempo e organização"><label for="p3d">Economia de tempo e organização</label>
+                        <input type="checkbox" id="p3e" name="p3_impacto" value="Conteúdo mais profissional"><label for="p3e">Conteúdo mais profissional</label>
+                        <input type="checkbox" id="p3f" name="p3_impacto" value="Ainda não percebi impactos significativos"><label for="p3f">Ainda não percebi impactos significativos</label>
+                        <input type="checkbox" id="p3g" name="p3_impacto" value="Outro"><label for="p3g">Outro</label>
                     </div>
                 </div>
 
@@ -400,6 +402,14 @@
                 var el = form.querySelector('input[name="' + name + '"]:checked');
                 return el ? el.value : '';
             }
+            function vals(name) {
+                var els = form.querySelectorAll('input[name="' + name + '"]:checked');
+                var res = [];
+                for (var i = 0; i < els.length; i++) {
+                    res.push(els[i].value);
+                }
+                return res.join(', ');
+            }
             function txt(name) {
                 var el = form.querySelector('[name="' + name + '"]');
                 return el ? el.value.trim() : '';
@@ -425,7 +435,7 @@
                     respondente_cargo: txt('respondente_cargo'),
                     p1_nps: val('p1_nps'),
                     p2_experiencia: val('p2_experiencia'),
-                    p3_impacto: val('p3_impacto'),
+                    p3_impacto: vals('p3_impacto'),
                     p4_trafego_gestao: val('p4_trafego_gestao'),
                     p5_trafego_evolucao: val('p5_trafego_evolucao'),
                     p6_conteudo_qualidade: val('p6_conteudo_qualidade'),
