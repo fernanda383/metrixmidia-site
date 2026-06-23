@@ -4,6 +4,24 @@ Registro de todas as alterações no site da Metrix Mídia. Atualizar a cada ses
 
 ---
 
+## [2026-06-23] — Depoimento em vídeo (Italo Santos / Academia de Tênis de Mesa)
+
+### Vídeo self-hosted
+- Depoimento do cliente Italo Santos (proprietário da Academia de Tênis de Mesa, Pindamonhangaba) adicionado ao site — origem: `DEPOIMENTO SITE.mp4` (1080×1920, 3min, 232MB)
+- Comprimido para web: 720×1280 H.264 + AAC 128k, `+faststart`, CRF 26 → **24MB** (`static/cases/academia-tenis-de-mesa/depoimento-italo.mp4`) + poster `depoimento-italo-poster.jpg` (frame @4s)
+- Player `<video controls preload="none" playsinline>` com poster → não pesa no load (só baixa ao dar play); fallback de download para navegadores sem suporte
+
+### Home (`index.html`)
+- Nova seção `#depoimento` entre Resultados e Planos (grid 2-col desktop: texto + vídeo vertical 9:16 em moldura glass-panel), com link "Ver o case completo" → `/case/academia-de-tenis-de-mesa/`
+
+### Case (`case/academia-de-tenis-de-mesa/index.html`)
+- Nova seção `#depoimento` ("Depoimento do Cliente") logo antes do CTA final — vídeo vertical centralizado, mesmo asset
+
+### Validação
+- Servido local + Playwright: home e case 200, poster carrega (720px), vídeo ratio 9:16, grid 2-col, vídeo decodifica (186s, 720×1280), 0 erros de console
+
+---
+
 ## [2026-06-16] — Nova página: Pesquisa de Evolução da Parceria (`pesquisa-satisfacao/`)
 
 ### Página `pesquisa-satisfacao/index.html`
